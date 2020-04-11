@@ -1,5 +1,36 @@
 .Navbar{
-    height: 200px;
+    display: flex;
     width: 100%;
-    background-color: red;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: space-between;
+    position: fixed;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: black 1px 0 10px;
+    z-index: 9999;
+    background-color:#10AC84;
+}
+
+.LogoAndTitleContainer {
+    display: flex;
+}
+
+.NavItemsContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.NavItems {
+    padding: 30px;
+}
+
+.NavItemsContainer a{
+    color: white;
+    font-weight: 800;
+}
+.NavItemsContainer a:hover{
+    color: grey;
+    
 }
