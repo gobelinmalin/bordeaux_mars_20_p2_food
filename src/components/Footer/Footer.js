@@ -50,7 +50,7 @@ const Footer = () => {
 
             </div>
 
-            <div>
+            <div className={styles.ContainerContentCopyright}>
                 <p><small>© Copyright: Website created by Pierre, David and Johanna</small></p>
             </div>
 

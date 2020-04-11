@@ -5,12 +5,14 @@ h4{
 
 h2{
     font-size: 2rem;
+    padding-bottom: 20px;
 }
 
 h4{
     font-size: 1.2rem;
     height: 40px;
     line-height: 40px;
+    padding-bottom: 40px;
 }
 
 a{
@@ -61,10 +63,9 @@ img{
 
 .Footer{
     width: 100%;
-    position: fixed;
-    bottom: 0;
     color: white;
     background-color: #10AC84;
+    padding-bottom: 20px;
 }
 
 .ContainerContentLinks{
@@ -95,4 +96,8 @@ img{
 
 .ContainerContentLinksItems ul{
     line-height: 25px;
+}
+
+.ContainerContentCopyright{
+    padding-top: 50px;
 }
