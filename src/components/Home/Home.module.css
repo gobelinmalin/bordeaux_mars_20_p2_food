@@ -1,0 +1,15 @@
+.BackgroundImage{
+    background-image: url('../../Images/ImageHome.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5px;
+    width : 100%;
+    height: 550px;
+}
+
+.Title {
+    position: absolute;
+    top: 20%;
+    margin-left: 45%;
+    font-size: 50px;
+}
