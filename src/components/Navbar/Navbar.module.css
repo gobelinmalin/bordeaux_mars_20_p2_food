@@ -11,6 +11,7 @@
     text-shadow: black 1px 0 10px;
     z-index: 9999;
     background-color:#10AC84;
+    margin-top: -10px;
 }
 
 .LogoAndTitleContainer {
