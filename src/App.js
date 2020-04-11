@@ -1,13 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
+import ContactUs from './components/Contact-Us /ContactUs'
 
 function App() {
   return (
     <div className="App">
         <Navbar />
-        <div> <h1>Test Pierre</h1></div>
+        <ContactUs />
     </div>
   );
 }
