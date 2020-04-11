@@ -1,0 +1,98 @@
+h2,
+h4{
+    margin-top: 0;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h4{
+    font-size: 1.2rem;
+    height: 40px;
+    line-height: 40px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: #1c6d5b;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    width: 50px;
+    height: auto;
+}
+
+.ImgTwitter,
+.ImgInstagram{
+    margin-right: 10px;
+}
+
+.ImgTwitter,
+.ImgInstagram,
+.ImgFacebook{
+    transition: transform .5s ease;
+    -webkit-transition: transform .5s ease;
+    -moz-transition: transform .5s ease;
+    -ms-transition: transform .5s ease;
+    -o-transition: transform .5s ease;
+}
+
+.ContainerContentSocialLinksImg:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.Footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: white;
+    background-color: #10AC84;
+}
+
+.ContainerContentLinks{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 50px;
+}
+
+.ContainerContentLinksItems,
+.ContainerContentContacts,
+.ContainerContentSocial{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContainerContentContacts li{
+    line-height: 2rem;
+}
+
+.ContainerContentSocialLinks{
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.ContainerContentLinksItems ul{
+    line-height: 25px;
+}
