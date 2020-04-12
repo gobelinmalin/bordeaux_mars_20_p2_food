@@ -18,6 +18,10 @@
     display: flex;
 }
 
+.LogoAndTitleContainer h2 {
+    margin-top: 25px;
+}
+
 .NavItemsContainer {
     display: flex;
     justify-content: flex-end;
