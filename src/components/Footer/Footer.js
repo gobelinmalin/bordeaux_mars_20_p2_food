@@ -11,13 +11,11 @@ const Footer = () => {
                 <div className={styles.ContainerContentLinksItems}>
                     <ul>
                         <h2>Empty my Fridge</h2>
-                        <a href="">
-                            <li><Link smooth to='/home'>Home</Link></li>
-                        </a>
-                        <a href=""><li>In my fridge</li></a>
-                        <a href=""><li>About us</li></a>
-                        <a href=""><li>Contact us</li></a>
-                        <a href=""><li>Legal notice</li></a>
+                        <li><Link smooth to='/home'>Home</Link></li>
+                        <li><Link smooth to='/inMyFridge'>In my fridge</Link></li>
+                        <li><Link smooth to='/aboutUs'>About us</Link></li>
+                        <li><Link smooth to='/contactUs'>Contact us</Link></li>
+                        <li><Link smooth to='/legalNotice'>Legal notice</Link></li>
                     </ul>
                 </div>
                 <div className={styles.ContainerContentContacts}>
