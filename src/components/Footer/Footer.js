@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Footer = () => {
     return (
@@ -10,7 +11,9 @@ const Footer = () => {
                 <div className={styles.ContainerContentLinksItems}>
                     <ul>
                         <h2>Empty my Fridge</h2>
-                        <a href=""><li>Home</li></a>
+                        <a href="">
+                            <li><Link smooth to='/home'>Home</Link></li>
+                        </a>
                         <a href=""><li>In my fridge</li></a>
                         <a href=""><li>About us</li></a>
                         <a href=""><li>Contact us</li></a>
