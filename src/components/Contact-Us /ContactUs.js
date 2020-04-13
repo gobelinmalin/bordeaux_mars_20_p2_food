@@ -1,19 +1,48 @@
 import React, { Component } from 'react'
 import styles from './ContactUs.module.css'
 
+const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+
 class ContactUs extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            name : '',
+            email: '',
+            message : ''
+        }
+    }
+
+    handleChangeName = (e) => {
+        this.setState({
+            name : e.target.value
+        });
+    }
+
+    handleChangeMessage = (e) => {
+        this.setState({
+            message : e.target.value
+        });
+    }
+
+    handleChangeEmail = (e) => {
+        this.setState({
+            email : e.target.value
+        });
+    }
+
     render(){
+        console.log(this.state.name.length)
         return(
             <div className={styles.ContactUs}>
                 <div className={styles.LeftInformations}>
-                    <p>Informations</p>
                     <div className={styles.LeftLocation}>
                         <div className={styles.LeftLocationImage}>
                             <img src="../../Images/Icone/Location-icone.png" alt=" icone"/>
                         </div>
                         <div className={styles.LeftLocationText}>
                             <h2>Location</h2>
-                            <p>2 allée de Serr,</p>
+                            <p>9 allée de Serr,</p>
                             <p>33300, Bordeaux, FR</p>
                         </div>
                     </div>
@@ -38,21 +67,51 @@ class ContactUs extends Component {
                         </div>
                     </div>
                 </div>
-                <div className={styles.RightForm}>
-                    <div className={styles.RightFormInput}>
-                        <input type="text" placeholder="Your Name" value="Name :"></input>
-                        <input type="text" placeholder="Your Email" value="Your Email :"></input>
-                        <input type="text" placeholder="Your Phone" value="Your Phone :"></input>
-                        <input type="text" placeholder="Subject" value="Subject:"></input>
-                        <textarea type="text" placeholder="Your Message"></textarea>
-                    </div>
-                    <div>
-                        <input className={styles.FormButton} type="image" id="image" alt="submit-button"
-                        src="../../Images/Icone/Submit-Button@2x.png"
-                        ></input>
-                    </div>
-                </div>
 
+                <div className={styles.RightForm}>
+                    <h1> Get In Touch</h1>
+                    <form onSubmit={this.handleSubmit}>
+                    <div className={styles.FormGroup}>
+                        <label htmlFor="name">Name* :</label>
+                        <input 
+                        type="text"
+                        className={this.state.name.length < 5 ? styles.InputBad : styles.InputOk}
+                        onChange={this.handleChangeName}
+                        value={this.state.name}
+                        />
+
+                        <label htmlFor="email" className={styles.RightInline}>Email* :</label>
+                        <input
+                        type="email"
+                        className={validEmailRegex.test(this.state.email) ? styles.InputOk : styles.InputBad}
+                        onChange={this.handleChangeEmail}
+                        value={this.state.email}
+                        />
+                    </div>
+
+                    <div className={styles.FormGroup}>
+                        <label htmlFor="phone">Phone :</label>
+                        <input className={styles.InputOk} />
+                        
+                        <label htmlFor="subject"className={styles.RightInline}>Subject :</label>
+                        <input className={styles.InputOk} />
+                    </div>
+
+                    <div className={styles.FormGroup}>
+                        <label htmlFor="message">Message* :</label>
+                        <textarea 
+                        type="text"
+                        className={this.state.message.length < 10 ? styles.InputBad : styles.InputOk}
+                        onChange={this.handleChangeMessage}
+                        value={this.state.message}
+                        >
+                        </textarea>
+                    </div>
+                    <div className={styles.button}>
+                        <button>Submit</button>
+                    </div>
+                    </form>
+                </div>
             </div>
         );
     }

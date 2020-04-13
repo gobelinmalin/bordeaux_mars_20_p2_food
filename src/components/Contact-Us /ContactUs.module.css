@@ -1,25 +1,52 @@
+:focus {
+    outline: none;
+}
+
 .ContactUs {
     display: flex;
+    justify-content: center;
 }
 
 .LeftInformations {
     display: flex;
     flex-direction: column;
-    border : 1px solid black;
-    width : 40%;
-    margin : 40px;
+    width : 20%;
+    margin : 160px 40px 30px 0px;
 }
 
+.LeftInformations h2 {
+  font-family: 'Rubik';
+  color: #10AC84;
+  text-transform: uppercase;
+}
+
+.LeftInformations p {
+  font-weight: bold;
+}
+
+.RightForm {
+    width: 50%;
+    margin : 100px 0px 30px 40px;
+}
+
+.RightForm h1 {
+  font-family: 'Rubik';
+  color: #10AC84;
+  font-size: 40px;
+  margin: 0px 0px 60px 0px;
+}
 
 .LeftLocation, 
 .LeftPhone, 
 .LeftMail {
 
     display: flex;
-    margin : 20px;
-    border : 1px solid blue;
+    margin : 20px 0px 20px 0px;
     justify-content: space-evenly;
+}
 
+.LeftMail {
+  height: 137px;
 }
 
 .LeftLocationText,
@@ -27,37 +54,198 @@
 .LeftMailText
 {
     text-align: left;
-    border : 1px solid red;
+    width: 45%;
 }
 
 .LeftLocationImage,
 .LeftPhoneImage,
 .LeftMailImage
 {
-    border : 1px solid green;
     align-self: center;
 }
 
-.RightForm {
-    border : solid 2px yellow;
-    width : 50%;
-    margin : 40px;
-}
-
-.RightFormInput {
+.FormGroup {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    margin : 10px 30px 50px 30px;
+    margin-left: 0;
+  }
+  
+  .FormGroup label {
+    flex: none;
+    display: block;
+    width: 80px;
+    font-weight: bold;
+    font-size: 1em;
+  }
+  .FormGroup label.RightInline {
+    text-align: right;  
+    padding-right: 8px;
+ 
+  }
+ 
+ .FormGroup input {
+   flex: 1 1 auto;
+   padding: 4px;
+   margin-top: -4px;
+   height: 40px;
+   background-color: #CFDFE6;
+   border-radius : 10px;
+   border : 1px solid #CFDFE6;
+   font-size: 16px;
+   font-family: 'Rubik';
+ }
+ 
+ .FormGroup textarea {
+   flex: 1 1 auto;
+   padding: 4px;
+   margin-top: -4px;
+   height: 250px;
+   background-color: #CFDFE6;
+   border-radius : 10px;
+   border : 1px solid #CFDFE6;
+   font-size: 16px;
+   font-family: 'Rubik';
+ }
+
+
+ .FormGroup input:focus,
+ .FormGroup textarea:focus {
+     background: none;
+     border: 1px solid black ;
+ }
+
+ .FormGroup input:hover,
+ .FormGroup textarea:hover {
+    border: 1px solid black ;
+ }
+
+ .FormGroup .InputOk:focus {
+  border: solid 1px  #10AC84;
 }
 
-.RightFormInput input {
-    width : 300px;
-    height : 30px;
-    margin : 20px;
+.FormGroup .InputBad:focus {
+  border: solid 1px red;
 }
+  
+  button {
+  border: none;
+	width: 315px;
+	height: 55px;
+	margin: auto;
+	margin-top: 29px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	background: #10AC84;
+  font-size: 22px;
+  font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	border-radius: 40px;
+	overflow: hidden;
+  }
 
-.RightFormInput textarea {
-    width : 100%;
-    height : 300px;
-    margin : 20px;
-}
+  button:hover {
+    background: #129372;
+  }
+
+  @media (max-width: 1200px) {
+
+    .ContactUs {
+      flex-direction: column;
+    }
+
+    .LeftInformations {
+      flex-direction: row;
+      width: auto;
+      justify-content: space-evenly;
+      margin-left: 40px;
+    }
+
+    .LeftLocation, 
+    .LeftPhone, 
+    .LeftMail {
+        margin : 20px 0px 20px 0px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .LeftMail {
+      height: auto;
+    }
+
+    .LeftLocationText,
+    .LeftPhoneText,
+    .LeftMailText
+    {
+      flex-wrap: wrap;
+      text-align: left;
+      width: 100%;
+    }
+
+    .RightForm {
+      width: auto;
+      margin : 40px;
+    }
+
+  }
+
+  @media (max-width: 780px){
+
+    .LeftInformations {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .LeftLocation, 
+    .LeftPhone, 
+    .LeftMail {
+        width: 60%;
+        justify-content: start;
+    }
+    .LeftLocationText,
+    .LeftPhoneText,
+    .LeftMailText
+    {
+      margin: 20px;
+    }
+
+    .FormGroup {
+      flex-direction: column;
+      align-items: center;
+      margin :10px 30px 10px 30px;
+    }
+
+    .FormGroup input,
+    .FormGroup textarea {
+      margin: 10px 0px 10px 0;
+      width: 90%;
+    }
+
+    .FormGroup label.RightInline {
+      text-align: center;  
+      padding-right: 0;
+      padding-left: 0;   
+    }
+  }
+
+  @media (max-width: 500px){
+
+    .LeftInformations {
+      width: auto;
+    }
+
+    .LeftLocation, 
+    .LeftPhone, 
+    .LeftMail {
+    flex-direction: column;
+    }
+
+    button {
+      width: 280px;
+    }
+  }
