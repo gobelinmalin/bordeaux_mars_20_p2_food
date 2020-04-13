@@ -1,0 +1,32 @@
+.PortraitCard {
+    width: 350px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 75px;
+
+}
+
+.Portrait {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.Name {
+    font-family: 'Flash';
+    font-size: 35px;
+}
+
+@media screen and (max-width: 375px) {
+    .PortraitCard {
+        margin: 35px auto;
+        margin-left: -15px;
+    }
+
+}

@@ -1,0 +1,118 @@
+.Footer h2,
+.Footer h4{
+    margin-top: 0;
+}
+
+.Footer h2{
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.Footer h4{
+    font-size: 1.2rem;
+    height: 40px;
+    line-height: 40px;
+    padding-bottom: 40px;
+}
+
+.Footer a{
+    text-decoration: none;
+    color: white;
+}
+
+.Footer a:hover{
+    color: #1c6d5b;
+}
+
+.Footer ul{
+    padding: 0;
+    margin: 0;
+}
+
+.Footer li{
+    list-style: none;
+}
+
+.Footer img{
+    width: 50px;
+    height: auto;
+}
+
+.Footer .ImgTwitter,
+.ImgInstagram{
+    margin-right: 10px;
+}
+
+.Footer .ImgTwitter,
+.Footer .ImgInstagram,
+.Footer .ImgFacebook{
+    transition: transform .5s ease;
+    -webkit-transition: transform .5s ease;
+    -moz-transition: transform .5s ease;
+    -ms-transition: transform .5s ease;
+    -o-transition: transform .5s ease;
+}
+
+.Footer .ContainerContentSocialLinksImg:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.Footer{
+    width: 100%;
+    color: white;
+    background-color: #10AC84;
+    padding-bottom: 20px;
+}
+
+.Footer .ContainerContentLinks{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 50px;
+}
+
+.Footer .ContainerContentLinksItems,
+.Footer .ContainerContentContacts,
+.Footer .ContainerContentSocial{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer .ContainerContentContacts li{
+    line-height: 2rem;
+}
+
+.Footer .ContainerContentSocialLinks{
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.Footer .ContainerContentLinksItems ul{
+    line-height: 25px;
+}
+
+.Footer .ContainerContentCopyright{
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* MOBILE */
+@media screen and (max-width: 799px){
+    .ContainerContentLinks{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ContainerContentContacts,
+    .ContainerContentSocial,
+    .ContainerContentCopyright{
+        margin-top: 30px;
+    }
+}
