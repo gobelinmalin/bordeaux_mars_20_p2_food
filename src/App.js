@@ -17,7 +17,7 @@ function App() {
           <Navbar />
           <Route path='/home' exact component={Home}/>
           <Route path='/aboutUs' exact component={AboutUs}/>
-          <ContactUs />
+          <Route path='/contactUs' exact component={ContactUs}/>
           <Footer />
       </div>
     </BrowserRouter>

@@ -32,8 +32,12 @@ class ContactUs extends Component {
     }
 
     render(){
-        console.log(this.state.name.length)
         return(
+        <div>
+            <div className={styles.Title}>
+                <div className={styles.ImgBackground} />
+                <h1>Contact Us</h1>
+            </div>
             <div className={styles.ContactUs}>
                 <div className={styles.LeftInformations}>
                     <div className={styles.LeftLocation}>
@@ -113,6 +117,7 @@ class ContactUs extends Component {
                     </form>
                 </div>
             </div>
+        </div>
         );
     }
 }
