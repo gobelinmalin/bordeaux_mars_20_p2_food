@@ -1,0 +1,98 @@
+.AboutUs .ContainerTitle{
+    position: relative;
+}
+
+.AboutUs .ContainerTitleImgBackground{
+    background-image: url('../../Images/AboutUsBoard.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 550px;
+}
+
+.AboutUs .ContainerTitle h1{
+    font-size: 8rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.AboutUs .ContainerMembersImgBackground{
+    background-image: url('../../Images/bg17.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 775px;
+}
+
+.AboutUs .ContainerMembers{
+    position: relative;
+    width: 100%;
+}
+
+.AboutUs .ContainerMembers .AllPortrait{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.AboutUs .ContainerMembersSocial{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 100px;
+}
+
+.AboutUs .ContainerMembersSocialContent img{
+    top: 50%;
+    height: 20px;
+    width: auto;
+}
+
+.AboutUs .ContainerMembersSocialLinksContent .ImgTwitter,
+.AboutUs .ContainerMembersSocialLinksContent .ImgInstagram,
+.AboutUs .ContainerMembersSocialLinksContent .ImgFacebook,
+.AboutUs .ContainerMembersSocialLinksContent .ImgLinkedin{
+    transition: transform .5s ease;
+    -webkit-transition: transform .5s ease;
+    -moz-transition: transform .5s ease;
+    -ms-transition: transform .5s ease;
+    -o-transition: transform .5s ease;
+}
+
+.AboutUs .ContainerMembersSocialLinksContent:hover{
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+}
+
+.AboutUs .ContainerMembers .ContainerMembersSocialContent{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 200px;
+}
+
+/* MOBILE */
+@media screen and (max-width: 799px){
+    .AboutUs .ContainerTitleImgBackground{
+        height: 440px;
+    }
+
+    .AboutUs .ContainerTitle h1{
+        font-size: 6rem;
+    }
+
+    .AboutUs .ContainerMembers .AllPortrait{
+        flex-direction: column;
+    }
+}
