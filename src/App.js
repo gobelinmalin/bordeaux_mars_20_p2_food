@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Redirect} from 'react-router-dom';
 import Home from './components/Home/Home';
+import AboutUs from './components/AboutUs/AboutUs';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Redirect exact from="/" to="/home" />
           <Navbar />
           <Route path='/home' exact component={Home}/>
+          <Route path='/aboutUs' exact component={AboutUs}/>
           <Footer />
       </div>
     </BrowserRouter>
