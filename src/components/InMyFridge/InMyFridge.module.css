@@ -1,0 +1,23 @@
+.BackgroundImage {
+    background-image: url('../../Images/ImageHome.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5px;
+    width : 100%;
+    height: 550px;
+}
+
+.BackgroundImage h1 {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    font-size: 8rem;
+}
+
+.Subtitle {
+    text-align: center;
+    color: #10AC84;
+    font-family: 'Rubik';
+    padding: 15px;
+    font-size: 2.5rem;
+}

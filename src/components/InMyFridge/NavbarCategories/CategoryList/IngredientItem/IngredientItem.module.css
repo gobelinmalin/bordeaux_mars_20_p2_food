@@ -1,0 +1,12 @@
+.Item {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.Item p {
+    margin-right: 10px;
+}
+
+/*.Item input {
+}*/

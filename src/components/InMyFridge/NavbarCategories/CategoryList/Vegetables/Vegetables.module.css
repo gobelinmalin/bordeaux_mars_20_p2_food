@@ -1,0 +1,26 @@
+.CategoryName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+
+}
+
+.IconAndName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Checkbox {
+    margin-right: 10px;
+}
+
+.IconAndName h3 {
+    font-family: 'Rubik';
+    font-size: 25px;
+}

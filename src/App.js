@@ -8,6 +8,7 @@ import { Route } from 'react-router-dom';
 import { Redirect} from 'react-router-dom';
 import Home from './components/Home/Home';
 import AboutUs from './components/AboutUs/AboutUs';
+import InMyFridge from './components/InMyFridge/InMyFridge';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Navbar />
           <Route path='/home' exact component={Home}/>
           <Route path='/aboutUs' exact component={AboutUs}/>
+          <Route path='/inMyFridge' exact component={InMyFridge}/>
           <Route path='/contactUs' exact component={ContactUs}/>
           <Footer />
       </div>

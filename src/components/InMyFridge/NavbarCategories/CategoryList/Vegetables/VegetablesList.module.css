@@ -1,0 +1,12 @@
+.List {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    border: solid 1px black;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.List li {
+    list-style: none;
+}
