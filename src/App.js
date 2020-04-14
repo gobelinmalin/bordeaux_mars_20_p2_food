@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ContactUs from './components/Contact-Us /ContactUs'
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter } from 'react-router-dom';
@@ -16,6 +17,7 @@ function App() {
           <Navbar />
           <Route path='/home' exact component={Home}/>
           <Route path='/aboutUs' exact component={AboutUs}/>
+          <Route path='/contactUs' exact component={ContactUs}/>
           <Footer />
       </div>
     </BrowserRouter>

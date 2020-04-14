@@ -46,13 +46,13 @@ const Home = () => {
                         />
                     </div>
                     <div className={styles.AboutUsBtn} >
-                        <Button variant="contained"><Link smooth to='/inMyFridge'>About us</Link></Button>
+                        <Button variant="contained"><Link smooth to='/aboutUs'>About us</Link></Button>
                     </div>
                 </div>
                 <div className={styles.BackgroundImage3}>
                     <h3>Any questions?</h3>
                     <div className={styles.ContactUsBtn}>
-                        <Button variant="contained"><Link smooth to='/inMyFridge'>Contact us</Link></Button>
+                        <Button variant="contained"><Link smooth to='/contactUs'>Contact us</Link></Button>
                     </div>
                 </div>
             </div>
