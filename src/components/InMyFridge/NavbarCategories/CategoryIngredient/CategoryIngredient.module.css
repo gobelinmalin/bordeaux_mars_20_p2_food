@@ -1,0 +1,48 @@
+.Item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.Item input {
+    margin: 5px;
+}
+
+.Item p {
+    margin-left: 5px;
+}
+
+.IconAndName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.IconAndName h3 {
+    font-family: 'Rubik';
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.List {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: solid 1px black;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.ItemList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 49%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
