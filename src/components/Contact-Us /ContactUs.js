@@ -1,125 +1,187 @@
 import React, { Component } from 'react'
 import styles from './ContactUs.module.css'
 
-const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+const validEmailRegex = 
+  RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 
-class ContactUs extends Component {
+const validateForm = (errors) => {
+let valid = true;
+Object.values(errors).forEach(
+    // if we have an error string set valid to false
+    (val) => val.length > 0 && (valid = false)
+);
+return valid;
+}
+
+class ContactUs extends Component{
     constructor(props){
         super(props);
         this.state = {
-            name : '',
-            email: '',
-            message : ''
+            fullName : '',
+            email : null,
+            message : null,
+            errors : {
+                fullName : '',
+                email : '',
+                message : '',
+            }
         }
     }
 
-    handleChangeName = (e) => {
-        this.setState({
-            name : e.target.value
-        });
+    handleSubmit = (event) => {
+        event.preventDefault();
+        if(validateForm(this.state.errors)) {
+          console.info('Valid Form')
+        }else{
+          console.error('Invalid Form')
+        }
+      }
+
+    handleChange = (event) => {
+        event.preventDefault();
+        const {name, value} = event.target;
+        let errors = this.state.errors;
+
+        switch(name){
+            case 'fullName':
+                errors.fullName=
+                value.length < 5
+                ? 'Full name must be 5 characters long'
+                : '';
+            break;
+            case 'email':
+                errors.email =
+                validEmailRegex.test(value)
+                ? ''
+                :'Email is not valid';
+            break;
+            case 'message':
+                errors.message = 
+                value.length < 10
+                ? 'Message must be at least 10 characters long'
+                : '';
+            break;
+            default:
+            break;
+        }
+
+        this.setState({errors, [name]: value});
     }
 
-    handleChangeMessage = (e) => {
-        this.setState({
-            message : e.target.value
-        });
-    }
-
-    handleChangeEmail = (e) => {
-        this.setState({
-            email : e.target.value
-        });
-    }
-
-    render(){
-        return(
+    render() {
+    const {errors} = this.state;
+   console.log(errors.message.length)
+      return (
         <div>
-            <div className={styles.Title}>
-                <div className={styles.ImgBackground} />
-                <h1>Contact Us</h1>
-            </div>
-            <div className={styles.ContactUs}>
-                <div className={styles.LeftInformations}>
-                    <div className={styles.LeftLocation}>
-                        <div className={styles.LeftLocationImage}>
-                            <img src="../../Images/Icone/Location-icone.png" alt=" icone"/>
-                        </div>
-                        <div className={styles.LeftLocationText}>
-                            <h2>Location</h2>
-                            <p>9 allée de Serr,</p>
-                            <p>33300, Bordeaux, FR</p>
-                        </div>
+          <div className={styles.Title}>
+          <div className={styles.ImgBackground} />
+          <h1>Contact Us</h1>
+          </div>
+          <div className={styles.wrapper}>
+              <div className={styles.informations}>
+                <div className={styles.LeftLocation}>
+                    <div className={styles.LeftLocationImage}>
+                        <img src="../../Images/Icone/Location-icone.png" alt="Location icone"/>
                     </div>
-                    <div className={styles.LeftPhone}>
-                        <div className={styles.LeftPhoneImage}>
-                            <img src="../../Images/Icone/phone-icone.png" alt="phone icone"/>
-                        </div>
-                        <div className={styles.LeftPhoneText}>
-                            <h2>Support</h2>
-                            <p>+33 6 66 96 17 77</p>
-                            <p>24/7 Hours support</p>
-                        </div>
-
-                    </div>
-                    <div className={styles.LeftMail}>
-                        <div className={styles.LeftMailImage}>
-                            <img src="../../Images/Icone/mail-icone.png" alt="mail icone"/>
-                        </div>
-                        <div className={styles.LeftMailText}>
-                            <h2>Email</h2>
-                            <p>support@emptymyfridge.com</p>
-                        </div>
+                    <div className={styles.LeftLocationText}>
+                        <h2>Location</h2>
+                        <p>9 allée de Serr,</p>
+                        <p>33300, Bordeaux, FR</p>
                     </div>
                 </div>
-
-                <div className={styles.RightForm}>
-                    <h1> Get In Touch</h1>
-                    <form onSubmit={this.handleSubmit}>
-                    <div className={styles.FormGroup}>
-                        <label htmlFor="name">Name* :</label>
-                        <input 
-                        type="text"
-                        className={this.state.name.length < 5 ? styles.InputBad : styles.InputOk}
-                        onChange={this.handleChangeName}
-                        value={this.state.name}
-                        />
-
-                        <label htmlFor="email" className={styles.RightInline}>Email* :</label>
-                        <input
-                        type="email"
-                        className={validEmailRegex.test(this.state.email) ? styles.InputOk : styles.InputBad}
-                        onChange={this.handleChangeEmail}
-                        value={this.state.email}
-                        />
+                <div className={styles.LeftPhone}>
+                    <div className={styles.LeftPhoneImage}>
+                        <img src="../../Images/Icone/phone-icone.png" alt="phone icone"/>
+                    </div>
+                    <div className={styles.LeftPhoneText}>
+                        <h2>Support</h2>
+                        <p>+33 6 66 96 17 77</p>
+                        <p>24/7 Hours support</p>
                     </div>
 
-                    <div className={styles.FormGroup}>
-                        <label htmlFor="phone">Phone :</label>
-                        <input className={styles.InputOk} />
-                        
-                        <label htmlFor="subject"className={styles.RightInline}>Subject :</label>
-                        <input className={styles.InputOk} />
-                    </div>
-
-                    <div className={styles.FormGroup}>
-                        <label htmlFor="message">Message* :</label>
-                        <textarea 
-                        type="text"
-                        className={this.state.message.length < 10 ? styles.InputBad : styles.InputOk}
-                        onChange={this.handleChangeMessage}
-                        value={this.state.message}
-                        >
-                        </textarea>
-                    </div>
-                    <div className={styles.button}>
-                        <button>Submit</button>
-                    </div>
-                    </form>
                 </div>
-            </div>
+                <div className={styles.LeftMail}>
+                    <div className={styles.LeftMailImage}>
+                        <img src="../../Images/Icone/mail-icone.png" alt="mail icone"/>
+                    </div>
+                    <div className={styles.LeftMailText}>
+                        <h2>Email</h2>
+                        <p>support<br/>@emptymyfridge.com</p>
+                    </div>
+                </div>
+              </div>
+
+              <div className={styles.FormWrapper}>
+                <h2>Get in touch</h2>
+                <form onSubmit={this.handleSubmit} noValidate >
+                  <div className={styles.fullName}>
+                    <label htmlFor="fullName" 
+                    className={errors.fullName.length === 35 && `${styles.LabelBad}`}
+                    >
+                      Full Name *</label>
+                    <input 
+                    type='text' 
+                    name='fullName' 
+                    placeholder="Your name" 
+                    className={errors.fullName.length === 35 && `${styles.InputLengthBad}`}
+                    onChange={this.handleChange} 
+                    noValidate />
+                    {errors.fullName.length > 0 && 
+                    <span className={styles.error}>{errors.fullName}</span>}
+                  </div>
+                  <div className={styles.email}>
+                    <label 
+                    htmlFor="email"
+                    className={errors.email.length === 18 && `${styles.LabelBad}`}
+                    >
+                        Email *
+                        </label>
+                    <input 
+                    type='email' 
+                    name='email'
+                    placeholder="Your email" 
+                    className={errors.email.length === 18 && `${styles.InputLengthBad}` }
+                    onChange={this.handleChange} noValidate />
+                    {errors.email.length > 0 && 
+                    <span className={styles.error}>{errors.email}</span>}
+                  </div>
+                  <div className={styles.phone}>
+                    <label htmlFor="phone">Phone</label>
+                    <input type='phone' name='phone' placeholder="Phone number" onChange={this.handleChange} noValidate />
+                  </div>
+                  <div className={styles.subject}>
+                    <label htmlFor="subject">Subject</label>
+                    <input type='text' name='subject' placeholder="Subject"onChange={this.handleChange} noValidate />
+                  </div>
+                  <div className={styles.message}>
+                    <label 
+                    htmlFor="message"
+                    className={errors.message.length === 43 && `${styles.LabelBad}`}
+                    >
+                        Message *
+                    </label>
+                    <textarea 
+                    type='text' 
+                    name='message' 
+                    placeholder="Your message"
+                    className={errors.message.length === 43 && `${styles.TextareaLengthBad}`}
+                    onChange={this.handleChange} 
+                    noValidate />
+                    {errors.message.length === 43 && 
+                    <span className={styles.error}>{errors.message}</span>}
+                  </div>
+                  <div className={styles.info}>
+                    <small>* required</small>
+                  </div>
+                  <div className={styles.submit}>
+                    <button>Submit</button> 
+                  </div>
+                </form>
+              </div>
+          </div>
         </div>
-        );
+      );
     }
-}
+  }
 
 export default ContactUs

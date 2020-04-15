@@ -6,7 +6,7 @@ const Recipe = (props) => {
     return (
         <div className={styles.Recipe}>
             <div className={styles.RecipeImgContainer}>
-                <img src={props.image} alt="recipe image"/>
+                <img src={props.image} alt="recipe"/>
             </div>
             <h3>{props.title}</h3>
             <p>Ingredients : {props.ingredients}</p>
