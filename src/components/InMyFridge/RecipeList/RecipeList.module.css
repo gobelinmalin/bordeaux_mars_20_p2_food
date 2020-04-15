@@ -1,0 +1,36 @@
+.CardsContainer {
+    width: 75%;
+    border: 1px solid black;
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Recipe {
+    width: 350px;
+    height: auto;
+    border: 1px solid black;
+    margin: 5px;
+    box-shadow: 4px 4px 10px grey;
+}
+
+.RecipeImgContainer{
+    height: 150px;
+    overflow: hidden;
+}
+
+.Recipe img{
+    width: 100%;
+}
+
+.Recipe h3{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.RecipeList {
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-shadow: 4px 4px 10px black;
+}
