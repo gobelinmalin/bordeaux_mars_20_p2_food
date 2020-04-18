@@ -30,7 +30,6 @@ class RecipeList extends Component {
 
     render(){
       const { recipes } = this.state;
-      console.log(recipes)
 
         return (
             <div className={styles.CardsContainer}>

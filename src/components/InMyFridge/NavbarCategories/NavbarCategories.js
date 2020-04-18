@@ -1,59 +1,35 @@
 import React, { Component } from 'react';
 import styles from './NavbarCategories.module.css';
 import CategoryIngredient from './CategoryIngredient/CategoryIngredient';
-import Fish from '../../../Images/Icone/Fish.png'
-import Vegetables from '../../../Images/Icone/Vegetables.png'
-import Meat from '../../../Images/Icone/Meat.png'
-import Cereals from '../../../Images/Icone/Cereals.png'
-import axios from 'axios'
+// import Fish from '../../../Images/Icone/Fish.png'
+// import Vegetables from '../../../Images/Icone/Vegetables.png'
+// import Meat from '../../../Images/Icone/Meat.png'
+// import Cereals from '../../../Images/Icone/Cereals.png'
+// import axios from 'axios'
+import ingredients from '../../../data/Ingredients'
 
 class NavbarCategories extends Component{
 
-    state= {
-        
+    state={
+        ingredientsList: null,
     }
-
-   
-
-    
-    
-    render() {
-        const listCategories = [
-            {
-                title: 'Vegetables',
-                icon: Vegetables,
-                ingredients: ['broccoli','carrot','salad','tomate','aubergine','potatoe'],
-            },
-            {
-                title: 'Meat',
-                icon: Meat,
-                ingredients: ['veau', 'mouton', 'dinde', 'porc', 'canard', 'boeuf', 'lapin', 'hérisson']
-            },
-            {
-                title: "Fish",
-                icon: Fish,
-                ingredients: ['saumon', 'bar', 'morue', 'maquereau', 'sardine', 'thon', 'baleine'],
-            },
-            {
-                title: "Cereals",
-                icon: Cereals,
-                ingredients: ['avoine', 'seigle', 'blé', 'épeautre', 'petit épeautre', 'riz', 'seigle'],
-            },
-        ]
         
+    render() {
+    console.log(this.state.ingredientsList)
         return (
-            
             <div className={styles.CategoryContainer}>
-                {listCategories.map((element, index) => {
+
+                {ingredients.map((element, index) => {
                     return <CategoryIngredient
+                        callbackFromParent={this.props.ingredientChoice}
                         key={index}
                         imageUrl={element.icon}
                         itemName={element.title}
-                        ingredientsList={element.ingredients}
+                        ingredientsList={element.ingredientsName.map(element => element.name)}
                         
                     />
                 })}
-                <button>Get a recipe !</button>
+                <button onClick={this.props.buttonCall}>Get a recipe !</button>
             </div>
         )
     }

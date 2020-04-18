@@ -1,20 +1,42 @@
 import React, {Component} from 'react';
 import styles from './CategoryIngredient.module.css'
 import CategoryIcon from '../../../Assets/CategoryIcon/CatergoryIcon';
+import ingredients from '../../../../data/Ingredients';
+import ingredientsList from '../../../../data/IngredientsList';
 
 class CategoryIngredient extends Component{
 
     state ={
-        toggle: false
+        toggle: false,
+        ingredients: ingredients,
+        ingredientsList: ingredientsList
     }
 
-handleToggle = () => {
-    this.setState({
-        toggle : !this.state.toggle
-    })
-}
+    handleToggle = () => {
+        this.setState({
+            toggle : !this.state.toggle
+        })
+    }
+
+    handleChecked = (event) => {
+        const item = event.target.name;
+        const checked = event.target.checked;
+        
+        this.setState(prevState => ({
+            ingredientsList: {                   
+                ...prevState.ingredientsList,    
+                [item]: checked
+            }
+        }), () => console.log(this.state.ingredientsList))
+    }
+    
+    toGiveToParent = () => {
+        const ingredientsList = this.state.ingredientsList;
+        this.props.callbackFromParent(ingredientsList);
+    }
 
     render(){
+
     return (
         <React.Fragment>
             <div className={styles.Item}>
@@ -30,10 +52,14 @@ handleToggle = () => {
             <div>
                 {this.state.toggle ?
                     <div className={styles.List}>
-                    {this.props.ingredientsList.map(element =>  {
-                        return  <div className={styles.ItemList}>
+                    {this.props.ingredientsList.map((element, index) =>  {
+                        return  <div key={index} className={styles.ItemList}>
                                     <p>{element}</p>
-                                    <input type='checkbox'/>
+                                    <input
+                                        name={element}
+                                        type='checkbox'
+                                        onChange={this.handleChecked}          
+                                    />
                                 </div>
                                 
                     })}
