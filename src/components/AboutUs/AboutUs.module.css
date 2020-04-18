@@ -1,3 +1,4 @@
+/* Title and image of the page */
 .AboutUs .ContainerTitle{
     position: relative;
 }
@@ -19,6 +20,7 @@
     transform: translate(-50%, -50%);
 }
 
+/* Background image of the portraits in the page */
 .AboutUs .ContainerMembersImgBackground{
     background-image: url('../../Images/bg17.jpg');
     background-repeat: no-repeat;
@@ -32,15 +34,18 @@
     width: 100%;
 }
 
+/* The 3 portraits */
 .AboutUs .ContainerMembers .AllPortrait{
-    display: flex;
     position: absolute;
+    display: flex;
+    justify-content: center;
     width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+/* The social networks icons */
 .AboutUs .ContainerMembersSocial{
     display: flex;
     justify-content: space-around;
@@ -82,7 +87,7 @@
     width: 200px;
 }
 
-/* MOBILE */
+/* TABLET RESPONSIVE */
 @media screen and (max-width: 799px){
     .AboutUs .ContainerTitleImgBackground{
         height: 440px;
