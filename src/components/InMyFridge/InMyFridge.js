@@ -3,12 +3,12 @@ import styles from './InMyFridge.module.css';
 import RecipeList from './RecipeList/RecipeList';
 import NavbarCategories from './NavbarCategories/NavbarCategories';
 import Axios from 'axios';
-// import ingredients from '../../data/Ingredients';
 
 class InMyFridge extends Component{
 
     state = {
-        checkedIngredients: {} // choix des ingrédients checké par l'utilisateur
+        checkedIngredients: [], // choix des ingrédients checké par l'utilisateur
+        recipeList: [],
     }
 
     myCallback = (dataFromChild) => {
@@ -16,22 +16,35 @@ class InMyFridge extends Component{
     }
 
     getRecipes = () => {
-        const { checkedIngredients } = this.state;
-        checkedIngredients.filter(element => {
-            if(Object.values(element) === true){
-                return Object.keys(element);
-            }
-        })
-        console.log(checkedIngredients);
-        
-        
+        let { checkedIngredients } = this.state;
+        const filteredArray = checkedIngredients.filter(element => {
+            const value = Object.values(element);
+            const key = Object.keys(element);
 
-        //https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=6&ingredients=apples%252Cflour%252Csugar
+            if (value[0] === true) {
+                return key[0]
+            }
+        });
+
+        const finalArray = filteredArray.map(element => Object.keys(element)).join(',');
         
+        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ranking=10&ingredients=${finalArray}`; // ingredientsNames + %252C
+        Axios.get(url,
+            {
+              headers: {
+                "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+                "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+              }
+            })
+        .then(response => response.data)
+        .then(data => this.setState({
+            recipeList : data
+        }))
     }
 
     render() {
-        console.log(this.state.checkedIngredients)
+        const { recipeList } = this.state;
+        console.log(recipeList);
         return (
             <React.Fragment>
                 <div className={styles.BackgroundImage}>
@@ -43,7 +56,9 @@ class InMyFridge extends Component{
                         ingredientChoice={this.myCallback}
                         buttonCall={this.getRecipes}
                     />
-                    <RecipeList />
+                    <RecipeList
+                        recipeList={recipeList}
+                    />
                 </div>
                 
             </React.Fragment>

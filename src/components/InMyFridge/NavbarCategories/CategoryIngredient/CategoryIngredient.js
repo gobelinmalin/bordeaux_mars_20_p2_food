@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import styles from './CategoryIngredient.module.css'
 import CategoryIcon from '../../../Assets/CategoryIcon/CatergoryIcon';
-import ingredients from '../../../../data/Ingredients';
 import ingredientsList from '../../../../data/IngredientsList';
 
 class CategoryIngredient extends Component{
@@ -22,7 +21,7 @@ class CategoryIngredient extends Component{
         const checked = event.target.checked;
         const updatedIngredientsList = this.state.ingredientsList.map(element => {
             if(Object.keys(element) == item){
-                return {[item]: true}
+                return {[item]: checked}
             }
             else{
                 return element
