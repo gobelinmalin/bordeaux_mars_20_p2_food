@@ -9,23 +9,17 @@ import CategoryIngredient from './CategoryIngredient/CategoryIngredient';
 import ingredients from '../../../data/Ingredients'
 
 class NavbarCategories extends Component{
-
-    state={
-        ingredientsList: null,
-    }
         
     render() {
-    console.log(this.state.ingredientsList)
         return (
             <div className={styles.CategoryContainer}>
-
                 {ingredients.map((element, index) => {
                     return <CategoryIngredient
                         callbackFromParent={this.props.ingredientChoice}
                         key={index}
                         imageUrl={element.icon}
                         itemName={element.title}
-                        ingredientsList={element.ingredientsName.map(element => element.name)}
+                        categoryIngredientsName ={element.ingredientsName.map(element => element.name)}
                         
                     />
                 })}
