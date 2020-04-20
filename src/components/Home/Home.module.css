@@ -106,7 +106,7 @@
 }
 
 .ContactUsBtn {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     text-align: center;
 }
@@ -134,7 +134,7 @@
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 450px) {
     .BackgroundImage1 {
         height: 350px;
     }
@@ -161,7 +161,7 @@
         text-align: center;
     }
     .BackgroundImage2 {
-        height: 1800px;
+        height: 1330px;
     }
     .AboutUsBtn {
         margin-top: 25px;
