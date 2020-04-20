@@ -2,6 +2,8 @@ import Meat from '../Images/Icone/Meat.png';
 import Vegetables from '../Images/Icone/Vegetables.png';
 import Fish from '../Images/Icone/Fish.png';
 import Cereals from '../Images/Icone/Cereals.png';
+import Fruits from '../Images/Icone/Fruits.png';
+import Dairy from '../Images/Icone/Milk.png';
 
 const ingredients = [
     {
@@ -12,35 +14,47 @@ const ingredients = [
             { name: 'carrot'},
             { name: 'salad'},
             { name: 'tomato'},
-            { name: 'aubergine'},
+            { name: 'eggplant'},
             { name: 'potato'},
+            { name: 'cauliflower'},
+            { name: 'cabbage'},
+            { name: 'asparagus'},
+            { name: 'beetroot'},
+            { name: 'artichoke'},
+            { name: 'celery'},
+            { name: 'cucumber'},
+            { name: 'mushroom'},
+            { name: 'onion'},
+            { name: 'pea'},
+            { name: 'pumpkin'},
+            { name: 'radish'},
         ]
     },
     {
         title: 'Meat',
         icon: Meat,
         ingredientsName: [
-            { name: "veau"},
-            { name: "mouton"},
-            { name: "dinde"},
-            { name: "porc"},
-            { name: "canard"},
-            { name: "boeuf"},
-            { name: "lapin"},
-            { name: "hérisson"}
+            { name: "calf"},
+            { name: "sheep"},
+            { name: "turkey"},
+            { name: "pork"},
+            { name: "duck"},
+            { name: "beef"},
+            { name: "rabbit"},
+            { name: "lamb"},
         ]  
     },
     {
         title: "Fish",
         icon: Fish,
         ingredientsName: [
-            { name: "thon"},
-            { name: "saumon"},
+            { name: "tuna"},
+            { name: "salmon"},
             { name: "bar"},
-            { name: "morue"},
-            { name: "maquereau"},
+            { name: "cod"},
+            { name: "mackerel"},
             { name: "sardine"},
-            { name: "baleine"}
+            { name: "hake"},
         ]  
         
     },
@@ -48,11 +62,36 @@ const ingredients = [
         title: "Cereals",
         icon: Cereals,
         ingredientsName: [
-            { name :'maïs'},
-            { name: 'épeautre'},
-            { name: 'seigle'},
-            { name: 'avoine'},
-            { name: 'blé'},
+            { name: 'corn'},
+            { name: 'rice'},
+            { name: 'rye'},
+            { name: 'oat'},
+            { name: 'wheat'},
+            { name: 'buckwheat'},
+        ]
+    },
+    {
+        title: "Fruits",
+        icon: Fruits,
+        ingredientsName: [
+            // { name: 'corn'},
+            // { name: 'rice'},
+            // { name: 'rye'},
+            // { name: 'oat'},
+            // { name: 'wheat'},
+            // { name: 'buckwheat'},
+        ]
+    },
+    {
+        title: "Dairy", // produits laitiers
+        icon: Dairy,
+        ingredientsName: [
+            // { name: 'corn'},
+            // { name: 'rice'},
+            // { name: 'rye'},
+            // { name: 'oat'},
+            // { name: 'wheat'},
+            // { name: 'buckwheat'},
         ]
     },
 ]
