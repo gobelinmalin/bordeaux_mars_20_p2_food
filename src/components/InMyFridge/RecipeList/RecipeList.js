@@ -40,9 +40,13 @@ class RecipeList extends Component {
                                     key={index}
                                     image={element.image}
                                     title={element.title}
-                                    ingredients={element.missedIngredients.map(
+                                    missedIngredients={element.missedIngredients.map(
                                       nameingredient => <span> {nameingredient.name}, </span>
                                     )}
+                                    usedIngredients= {element.usedIngredients.map(
+                                        nameingredient => <span>{nameingredient.name},</span>
+                                    )}
+                                    recipeLikes= {element.likes}
                                 />
                     })}
                 </div>
