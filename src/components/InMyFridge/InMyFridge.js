@@ -28,7 +28,7 @@ class InMyFridge extends Component{
 
         const finalArray = filteredArray.map(element => Object.keys(element)).join(',');
         
-        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ranking=10&ingredients=${finalArray}`; // ingredientsNames + %252C
+        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=12&ranking=10&ingredients=${finalArray}`; // ingredientsNames + %252C
         Axios.get(url,
             {
               headers: {

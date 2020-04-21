@@ -23,7 +23,7 @@ class NavbarCategories extends Component{
                         
                     />
                 })}
-                <button onClick={this.props.buttonCall}>Get a recipe !</button>
+                <button className={styles.buttonCall} onClick={this.props.buttonCall}>Get a recipe</button>
             </div>
         )
     }
