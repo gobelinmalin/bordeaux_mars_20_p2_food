@@ -5,6 +5,7 @@
     border: 1px solid black;
     height: 0 auto;
     margin-left: 50px;
+    overflow: scroll;
 }
 
 .buttonCall {
@@ -23,4 +24,6 @@
     font-weight: bold;
     text-transform: uppercase;
     align-self: center;
+    overflow: scroll;
 }
+
