@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 20%;
     border: 1px solid black;
-    height: 0 auto;
+    height: 1200px;
     margin-left: 50px;
     overflow: scroll;
 }
@@ -24,6 +24,5 @@
     font-weight: bold;
     text-transform: uppercase;
     align-self: center;
-    overflow: scroll;
 }
 
