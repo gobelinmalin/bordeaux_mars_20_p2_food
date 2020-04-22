@@ -48,8 +48,7 @@ const ingredients = [
             { name: 'bean'},
             { name: 'chickpea'},
             { name: 'lentil'},
-
-            
+ 
         ]
     },
     {
