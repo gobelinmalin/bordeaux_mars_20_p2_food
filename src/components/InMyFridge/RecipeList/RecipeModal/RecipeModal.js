@@ -99,9 +99,9 @@ export default function TransitionsModal(props) {
               <div className={styles.RecipeTitle}>
                 <div><h1 className={styles.title} id="transition-modal-title">{recipe.map(element => element.title)}</h1></div>
                 <div className={styles.RecipeIcon}>
-                  <div><img src="../../../../Images/Icone/icon-cook-time@2x.png"alt="icone-cooking-min"/><small> Prep {recipe.map(element => element.cookingMinutes)} min</small></div>
+                  <div><img src="../../../../Images/Icone/icon-cook-time@2x.png"alt="icone-cooking-min"/><small> Cook {recipe.map(element => element.cookingMinutes)} min</small></div>
                   <div><img src="../../../../Images/Icone/icon-people-count@2x.png"alt="icone-cooking-min"/><small> For {recipe.map(element => element.servings)} people</small></div>
-                  <div><img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/><small> Cook {recipe.map(element => element.preparationMinutes)} min</small></div>
+                  <div><img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/><small> Prep {recipe.map(element => element.preparationMinutes)} min</small></div>
                 </div>
                 {/* <small>Dish types : {recipe.map(element => element.dishTypes.map(dish => <span>{dish},</span>))}</small> */}
               </div>
