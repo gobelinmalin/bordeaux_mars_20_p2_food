@@ -9,10 +9,26 @@ class InMyFridge extends Component{
     state = {
         checkedIngredients: [], // choix des ingrédients checké par l'utilisateur
         recipeList: [],
+        randomJoke: ''
     }
 
     myCallback = (dataFromChild) => {
         this.setState({checkedIngredients: dataFromChild})
+    }
+
+    componentDidMount() {
+        const url = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/jokes/random' 
+        Axios.get(url,
+            {
+              headers: {
+                "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+                "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+              }
+            })
+        .then(response => response.data)
+        .then(data => this.setState({
+            randomJoke : Object.values(data)[0]
+        }))
     }
 
     getRecipes = () => {
@@ -44,11 +60,12 @@ class InMyFridge extends Component{
 
     render() {
         const { recipeList } = this.state;
-        console.log(recipeList);
+        console.log(this.state.randomJoke);
         return (
             <React.Fragment>
                 <div className={styles.BackgroundImage}>
                     <h1>In my Fridge</h1>
+                    <p>"{this.state.randomJoke}"</p>
                 </div>
                 <h2 className={styles.Subtitle} >Get your meal</h2>
                 <div className={styles.GlobalContainer}>
