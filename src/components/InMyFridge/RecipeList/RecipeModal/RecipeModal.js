@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: '80px',
   },
 
   paper: {
@@ -18,16 +19,18 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0px 3px 10px black",
     padding: theme.spacing(2, 4, 3),
     width: '900px',
-    height: '600px',
+    height: '700px',
     padding: '0px',
+    overflow: 'scroll',
   },
 }));
 
 export default function TransitionsModal(props) {
+  const { dataRecipe} = props;
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [recipe, setRecipe] = React.useState(
-    {}
+    []
   )
 
   const handleOpen = () => {
@@ -40,7 +43,7 @@ export default function TransitionsModal(props) {
 
   useEffect(() => {
     console.log(props)
-    const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${props.dataRecipe}/information`;
+    const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk?ids=${dataRecipe}`
     axios
       .get(
         url,
@@ -56,7 +59,8 @@ export default function TransitionsModal(props) {
     .catch((err) => {
       console.log(err);
     })
-  }, [])
+  }, [dataRecipe])
+
 
 
   return (
@@ -80,41 +84,51 @@ export default function TransitionsModal(props) {
           <div className={classes.paper}>
 
             <div className={styles.ContainerModalFlex}>
-    
+              <img className={styles.closeButton} onClick={handleClose} src="../../../../Images/Icone/icon-close-white@2x.png" alt ="close modal"/>
               <div 
-              className={styles.divImg}
-              style={{ backgroundImage:`url(${recipe.image})`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
-              width:"600px",
-              height: "600px"
-            }} />
+                className={styles.divImg}
+                style={{ backgroundImage:`url(${recipe.map(element => element.image)})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                height: "300px",
+                width: "900px"
+                  }}
+              />
+
+              <div className={styles.RecipeTitle}>
+                <div><h1 className={styles.title} id="transition-modal-title">{recipe.map(element => element.title)}</h1></div>
+                <div className={styles.RecipeIcon}>
+                  <div><img src="../../../../Images/Icone/icon-cook-time@2x.png"alt="icone-cooking-min"/><small> Prep {recipe.map(element => element.cookingMinutes)} min</small></div>
+                  <div><img src="../../../../Images/Icone/icon-people-count@2x.png"alt="icone-cooking-min"/><small> For {recipe.map(element => element.servings)} people</small></div>
+                  <div><img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/><small> Cook {recipe.map(element => element.preparationMinutes)} min</small></div>
+                </div>
+                {/* <small>Dish types : {recipe.map(element => element.dishTypes.map(dish => <span>{dish},</span>))}</small> */}
+              </div>
               
-              <div>
-                <h1 className={styles.title} id="transition-modal-title">{recipe.title}</h1>
-                <p>Dish types</p>
-                <p>Cooking minutes</p>
-                <p>Preparation minutes</p>
-                <p>Ingredients list : </p>
-                <ul>
-                  
-                  {/* { Object.entries(recipe).map(element => element.map(moreElem => console.log(moreElem))) } */}
+              <div className={styles.RecipeDetail}>
 
-                  { console.log(Object.entries(recipe)
-                    .map(element => element
-                      .map(moreElem => moreElem)
-                    )
-                  
-
-                  )}
-
-
-                       
-                </ul>
                 
-                <p>informations (html à parser)</p>
-                <p>Diets</p>
+                <h2 className={styles.title2}>Ingredients list </h2>
+                <ul style={{columns: 3 }}className={styles.orderList}>
+                    {recipe.map(element => element.extendedIngredients.map(ingredient => <li>{ingredient.name}</li>))}                      
+                </ul>
+                <h2 className={styles.title2} >Instructions</h2>
+                <ol>
+                  {recipe.map(element => element.analyzedInstructions
+                      .map(element2 => element2.steps
+                      .map(element3 => <li>{element3.step}</li>))
+                      )
+                    
+                  }
+                </ol>
+                <h2 className={styles.title2} >Diets</h2>
+                <ul className={styles.orderList}>
+                  {recipe.map(element => element.diets.length > 0 ? recipe.map(element => element.diets.map(diet => <li>{diet}</li>)) : <p>No special diets</p>)}                  
+                  {/* {console.log(recipe.map(element => element.diets))} */}
+                  {/* {recipe.map(item => console.log(item.diets.length))}       */}
+                </ul>
+
               </div>
             </div>
 

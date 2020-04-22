@@ -3,10 +3,6 @@ import RecipeModal from './RecipeModal/RecipeModal'
 import styles from "./Recipe.module.css";
 
 const Recipe = (props) => {
-    
-    // const handleModalClick = (data) => {
-    //     props.getData(data);
-    // }
 
     return (
         <div className={styles.Recipe}>
@@ -18,7 +14,7 @@ const Recipe = (props) => {
             </div>
             {/* <hr/> */}
             <div className={styles.RecipeIngredients}>
-                <p><i>Ingredients :</i> {props.usedIngredients} {props.missedIngredients}</p>
+                <p><strong>Ingredients :</strong> {props.usedIngredients} {props.missedIngredients}</p>
             </div>
             <div className={styles.RecipeButtonLike}>
                 <div className={styles.RecipeButton}>
