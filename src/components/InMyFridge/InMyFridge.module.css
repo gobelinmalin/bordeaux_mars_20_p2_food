@@ -5,13 +5,19 @@
     margin-top: 5px;
     width : 100%;
     height: 550px;
+    position: relative;
 }
 
 .BackgroundImage h1 {
     position: absolute;
-    top: 30%;
-    left: 40%;
+    top: 50%;
+    left: 50%;
     font-size: 8rem;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
 .Subtitle {
@@ -28,7 +34,12 @@
 
 .BackgroundImage p {
     position: absolute;
-    top: 50%;
-    left: 40%;
+    top: 80%;
+    left: 58%;
     font-size: 2rem;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
