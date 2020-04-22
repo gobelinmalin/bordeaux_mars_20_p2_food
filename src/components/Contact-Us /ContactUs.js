@@ -4,6 +4,9 @@ import styles from './ContactUs.module.css'
 const validEmailRegex = 
   RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 
+const validPhoneRegex = 
+  RegExp(/^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/);
+
 const validateForm = (errors) => {
 let valid = true;
 Object.values(errors).forEach(
@@ -18,11 +21,13 @@ class ContactUs extends Component{
         super(props);
         this.state = {
             fullName : '',
-            email : null,
-            message : null,
+            email : '',
+            phone : '',
+            message : '',
             errors : {
                 fullName : '',
                 email : '',
+                phone : '',
                 message : '',
             }
         }
@@ -45,8 +50,8 @@ class ContactUs extends Component{
         switch(name){
             case 'fullName':
                 errors.fullName=
-                value.length < 5
-                ? 'Full name must be 5 characters long'
+                value.length < 2
+                ? 'Full name is not valid'
                 : '';
             break;
             case 'email':
@@ -54,6 +59,12 @@ class ContactUs extends Component{
                 validEmailRegex.test(value)
                 ? ''
                 :'Email is not valid';
+            break;
+            case 'phone':
+                  errors.phone = 
+                  validPhoneRegex.test(value)
+                  ? ''
+                  :'Phone must be at least 10 numbers';
             break;
             case 'message':
                 errors.message = 
@@ -70,7 +81,7 @@ class ContactUs extends Component{
 
     render() {
     const {errors} = this.state;
-   console.log(errors.message.length)
+   console.log(errors.phone.length)
       return (
         <div>
           <div className={styles.Title}>
@@ -116,14 +127,14 @@ class ContactUs extends Component{
                 <form onSubmit={this.handleSubmit} noValidate >
                   <div className={styles.fullName}>
                     <label htmlFor="fullName" 
-                    className={errors.fullName.length === 35 && `${styles.LabelBad}`}
+                    className={errors.fullName.length === 22 && `${styles.LabelBad}`}
                     >
                       Full Name *</label>
                     <input 
                     type='text' 
                     name='fullName' 
                     placeholder="Your name" 
-                    className={errors.fullName.length === 35 && `${styles.InputLengthBad}`}
+                    className={errors.fullName.length === 22 && `${styles.InputLengthBad}`}
                     onChange={this.handleChange} 
                     noValidate />
                     {errors.fullName.length > 0 && 
@@ -146,8 +157,20 @@ class ContactUs extends Component{
                     <span className={styles.error}>{errors.email}</span>}
                   </div>
                   <div className={styles.phone}>
-                    <label htmlFor="phone">Phone</label>
-                    <input type='phone' name='phone' placeholder="Phone number" onChange={this.handleChange} noValidate />
+                    <label 
+                    htmlFor="phone"
+                    className={errors.phone.length === 33 && `${styles.LabelBad}`}
+                    >
+                    Phone
+                    </label>
+                    <input 
+                    type='phone' 
+                    name='phone' 
+                    placeholder="Phone Number : 06 XX XX XX XX / +33 6 XX XX XX XX"
+                    className={errors.phone.length === 33 && `${styles.InputLengthBad}` }
+                    onChange={this.handleChange} noValidate />
+                    {errors.phone.length > 0 && 
+                    <span className={styles.error}>{errors.phone}</span>}
                   </div>
                   <div className={styles.subject}>
                     <label htmlFor="subject">Subject</label>
