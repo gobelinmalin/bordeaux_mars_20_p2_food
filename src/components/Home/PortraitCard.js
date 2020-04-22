@@ -8,7 +8,7 @@ const PortraitCard = (props) => {
         <div className={styles.PortraitCard} >
             <div className={styles.Portrait} style={{backgroundImage: 'url(' + props.imageUrl + ')' }}></div>
             <p className={styles.Name}>{props.name}</p>
-            <p>{props.text}</p>
+            <p className={styles.Description}>{props.text}</p>
         </div>
     )
 }
