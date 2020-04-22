@@ -1,0 +1,87 @@
+.title, .title2 {
+    text-transform: uppercase;
+    font-family: 'Rubik';
+}
+
+.title {
+    color: #10AC84;
+    align-self: center;
+}
+
+.RecipeTitle .title {
+    font-size: 40px;
+}
+
+.title2 {
+    align-self: center;
+}
+
+.ContainerModalFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.closeButton {
+    position: absolute;
+    right: 0;
+    left: 90;
+    top : 50;
+    /* width: 20%; */
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+.orderList {
+    margin-left: 40px;
+}
+
+.RecipeDetail {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-evenly;
+    margin: 0px 20px 20px 60px;
+}
+
+.RecipeTitle {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.RecipeTitle h1{
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+.RecipeIcon {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    margin: 10px 20px 10px 0;
+
+} 
+
+.RecipeIcon div {
+    display: flex;
+    align-items: center;
+}
+
+.RecipeIcon div img{
+    padding-right: 10px;
+}
+
+.RecipeDetail h2 {
+    margin: 35px 0 20px 0;
+}
+
+.RecipeDetail ul{
+    margin-left: 0;
+}
+
+.RecipeDetail ol li{
+    margin-bottom: 10px;
+}

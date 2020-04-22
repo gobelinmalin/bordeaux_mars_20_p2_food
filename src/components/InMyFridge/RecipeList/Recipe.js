@@ -1,8 +1,9 @@
 import React from 'react';
-
+import RecipeModal from './RecipeModal/RecipeModal'
 import styles from "./Recipe.module.css";
 
 const Recipe = (props) => {
+
     return (
         <div className={styles.Recipe}>
             <div className={styles.RecipeImgContainer}>
@@ -13,11 +14,11 @@ const Recipe = (props) => {
             </div>
             {/* <hr/> */}
             <div className={styles.RecipeIngredients}>
-                <p><i>Ingredients :</i> {props.usedIngredients} {props.missedIngredients}</p>
+                <p><strong>Ingredients :</strong> {props.usedIngredients} {props.missedIngredients}</p>
             </div>
             <div className={styles.RecipeButtonLike}>
                 <div className={styles.RecipeButton}>
-                    <button>Read More</button>
+                    <RecipeModal dataRecipe={props.id} />
                 </div>
                 <div className={styles.RecipeLikesContainer}>
                     <div className={styles.RecipeLikes}>
