@@ -47,8 +47,7 @@ class CategoryIngredient extends Component{
                         />
                         <h3>{this.props.itemName}</h3>
                     </div>
-                    
-                    <input onClick={this.handleToggle} type='checkbox' />
+                    <input onClick={this.handleToggle} type='checkbox'  />
                 </div>
                 <div>
                     {this.state.toggle ?
