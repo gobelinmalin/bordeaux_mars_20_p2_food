@@ -1,0 +1,8 @@
+.title {
+    text-transform: uppercase;
+    font-family: 'Rubik';
+}
+
+.ContainerModalFlex {
+    display: flex;
+}

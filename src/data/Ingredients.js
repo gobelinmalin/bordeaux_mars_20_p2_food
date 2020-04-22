@@ -3,7 +3,7 @@ import Vegetables from '../Images/Icone/Vegetables.png';
 import Fish from '../Images/Icone/Fish.png';
 import Cereals from '../Images/Icone/Cereals.png';
 import Fruits from '../Images/Icone/Fruits.png';
-import Dairy from '../Images/Icone/Milk.png';
+import Dairy from '../Images/Icone/Dairy.png';
 
 const ingredients = [
     {

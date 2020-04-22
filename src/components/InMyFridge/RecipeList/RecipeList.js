@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from "./RecipeList.module.css";
 import Recipe from './Recipe'
 import axios from 'axios';
+import RecipeModal from './RecipeModal/RecipeModal'
 
 class RecipeList extends Component {
     
@@ -28,6 +29,10 @@ class RecipeList extends Component {
     //   });
     // }
 
+    // getDataId = (idFromChild) => { // get the ID from child
+    //     console.log(idFromChild)
+    // }
+
     render(){
       // const { recipes } = this.state;
       
@@ -37,6 +42,7 @@ class RecipeList extends Component {
                     {this.props.recipeList.map((element, index) => {
 
                         return  <Recipe
+                                    // getData={this.getDataId}
                                     key={index}
                                     image={element.image}
                                     title={element.title}
@@ -47,6 +53,7 @@ class RecipeList extends Component {
                                         nameingredient => <span>{nameingredient.name},</span>
                                     )}
                                     recipeLikes= {element.likes}
+                                    id={element.id}
                                 />
                     })}
                 </div>
