@@ -41,29 +41,7 @@
     
 }
 
-@media screen and (max-width: 768px) {
-    .NavItems {
-        display: none;
-    }
-    .Navbar {
-        flex-direction: row-reverse;
-    }
-    .LogoAndTitleContainer h2 {
-      display: none;
-    }
-   
-}
 
-@media screen and (min-width: 765px) {
-    .BurgerMenu {
-        display: none;
-    }
-    .bm-burger-button {
-        display: none;
-    }
-    
-    
-}
 
 .navItemsBurger a {
   color: white;
@@ -76,14 +54,14 @@
     height: 30px;
     /* left: 16px;
     top: 26px; */
-    left: 20px;
+    left: 85%;
     top: 25px;
     z-index: 1000;
   }
    
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
-    background: #373a47;
+    background: white;
   }
    
   /* Color/shape of burger icon bars on hover*/
@@ -113,7 +91,7 @@
    
   /* General sidebar styles */
   .bm-menu {
-    background: #373a47;
+    background: #1c6d5b;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
   }
@@ -126,15 +104,42 @@
   /* Wrapper for item list */
   .bm-item-list {
     color: #b8b7ad;
-    padding: 0.8em;
+    padding: 1.2em;
+    margin-top: 150px;
   }
    
   /* Individual item */
   .bm-item {
     display: inline-block;
+    padding-top: 15px;
   }
    
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
   }
+
+  @media screen and (max-width: 775px) {
+    .NavItems {
+        display: none;
+    }
+    .bm-burger-button{
+      left: 85%;
+    }
+    
+    .LogoAndTitleContainer h2 {
+      display: none;
+    }
+   
+}
+@media screen and (min-width: 768px) {
+  .bm-burger-button{
+    left: 90%
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .bm-burger-button{
+    display: none;
+  }
+}
