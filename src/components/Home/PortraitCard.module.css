@@ -19,11 +19,11 @@
 }
 
 .Name {
-    font-family: 'Flash';
-    font-size: 35px;
+    font-family: 'Rubik';
+    font-size: 30px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 450px) {
     .PortraitCard {
         margin: 35px auto;
         margin-left: -15px;
@@ -35,5 +35,22 @@
         height: 150px;
         width: 150px;
     }
+    .Description {
+        display: none;
+    }
+
+
+}
+@media screen and (max-width: 1200px) {
+
+    .PortraitCard {
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .Description {
+        display: none;
+    }
+
 
 }
