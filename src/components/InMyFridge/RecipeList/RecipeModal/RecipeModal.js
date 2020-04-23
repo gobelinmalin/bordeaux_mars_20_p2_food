@@ -92,16 +92,16 @@ export default function TransitionsModal(props) {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 height: "300px",
-                width: "900px"
+                width: "885px"
                   }}
               />
 
               <div className={styles.RecipeTitle}>
                 <div><h1 className={styles.title} id="transition-modal-title">{recipe.map(element => element.title)}</h1></div>
                 <div className={styles.RecipeIcon}>
-                  <div><img src="../../../../Images/Icone/icon-cook-time@2x.png"alt="icone-cooking-min"/><small> Prep {recipe.map(element => element.cookingMinutes)} min</small></div>
+                  <div><img src="../../../../Images/Icone/icon-cook-time@2x.png"alt="icone-cooking-min"/><small> Cook {recipe.map(element => element.cookingMinutes)} min</small></div>
                   <div><img src="../../../../Images/Icone/icon-people-count@2x.png"alt="icone-cooking-min"/><small> For {recipe.map(element => element.servings)} people</small></div>
-                  <div><img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/><small> Cook {recipe.map(element => element.preparationMinutes)} min</small></div>
+                  <div><img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/><small> Prep {recipe.map(element => element.preparationMinutes)} min</small></div>
                 </div>
                 {/* <small>Dish types : {recipe.map(element => element.dishTypes.map(dish => <span>{dish},</span>))}</small> */}
               </div>
@@ -118,15 +118,12 @@ export default function TransitionsModal(props) {
                   {recipe.map(element => element.analyzedInstructions
                       .map(element2 => element2.steps
                       .map(element3 => <li>{element3.step}</li>))
-                      )
-                    
+                      )  
                   }
                 </ol>
                 <h2 className={styles.title2} >Diets</h2>
                 <ul className={styles.orderList}>
                   {recipe.map(element => element.diets.length > 0 ? recipe.map(element => element.diets.map(diet => <li>{diet}</li>)) : <p>No special diets</p>)}                  
-                  {/* {console.log(recipe.map(element => element.diets))} */}
-                  {/* {recipe.map(item => console.log(item.diets.length))}       */}
                 </ul>
 
               </div>
