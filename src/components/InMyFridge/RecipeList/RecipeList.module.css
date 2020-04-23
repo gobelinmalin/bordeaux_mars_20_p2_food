@@ -1,6 +1,6 @@
 .CardsContainer {
     width: 75%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 40%;
     display: flex;
     flex-wrap: wrap;
@@ -32,5 +32,4 @@
     display : flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    box-shadow: 4px 4px 10px black;
 }

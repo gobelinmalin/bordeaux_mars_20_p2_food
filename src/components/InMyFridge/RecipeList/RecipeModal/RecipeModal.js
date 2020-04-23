@@ -92,7 +92,7 @@ export default function TransitionsModal(props) {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 height: "300px",
-                width: "900px"
+                width: "885px"
                   }}
               />
 
@@ -118,15 +118,12 @@ export default function TransitionsModal(props) {
                   {recipe.map(element => element.analyzedInstructions
                       .map(element2 => element2.steps
                       .map(element3 => <li>{element3.step}</li>))
-                      )
-                    
+                      )  
                   }
                 </ol>
                 <h2 className={styles.title2} >Diets</h2>
                 <ul className={styles.orderList}>
                   {recipe.map(element => element.diets.length > 0 ? recipe.map(element => element.diets.map(diet => <li>{diet}</li>)) : <p>No special diets</p>)}                  
-                  {/* {console.log(recipe.map(element => element.diets))} */}
-                  {/* {recipe.map(item => console.log(item.diets.length))}       */}
                 </ul>
 
               </div>

@@ -40,7 +40,8 @@ class CategoryIngredient extends Component{
     render(){
         return (
             <React.Fragment>
-                <div className={styles.Item}>
+                <div className= {this.state.toggle ? `${styles.ItemWithCat}` : `${styles.Item}`}
+                >
                     <div className={styles.IconAndName}>
                         <CategoryIcon
                             imageUrl={this.props.imageUrl}
