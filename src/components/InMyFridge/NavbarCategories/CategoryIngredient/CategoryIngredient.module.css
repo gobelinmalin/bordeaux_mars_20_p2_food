@@ -48,3 +48,34 @@
     padding: 5px;
 }
 
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1200px){
+
+    .Item {
+        height: 55px;
+    }
+
+    .IconAndName h3{
+        font-size: 1rem;
+    }
+
+    .ItemList p{
+        font-size: .9rem;
+    }
+    
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 750px){
+    .Item{
+        height: 40px;
+    }
+
+    .IconAndName h3{
+        font-size: .8rem;
+    }
+
+    .ItemList p{
+        font-size: .8rem;
+    }
+}

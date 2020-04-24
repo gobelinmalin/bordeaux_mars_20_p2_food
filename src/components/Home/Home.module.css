@@ -81,6 +81,7 @@
 .AllPortrait {
     display: flex;
     margin-top: 0px;
+    justify-content: center;
 }
 
 .AboutUsBtn {

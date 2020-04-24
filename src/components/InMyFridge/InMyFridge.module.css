@@ -10,6 +10,8 @@
 
 .BackgroundImage h1 {
     position: absolute;
+    width: 100%;
+    text-align: center;
     top: 50%;
     left: 50%;
     font-size: 8rem;
@@ -34,12 +36,77 @@
 
 .BackgroundImage p {
     position: absolute;
+    width: 100%;
     top: 80%;
-    left: 58%;
+    left: 50%;
     font-size: 2rem;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+}
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1200px){
+
+    .BackgroundImage{
+        height: 405px;
+    }
+
+    .BackgroundImage h1{
+        font-size: 6rem;
+    }
+
+    .BackgroundImage p{
+        font-size: 1.5rem;
+        text-align: center;
+        text-shadow: 0 0 3px #FFF;
+    }
+
+    .Subtitle{
+        font-size: 1.7rem;
+    }
+
+    .GlobalContainer{
+        width: 99%;
+        border: 1px solid black;
+        margin-left: 4px;
+        margin-bottom: 4px;
+    }
+
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 750px){
+
+    .BackgroundImage{
+        height: 440px;
+        background-position: 40% 50%;
+    }
+
+    .BackgroundImage h1{
+        font-size: 4rem;
+    }
+
+    .BackgroundImage p{
+        font-size: 1.3rem;
+        font-weight: 600;
+        text-align: center;
+        text-shadow: 0 0 3px #FFF;
+    }
+
+    .Subtitle{
+        font-size: 1.5rem;
+    }
+
+    .GlobalContainer{
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        border: none;
+    }
+
+
+
 }

@@ -28,7 +28,6 @@
     right: 0;
     left: 90;
     top : 50;
-    /* width: 20%; */
     cursor: pointer;
     padding: 10px;
 }
@@ -61,9 +60,28 @@
     display: flex;
     align-items: baseline;
     justify-content: space-evenly;
-    margin: 10px 20px 10px 0;
+    margin: 10px 20px 30px 0;
 
-} 
+}
+
+.NutritionContainer{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.NutritionContainer div {
+    display: flex;
+    align-items: center;
+}
+
+.NutritionContainer small {
+    padding-left: 5px;
+}
+
+.NutritionImg{
+    width: 35px;
+}
 
 .RecipeIcon div {
     display: flex;
@@ -71,7 +89,7 @@
 }
 
 .RecipeIcon div img{
-    padding-right: 10px;
+    padding-right: 7px;
 }
 
 .RecipeDetail h2 {
@@ -84,4 +102,110 @@
 
 .RecipeDetail ol li{
     margin-bottom: 10px;
+}
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1200px){
+
+    .divImg{
+        width: 640px!important;
+    }
+
+    .RecipeTitle .title {
+        font-size: 2.2rem
+    }
+
+    .RecipeDetail{
+        width: 90%;
+        margin-left: 50px;
+    }
+
+    .RecipeDetail h2{
+        font-size: 1.3rem
+    }
+
+    .RecipeDetail p,
+    .RecipeDetail ol,
+    .RecipeDetail ul{
+        font-size: 1rem;
+    }
+
+    .RecipeDetail .orderList{
+        margin-left: 40px;
+    }
+
+    .RecipeDetail ol{
+        margin-right: 10px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 750px){
+
+    .closeButton{
+        width: 65px;
+    }
+
+    .divImg{
+        height: 250px!important;
+        width: 360px!important;
+    }
+
+    .RecipeDetail p,
+    .RecipeDetail ol,
+    .RecipeDetail ul{
+        font-size: .9rem;
+    }
+
+    .RecipeTitle .title {
+        font-size: 1.6rem
+    }
+
+    .RecipeIcon{
+        margin: 0;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .RecipeIcon div small{
+        padding-right: 10px;
+    }
+
+    .RecipeDetail{
+        margin: 0;
+        width: 100%;
+        padding: 10px;
+        padding-top: 0;
+    }
+
+    .RecipeDetail h2{
+        margin-top: 35px;
+    }
+
+    .RecipeDetail .orderList{
+        margin-left: 40px;
+        column-count: 2!important;
+    }
+
+    .title2 {
+        font-size: 1.2rem
+    }
+
+    .RecipeDetail ol{
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+
+    .paper{
+        height: 663px!important;
+    }
+
+    .modal{
+        margin-top: 0!important;
+    }
+
+    .noSpecialInfo{
+        text-align: center;
+        padding-right: 10px;
+    }
 }
