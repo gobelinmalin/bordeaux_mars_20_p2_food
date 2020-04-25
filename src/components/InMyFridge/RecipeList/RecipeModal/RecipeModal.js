@@ -118,7 +118,7 @@ export default function TransitionsModal(props) {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 height: "300px",
-                width: "900px"
+                width: "885px"
                   }}
               />
 
@@ -145,6 +145,11 @@ export default function TransitionsModal(props) {
                     : <small>no prep. time</small>
                     )}
                   </div>
+
+                  <div><img src="../../../../Images/Icone/icon-cook-time@2x.png"alt="icone-cooking-min"/><small> Cook {recipe.map(element => element.cookingMinutes)} min</small></div>
+                  <div><img src="../../../../Images/Icone/icon-people-count@2x.png"alt="icone-cooking-min"/><small> For {recipe.map(element => element.servings)} people</small></div>
+                  <div><img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/><small> Prep {recipe.map(element => element.preparationMinutes)} min</small></div>
+
                 </div>
 
 
@@ -185,6 +190,10 @@ export default function TransitionsModal(props) {
                   ? recipe.map(element => element.analyzedInstructions.map(element2 => element2.steps.map(element3 => <li>{element3.step}</li>)))
                   : <p className={styles.noSpecialInfo}>No special instructions</p>
                   )
+                  {recipe.map(element => element.analyzedInstructions
+                      .map(element2 => element2.steps
+                      .map(element3 => <li>{element3.step}</li>))
+                      )  
                   }
                 </ol>
                 <h2 className={styles.title2} >Diets</h2>
@@ -192,8 +201,8 @@ export default function TransitionsModal(props) {
                   {recipe.map(element => element.diets.length > 0
                   ? recipe.map(element => element.diets.map(diet => <li>{diet}</li>))
                   : <p className={styles.noSpecialInfo}>No special diets</p>)}
+                  {recipe.map(element => element.diets.length > 0 ? recipe.map(element => element.diets.map(diet => <li>{diet}</li>)) : <p>No special diets</p>)}                  
                 </ul>
-
               </div>
             </div>
           </div>

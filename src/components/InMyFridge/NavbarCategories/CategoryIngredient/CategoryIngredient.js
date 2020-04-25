@@ -40,15 +40,15 @@ class CategoryIngredient extends Component{
     render(){
         return (
             <React.Fragment>
-                <div className={styles.Item}>
+                <div className= {this.state.toggle ? `${styles.ItemWithCat}` : `${styles.Item}`}
+                >
                     <div className={styles.IconAndName}>
                         <CategoryIcon
                             imageUrl={this.props.imageUrl}
                         />
                         <h3>{this.props.itemName}</h3>
                     </div>
-                    
-                    <input onClick={this.handleToggle} type='checkbox' />
+                    <input onClick={this.handleToggle} type='checkbox'  />
                 </div>
                 <div>
                     {this.state.toggle ?

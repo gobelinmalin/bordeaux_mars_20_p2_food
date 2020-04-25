@@ -1,11 +1,12 @@
 .CategoryContainer {
     display: flex;
     flex-direction: column;
-    width: 20%;
-    border: 1px solid black;
-    height: 1200px;
-    margin-left: 50px;
+    width: 25%;
+    border-right: 2px solid black;
+    height: 1264px;
+    /* margin-left: 50px; */
     overflow: scroll;
+    padding-top: 40px;
 }
 
 .buttonCall {
@@ -25,6 +26,7 @@
     text-transform: uppercase;
     align-self: center;
 }
+
 
 /* TABLET RESPONSIVE */
 @media screen and (max-width: 1200px){
@@ -58,3 +60,11 @@
     }
 
 }
+
+.buttonCall:hover{
+    background-color:white;
+    color: black;
+    border: 1px solid #10AC84;
+}
+
+
