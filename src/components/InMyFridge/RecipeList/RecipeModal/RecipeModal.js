@@ -1,10 +1,24 @@
 import React, { useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
+import Tooltip from '@material-ui/core/Tooltip'
 import Fade from '@material-ui/core/Fade';
 import styles from "./RecipeModal.module.css";
 import axios from 'axios'
+
+const LightTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: '#F29B20',
+    color:'white',
+    fontSize: 12,
+    fontFamily:'Rubik',
+    fontWeight: 'bold'
+  },
+  arrow : {
+    color: '#F29B20'
+  }
+}))(Tooltip);
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -22,6 +36,8 @@ const useStyles = makeStyles((theme) => ({
     height: '700px',
     padding: '0px',
     overflow: 'scroll',
+    overflowY: 'auto',
+    overflowX: 'auto',
   },
 }));
 
@@ -97,31 +113,44 @@ export default function TransitionsModal(props) {
               />
 
               <div className={styles.RecipeTitle}>
-                <div><h1 className={styles.title} id="transition-modal-title">{recipe.map(element => element.title)}</h1></div>
-                <div className={styles.RecipeIcon}>
-                  <div><img src="../../../../Images/Icone/icon-cook-time@2x.png"alt="icone-cooking-min"/><small> Cook {recipe.map(element => element.cookingMinutes)} min</small></div>
-                  <div><img src="../../../../Images/Icone/icon-people-count@2x.png"alt="icone-cooking-min"/><small> For {recipe.map(element => element.servings)} people</small></div>
-                  <div><img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/><small> Prep {recipe.map(element => element.preparationMinutes)} min</small></div>
+                <div>
+                  <h1 className={styles.title} id="transition-modal-title">{recipe.map(element => element.title)}</h1>
                 </div>
-                {/* <small>Dish types : {recipe.map(element => element.dishTypes.map(dish => <span>{dish},</span>))}</small> */}
+                <div className={styles.RecipeIcon}>
+                  <div>
+                    <img src="../../../../Images/Icone/icon-cook-time@2x.png"alt="icone-cooking-min"/>
+                    <LightTooltip title="Cooking Time" arrow>
+                      <small> Cook {recipe.map(element => element.cookingMinutes)} min</small>
+                    </LightTooltip >
+                  </div>
+                  <div>
+                    <img src="../../../../Images/Icone/icon-people-count@2x.png"alt="icone-cooking-min"/>
+                    <small>{recipe.map(element => element.servings)} people</small>
+                  </div>
+                  <div>
+                    <img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/>
+                    <LightTooltip title="Preparation Time" arrow>
+                      <small> Prep {recipe.map(element => element.preparationMinutes)} min</small>
+                    </LightTooltip>
+                  </div>
+                </div>
               </div>
               
               <div className={styles.RecipeDetail}>
-
                 
-                <h2 className={styles.title2}>Ingredients list </h2>
-                <ul style={{columns: 3 }}className={styles.orderList}>
-                    {recipe.map(element => element.extendedIngredients.map(ingredient => <li>{ingredient.name}</li>))}                      
+                <h2 className={styles.title2}>Ingredients list</h2><hr/>
+                <ul className={styles.orderList}>
+                    {recipe.map(element => element.extendedIngredients.map(ingredient => <li className={styles.IngredientsLi}>{ingredient.name}</li>))}                      
                 </ul>
-                <h2 className={styles.title2} >Instructions</h2>
-                <ol>
+                <h2 className={styles.title2}>Instructions</h2><hr/>
+                <ol className={styles.InstructionsOl}>
                   {recipe.map(element => element.analyzedInstructions
                       .map(element2 => element2.steps
-                      .map(element3 => <li>{element3.step}</li>))
+                      .map(element3 => <li className={styles.InstructionsLi}>{element3.step}</li>))
                       )  
                   }
                 </ol>
-                <h2 className={styles.title2} >Diets</h2>
+                <h2 className={styles.title2} >Diets</h2><hr/>
                 <ul className={styles.orderList}>
                   {recipe.map(element => element.diets.length > 0 ? recipe.map(element => element.diets.map(diet => <li>{diet}</li>)) : <p>No special diets</p>)}                  
                 </ul>

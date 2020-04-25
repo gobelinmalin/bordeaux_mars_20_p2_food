@@ -64,19 +64,20 @@
     height: auto;
     cursor: pointer;
     padding: 0.938em;
+    background-color: #10AC84;
     border: 1px solid #10AC84;
     border-radius: 20px;
-    background-color: white;
-    color: black;
+    color: white;
     font-size: 14px;
     text-transform: uppercase;
     font-family: 'Rubik';
-    font-weight: 800;
+    font-weight: bold;
     margin-left:50px;
 }
 
 .RecipeButton button:hover {
-    background-color: #10AC84;
+    background-color: #F29B20;
+    border: 1px solid #F29B20;
     color: white;
 }
 

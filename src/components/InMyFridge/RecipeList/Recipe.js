@@ -22,7 +22,7 @@ const Recipe = (props) => {
                 </div>
                 <div className={styles.RecipeLikesContainer}>
                     <div className={styles.RecipeLikes}>
-                        <div className={styles.RecipeImage}><img src="../../../Images/Icone/LikeRecipe@2x.png" alt="like it"/></div>
+                        <div className={styles.RecipeImage}><img src="../../../Images/Icone/icon-like-orange@2x.png" alt="like it"/></div>
                         {/* <br/> */}
                         <div className={styles.RecipeNbLike}><small>{props.recipeLikes}</small></div>
                     </div>
