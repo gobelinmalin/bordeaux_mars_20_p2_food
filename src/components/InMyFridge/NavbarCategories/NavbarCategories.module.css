@@ -29,8 +29,43 @@
     align-self: center;
 }
 
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1200px){
+
+    .CategoryContainer{
+        width: 45%;
+        height: initial;
+        border: none;
+        border-right: 1px solid grey;
+        margin-left: 0;
+    }
+
+    .buttonCall{
+        font-size: 1rem;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 750px){
+
+    .CategoryContainer{
+        width: 100%;
+        margin-left: 0;
+        border: none;
+        height: initial;
+    }
+
+    .buttonCall{
+        width: 50%;
+        font-size: 1rem;
+    }
+
+}
+
 .buttonCall:hover{
     background-color: #F29B20;
     /* border: 1px solid #F29B20; */
 }
+
 

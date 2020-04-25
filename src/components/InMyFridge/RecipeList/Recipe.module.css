@@ -1,7 +1,6 @@
 .Recipe {
     width: 312px;
     height: 400px;
-    /* border: 1px solid black; */
     margin: 10px;
     box-shadow: 0px 3px 10px grey;
     display: flex;
@@ -49,8 +48,13 @@
 }
 
 .RecipeIngredients {
-    margin : 0px 10px 0px 30px;
+    width: 100%;
     align-self: flex-start;
+}
+
+.RecipeIngredients p{
+    width: 90%;
+    margin: 0 auto;
 }
 
 .RecipeButton {
@@ -100,4 +104,30 @@
 
 .RecipeImage{
     height: 14px;
+}
+
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1200px){
+
+    .Recipe {
+        width: 400px;
+    }
+
+    .RecipeImgContainer{
+        height: 185px;
+    }
+
+    .RecipeImgContainer img{
+        width: 400px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 750px){
+
+    .Recipe {
+        width: 312px;
+    }
+
 }

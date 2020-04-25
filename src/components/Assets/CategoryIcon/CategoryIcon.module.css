@@ -6,3 +6,22 @@
     height: 50px;
     margin-left: 5px;
 }
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 800px){
+
+    .Icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 450px){
+
+    .Icon {
+        width: 30px;
+        height: 30px;
+    }
+}
