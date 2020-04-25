@@ -33,3 +33,29 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1200px){
+
+    .CardsContainer{
+        border: none;
+    }
+
+    .RecipeList{
+        box-shadow: none;
+    }
+    
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 750px){
+
+    .CardsContainer{
+        width: 100%;
+        border: none;
+    }
+
+    .RecipeList{
+        box-shadow: none;
+    }
+}
