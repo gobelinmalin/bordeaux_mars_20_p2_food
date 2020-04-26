@@ -11,7 +11,7 @@ const LightTooltip = withStyles((theme) => ({
   tooltip: {
     backgroundColor: '#F29B20',
     color:'white',
-    fontSize: 12,
+    fontSize: 14,
     fontFamily:'Rubik',
     fontWeight: 'bold'
   },
@@ -46,6 +46,10 @@ const useStyles = makeStyles((theme) => ({
       width: '630px',
       height: '750px',
     },
+    [theme.breakpoints.up('lg')]: {
+      width: '900px',
+      height: '700px',
+    },
   },
 }));
 
@@ -67,7 +71,6 @@ export default function TransitionsModal(props) {
   };
 
   useEffect(() => {
-    // console.log(props)
     const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk?ids=${dataRecipe}`
     axios
       .get(
@@ -164,32 +167,12 @@ export default function TransitionsModal(props) {
                   </div>
                 </div>
               </div>
-              
-              <div className={styles.RecipeDetail}>
-                
-                <h2 className={styles.title2}>Ingredients list</h2><hr/>
-                <ul className={styles.orderList}>
-                    {recipe.map(element => element.extendedIngredients.map(ingredient => <li className={styles.IngredientsLi}>{ingredient.name}</li>))}                      
-                </ul>
-                <h2 className={styles.title2}>Instructions</h2><hr/>
-                    <ol className={styles.InstructionsOl}>
-                        {console.log(recipe.map(element => element.preparationMinutes))}
-                        {recipe.map(element => element.preparationMinutes !== undefined
-                        ? <small> Prep {recipe.map(element => element.preparationMinutes)} min</small>
-                        : <small>no prep. time</small>
-                        )}
-                    </ol>
-                  <div><img src="../../../../Images/Icone/icon-cook-time@2x.png"alt="icone-cooking-min"/><small> Cook {recipe.map(element => element.cookingMinutes)} min</small></div>
-                  <div><img src="../../../../Images/Icone/icon-people-count@2x.png"alt="icone-cooking-min"/><small> For {recipe.map(element => element.servings)} people</small></div>
-                  <div><img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/><small> Prep {recipe.map(element => element.preparationMinutes)} min</small></div>
-
-
-
                 <div className={styles.NutritionContainer}>
-                  <div>
+                  <LightTooltip title='Calories' arrow><div>
                     <img className={styles.NutritionImg} title="calories" src="../../../../Images/Icone/icone-kcal2x.png" alt="calories"/>
                     <small>{nutrition.calories}</small>
                   </div>
+                  </LightTooltip>
                   
                   <div>
                     <img className={styles.NutritionImg} title="fat" src="../../../../Images/Icone/icone-fat2x.png" alt="fat"/>
@@ -205,28 +188,21 @@ export default function TransitionsModal(props) {
                     <img className={styles.NutritionImg} title="protein" src="../../../../Images/Icone/icone-prot2x.png" alt="protein"/>
                     <small>{nutrition.protein}</small>
                   </div>
-                </div>
-                
-              </div>
-              
+                </div>            
+              </div>              
               <div className={styles.RecipeDetail}>
-                <h2 className={styles.title2}>Ingredients list</h2>
+                <h2 className={styles.title2}>Ingredients list</h2><hr/>
                 <div className={styles.ContainerListIngredients}>
-                  <ul style={{ columns: 3 }} className={styles.orderList}>
+                  <ul className={styles.orderList}>
                       {recipe.map(element => element.extendedIngredients.map(ingredient => <li>{ingredient.name}</li>))}                      
                   </ul>
                 </div>
-                <h2 className={styles.title2} >Instructions</h2>
-                  <ol>
+                <h2 className={styles.title2} >Instructions</h2><hr/>
+                  <ol className={styles.InstructionsOl}>
                     {recipe.map(element => element.analyzedInstructions.length > 0 
-                    ? recipe.map(element => element.analyzedInstructions.map(element2 => element2.steps.map(element3 => <li>{element3.step}</li>)))
+                    ? recipe.map(element => element.analyzedInstructions.map(element2 => element2.steps.map(element3 => <li className={styles.InstructionsLi}>{element3.step}</li>)))
                     : <p className={styles.noSpecialInfo}>No special instructions</p>
                     )
-                    }
-                    {recipe.map(element => element.analyzedInstructions
-                        .map(element2 => element2.steps
-                        .map(element3 => <li className={styles.InstructionsLi}>{element3.step}</li>))
-                        )  
                     }
                   </ol>
                 <h2 className={styles.title2} >Diets</h2><hr/>
@@ -234,9 +210,7 @@ export default function TransitionsModal(props) {
                     {recipe.map(element => element.diets.length > 0
                     ? recipe.map(element => element.diets.map(diet => <li>{diet}</li>))
                     : <p className={styles.noSpecialInfo}>No special diets</p>)}
-                    {recipe.map(element => element.diets.length > 0 ? recipe.map(element => element.diets.map(diet => <li>{diet}</li>)) : <p>No special diets</p>)}                  
                   </ul>
-              </div>
             </div>
           </div>
         </Fade>

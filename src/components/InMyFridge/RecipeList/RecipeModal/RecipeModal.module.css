@@ -15,6 +15,7 @@
 
 .title2 {
     align-self: center;
+    text-align: center;
     color: #10AC84;
 }
 
@@ -23,15 +24,6 @@
     border: 0.5px solid #10AC84;
     /* border: 0.5px solid #F29B20; */
     /* width: 400px;*/
-}
-
-.title2 span {
-    position: relative;
-    z-index: 3;
-    background-color: white;
-    padding: 0 1rem;
-    display: inline-block;
-    overflow: visible;
 }
 
 .ContainerModalFlex {
@@ -92,7 +84,7 @@
 .NutritionContainer{
     display: flex;
     justify-content: space-evenly;
-
+    /* width: 100%; */
 }
 
 .NutritionContainer div {
@@ -161,6 +153,18 @@
     font-weight: bold;
     font-size: 20px;
     font-family: 'Rubik';
+}
+
+/* David est son GROS ecran responsive */
+
+@media screen and (min-width: 1201px){
+    .RecipeDetail{
+        width: initial;
+    }
+
+    .NutritionContainer{
+        width: 100%;
+    }
 }
 
 /* TABLET RESPONSIVE */
