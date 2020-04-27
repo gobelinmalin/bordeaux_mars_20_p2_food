@@ -4,8 +4,10 @@ import Button from '@material-ui/core/Button';
 import PortraitCard from './PortraitCard';
 import { HashLink as Link } from 'react-router-hash-link';
 
+
 const Home = () => {
 
+// 
     return (
         <React.Fragment>
             <div>
