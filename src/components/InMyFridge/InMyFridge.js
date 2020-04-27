@@ -9,11 +9,16 @@ class InMyFridge extends Component{
     state = {
         checkedIngredients: [], // choix des ingrédients checké par l'utilisateur
         recipeList: [],
-        randomJoke: ''
+        randomJoke: '',
+        recipeSearch: [],
     }
 
     myCallback = (dataFromChild) => {
-        this.setState({checkedIngredients: dataFromChild})
+        this.setState({checkedIngredients: dataFromChild});
+    }
+
+    myCallbackSearch = (dataFromSearch) => {
+        this.setState({recipeSearch: dataFromSearch});
     }
 
     componentDidMount() {
@@ -31,7 +36,10 @@ class InMyFridge extends Component{
         }))
     }
 
+    
+
     getRecipes = () => {
+        this.setState({recipeSearch : []}) //clear the previous list of recipe from search
         let { checkedIngredients } = this.state;
         const filteredArray = checkedIngredients.filter(element => {
             const value = Object.values(element);
@@ -59,8 +67,8 @@ class InMyFridge extends Component{
     }
 
     render() {
-        const { recipeList } = this.state;
-        console.log(this.state.randomJoke);
+        const { recipeList, recipeSearch } = this.state;
+        console.log(this.state.recipeSearch);
         return (
             <React.Fragment>
                 <div className={styles.BackgroundImage}>
@@ -72,9 +80,11 @@ class InMyFridge extends Component{
                     <NavbarCategories
                         ingredientChoice={this.myCallback}
                         buttonCall={this.getRecipes}
+                        myCallbackSearch={this.myCallbackSearch}
                     />
                     <RecipeList
                         recipeList={recipeList}
+                        recipeSearch={recipeSearch}
                     />
                 </div>
                 

@@ -57,6 +57,30 @@
     margin: 0 auto;
 }
 
+.ContainerInformationSearch {
+    display: flex;
+    justify-content: center;
+}
+
+.ReadyInMinutes,
+.HowManyPeople{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.ReadyInMinutes img,
+.HowManyPeople img{
+    margin-right: 5px;
+}
+
+.HowManyPeople img{
+    margin-left: 5px;
+}
+
+.ContainerInformationSearch small{
+    line-height: 20px;
+}
+
 .RecipeButton {
     margin-bottom : 20px;
     align-self: center;
