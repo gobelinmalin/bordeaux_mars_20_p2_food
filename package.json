@@ -16,7 +16,8 @@
     "react-router-dom": "^5.1.2",
     "react-router-hash-link": "^1.2.2",
     "react-scripts": "3.4.1",
-    "save": "^2.4.0"
+    "save": "^2.4.0",
+    "tooltip": "^1.6.1"
   },
   "scripts": {
     "start": "react-scripts start",

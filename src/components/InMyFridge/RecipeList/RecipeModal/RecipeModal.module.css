@@ -4,7 +4,8 @@
 }
 
 .title {
-    color: #10AC84;
+    /* color: #10AC84; */
+    /* color: #F29B20; */
     align-self: center;
 }
 
@@ -14,6 +15,15 @@
 
 .title2 {
     align-self: center;
+    text-align: center;
+    color: #10AC84;
+}
+
+.RecipeDetail hr{
+    margin: 10px 0px 20px 0px;
+    border: 0.5px solid #10AC84;
+    /* border: 0.5px solid #F29B20; */
+    /* width: 400px;*/
 }
 
 .ContainerModalFlex {
@@ -34,7 +44,14 @@
 
 
 .orderList {
+    column-count: 3;
     margin-left: 40px;
+    margin-right: 5px;
+    list-style-image: url('../../../../Images/Icone/list-ingre-vege.png');
+}
+
+.orderList .IngredientsLi {
+    margin-left: 10px;
 }
 
 .RecipeDetail {
@@ -67,7 +84,7 @@
 .NutritionContainer{
     display: flex;
     justify-content: space-evenly;
-
+    /* width: 100%; */
 }
 
 .NutritionContainer div {
@@ -83,6 +100,10 @@
     width: 35px;
 }
 
+.RecipeIcon small{
+    font-weight: bold;
+}
+
 .RecipeIcon div {
     display: flex;
     align-items: center;
@@ -93,15 +114,57 @@
 }
 
 .RecipeDetail h2 {
-    margin: 35px 0 20px 0;
+    margin: 35px 0 0 0;
 }
 
 .RecipeDetail ul{
     margin-left: 0;
 }
 
-.RecipeDetail ol li{
+/* .RecipeDetail ol li{
     margin-bottom: 10px;
+} */
+
+.InstructionsOl {
+    counter-reset: li;
+    list-style: none;
+}
+
+.InstructionsLi {
+    position: relative;
+    padding: 5px 0 33px 50px;
+    font-size: 16px;
+    font-family: 'Rubik';
+}
+
+.InstructionsLi:before {
+    border-radius: 50%;
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    line-height: 35px;
+    left: -8px;
+    top: -2px;
+    color: #10AC84;
+    width: 35px;
+    height: 35px;
+    box-shadow: 1px 1px 12px 0 rgba(0, 0, 0, 0.07);
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Rubik';
+}
+
+/* David est son GROS ecran responsive */
+
+@media screen and (min-width: 1201px){
+    .RecipeDetail{
+        width: initial;
+    }
+
+    .NutritionContainer{
+        width: 100%;
+    }
 }
 
 /* TABLET RESPONSIVE */
