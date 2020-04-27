@@ -57,6 +57,30 @@
     margin: 0 auto;
 }
 
+.ContainerInformationSearch {
+    display: flex;
+    justify-content: center;
+}
+
+.ReadyInMinutes,
+.HowManyPeople{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.ReadyInMinutes img,
+.HowManyPeople img{
+    margin-right: 5px;
+}
+
+.HowManyPeople img{
+    margin-left: 5px;
+}
+
+.ContainerInformationSearch small{
+    line-height: 20px;
+}
+
 .RecipeButton {
     margin-bottom : 20px;
     align-self: center;
@@ -68,19 +92,20 @@
     height: auto;
     cursor: pointer;
     padding: 0.938em;
+    background-color: #10AC84;
     border: 1px solid #10AC84;
     border-radius: 20px;
-    background-color: white;
-    color: black;
+    color: white;
     font-size: 14px;
     text-transform: uppercase;
     font-family: 'Rubik';
-    font-weight: 800;
+    font-weight: bold;
     margin-left:50px;
 }
 
 .RecipeButton button:hover {
-    background-color: #10AC84;
+    background-color: #F29B20;
+    border: 1px solid #F29B20;
     color: white;
 }
 

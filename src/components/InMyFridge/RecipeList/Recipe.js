@@ -14,19 +14,34 @@ const Recipe = (props) => {
             </div>
             {/* <hr/> */}
             <div className={styles.RecipeIngredients}>
-                <p><strong>Ingredients :</strong> {props.usedIngredients} {props.missedIngredients}</p>
+                {props.usedIngredients === undefined
+                ? <div className={styles.ContainerInformationSearch}>
+                    <div className={styles.ReadyInMinutes}>
+                        <img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/>
+                        <small>{props.readyInMinutes} minutes</small> 
+                    </div>
+                    <div className={styles.HowManyPeople}>
+                        <img src="../../../../Images/Icone/icon-people-count@2x.png"alt="icone-cooking-min"/>
+                        <small>For {props.servings} person(s).</small>
+                    </div>
+                </div>
+                : <p><strong>Ingredients: </strong>{props.usedIngredients} {props.missedIngredients}</p>}
             </div>
             <div className={styles.RecipeButtonLike}>
                 <div className={styles.RecipeButton}>
                     <RecipeModal dataRecipe={props.id} />
                 </div>
                 <div className={styles.RecipeLikesContainer}>
-                    <div className={styles.RecipeLikes}>
-                        <div className={styles.RecipeImage}><img src="../../../Images/Icone/LikeRecipe@2x.png" alt="like it"/></div>
-                        {/* <br/> */}
-                        <div className={styles.RecipeNbLike}><small>{props.recipeLikes}</small></div>
-                    </div>
+                    {props.recipeLikes === undefined
+                    ? null
+                    :
+                        <div className={styles.RecipeLikes}>
+                            <div className={styles.RecipeImage}><img src="../../../Images/Icone/icon-like-orange@2x.png" alt="like it"/></div>
+                            <div className={styles.RecipeNbLike}><small>{props.recipeLikes}</small></div>
+                        </div>
+                    }
                 </div>
+                
             </div>
         </div>
     )

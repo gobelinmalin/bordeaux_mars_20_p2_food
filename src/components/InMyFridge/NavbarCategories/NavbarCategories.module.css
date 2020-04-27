@@ -3,10 +3,34 @@
     flex-direction: column;
     width: 25%;
     border-right: 2px solid black;
-    height: 1264px;
     /* margin-left: 50px; */
     overflow: scroll;
     padding-top: 40px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.ContainerSearch {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.ContainerSearch input{
+    width: 90%;
+    padding: 10px 10px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #d6d1d5;
+    margin: 0 auto;
+}
+
+.CategoryContainer h2 {
+    text-align: center;
+    font-family: 'Rubik';
+    color: #10AC84;
+    margin-bottom: 20px;
 }
 
 .buttonCall {
@@ -62,9 +86,8 @@
 }
 
 .buttonCall:hover{
-    background-color:white;
-    color: black;
-    border: 1px solid #10AC84;
+    background-color: #F29B20;
+    /* border: 1px solid #F29B20; */
 }
 
 

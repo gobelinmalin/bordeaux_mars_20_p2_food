@@ -28,6 +28,19 @@ const RecipeList = (props) => {
                                 />
                     })}
                 </div>
+                <div className={styles.RecipeList}>
+                    {props.recipeSearch.map((element, index) => {
+
+                        return <Recipe
+                                    key={index}
+                                    image={`https://spoonacular.com/recipeImages/${element.image}`}
+                                    title={element.title}
+                                    readyInMinutes={element.readyInMinutes}
+                                    servings={element.servings}
+                                    id={element.id}
+                                />
+                    })}
+                </div>
             </div>
         )
 }
