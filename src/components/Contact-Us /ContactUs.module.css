@@ -257,7 +257,19 @@ MEDIA QUERIES START HERE :
 //
 //
 // */
-@media (max-width: 1500px){
+@media (min-width: 1201px){
+
+  /* .informations{
+    margin:100px;
+    width: 40%;
+    min-width: 100px;
+    min-height: 760px;
+    padding: 20px 40px;
+    border-radius: 6px;
+    box-shadow: -1px 1px 20px 0px rgba(0,0,0,0.75);
+    background-color: #fefefe;
+  } */
+
   .LeftLocation, 
   .LeftPhone, 
   .LeftMail {
@@ -265,6 +277,11 @@ MEDIA QUERIES START HERE :
       padding : 10px;
       width: 100%;
   }
+
+  /* .FormWrapper {
+    width: 40%;
+  } */
+
 }
 
 @media (max-width: 1200px) {
