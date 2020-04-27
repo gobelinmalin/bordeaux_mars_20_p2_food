@@ -1,6 +1,5 @@
 .CardsContainer {
     width: 75%;
-    /* border: 1px solid black; */
     height: 40%;
     display: flex;
     flex-wrap: wrap;
@@ -37,6 +36,10 @@
 /* TABLET RESPONSIVE */
 @media screen and (max-width: 1200px){
 
+    .ContainerSpinner{
+        display: none;
+    }
+
     .CardsContainer{
         border: none;
     }
@@ -57,5 +60,9 @@
 
     .RecipeList{
         box-shadow: none;
+    }
+
+    .ContainerSpinner{
+        display: none;
     }
 }

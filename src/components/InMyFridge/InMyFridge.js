@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './InMyFridge.module.css';
 import RecipeList from './RecipeList/RecipeList';
 import NavbarCategories from './NavbarCategories/NavbarCategories';
-import Axios from 'axios';
+import axios from 'axios';
 
 class InMyFridge extends Component{
 
@@ -11,6 +11,8 @@ class InMyFridge extends Component{
         recipeList: [],
         randomJoke: '',
         recipeSearch: [],
+        inputFromSearch: '',
+        loading: false,
     }
 
     myCallback = (dataFromChild) => {
@@ -18,12 +20,12 @@ class InMyFridge extends Component{
     }
 
     myCallbackSearch = (dataFromSearch) => {
-        this.setState({recipeSearch: dataFromSearch});
+        this.setState({inputFromSearch: dataFromSearch});
     }
 
     componentDidMount() {
         const url = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/jokes/random' 
-        Axios.get(url,
+        axios.get(url,
             {
               headers: {
                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -36,10 +38,27 @@ class InMyFridge extends Component{
         }))
     }
 
+
+     getRecipeBySearch = () => {
+        this.setState({recipeList: [], loading: true});
+        const { inputFromSearch } = this.state;
+        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=${inputFromSearch}&offset=0&number=12`;
+        axios.get(url,
+            {
+              headers: {
+                "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+                "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+              }
+            })
+        .then(response => response.data)
+        .then(data => this.setState({   recipeSearch: data.results,
+                                        loading: false}))
+        .catch(error => console.log(error));
+    }
     
 
     getRecipes = () => {
-        this.setState({recipeSearch : []}) //clear the previous list of recipe from search
+        this.setState({recipeSearch : [], loading: true}) //clear the previous list of recipe from search
         let { checkedIngredients } = this.state;
         const filteredArray = checkedIngredients.filter(element => {
             const value = Object.values(element);
@@ -53,7 +72,7 @@ class InMyFridge extends Component{
         const finalArray = filteredArray.map(element => Object.keys(element)).join(',');
         
         const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=12&ranking=10&ingredients=${finalArray}`; // ingredientsNames + %252C
-        Axios.get(url,
+        axios.get(url,
             {
               headers: {
                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -62,13 +81,14 @@ class InMyFridge extends Component{
             })
         .then(response => response.data)
         .then(data => this.setState({
-            recipeList : data
+            recipeList : data,
+            loading: false,
         }))
     }
 
     render() {
-        const { recipeList, recipeSearch } = this.state;
-        console.log(this.state.recipeSearch);
+        const { recipeList, recipeSearch, inputFromSearch, loading } = this.state;
+        console.log(recipeSearch, inputFromSearch);
         return (
             <React.Fragment>
                 <div className={styles.BackgroundImage}>
@@ -81,10 +101,12 @@ class InMyFridge extends Component{
                         ingredientChoice={this.myCallback}
                         buttonCall={this.getRecipes}
                         myCallbackSearch={this.myCallbackSearch}
+                        getRecipeBySearch = {this.getRecipeBySearch}
                     />
                     <RecipeList
                         recipeList={recipeList}
                         recipeSearch={recipeSearch}
+                        isLoading={loading}
                     />
                 </div>
                 
