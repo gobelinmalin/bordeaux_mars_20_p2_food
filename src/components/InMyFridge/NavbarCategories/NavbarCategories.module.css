@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 25%;
     border-right: 2px solid black;
-    /* margin-left: 50px; */
     overflow: scroll;
     padding-top: 40px;
     overflow-y: auto;
@@ -38,7 +37,6 @@
     cursor: pointer;
     margin-right: 0.25em;
     margin: 30px;
-    /* margin-top: 0.5em; */
     padding: 0.7em;
     border: none;
     border-radius: 30px;
@@ -51,6 +49,31 @@
     align-self: center;
 }
 
+.buttonCall:disabled{
+    width: 70%;
+    cursor: not-allowed;
+    margin-right: 0.25em;
+    margin: 30px;
+    padding: 0.7em;
+    border: none;
+    border-radius: 30px;
+    background-color: grey;
+    color: #fefefe;
+    font-size: 20px;
+    font-family: 'Rubik';
+    font-weight: bold;
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.buttonCall:hover{
+    background-color: #F29B20;
+}
+
+
+.buttonCall:disabled:hover{
+    background-color: grey;
+}
 
 /* TABLET RESPONSIVE */
 @media screen and (max-width: 1200px){
@@ -84,10 +107,3 @@
     }
 
 }
-
-.buttonCall:hover{
-    background-color: #F29B20;
-    /* border: 1px solid #F29B20; */
-}
-
-
