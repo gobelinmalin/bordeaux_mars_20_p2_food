@@ -33,10 +33,10 @@
 .GlobalContainer {
     display: flex;
     justify-content: space-around;
-    /* padding-left: 10px; */
     padding-right: 10px;
     border: 2px solid black;
     margin: 0px 5px 20px 5px;
+    position: relative;
 }
 
 .BackgroundImage p {
