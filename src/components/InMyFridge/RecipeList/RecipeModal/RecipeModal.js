@@ -158,13 +158,15 @@ export default function TransitionsModal(props) {
                     <small>{recipe.map(element => element.servings)} people</small>
                   </div>
                   <div>
+
+
                   <img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/>
-                    {console.log(recipe.map(element => element.preparationMinutes))}
                     {recipe.map(element => element.preparationMinutes !== undefined
                     ? <small> Prep {recipe.map(element => element.preparationMinutes)} min</small>
                     : <small>no prep. time</small>
                     )}
                   </div>
+
                 </div>
               </div>
                 <div className={styles.NutritionContainer}>
@@ -197,6 +199,7 @@ export default function TransitionsModal(props) {
                       {recipe.map(element => element.extendedIngredients.map(ingredient => <li>{ingredient.name}</li>))}                      
                   </ul>
                 </div>
+
                 <h2 className={styles.title2} >Instructions</h2><hr/>
                   <ol className={styles.InstructionsOl}>
                     {recipe.map(element => element.analyzedInstructions.length > 0 
