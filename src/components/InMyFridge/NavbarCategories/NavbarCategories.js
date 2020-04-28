@@ -21,7 +21,22 @@ const NavbarCategories = (props) => {
         dataFromSearch();
     }, [userInput])
 
-    
+    const isChecked = () => {
+        //check the ingredient checked with filter in order to enable the button
+       const filteredArray = props.listOfIngredients.filter(element => {
+           if(Object.values(element)[0] === true){
+               return element;
+           }
+       });
+       // check if user has checked an ingredient and return the result
+       if (!filteredArray.length > 0) {
+           return true;
+       }
+       else {
+           return false;
+       }
+    }
+
     return (
         <div className={styles.CategoryContainer}>
             <div className={styles.ContainerSearch}>
@@ -40,7 +55,7 @@ const NavbarCategories = (props) => {
                     
                 />
             })}
-            <button className={styles.buttonCall} onClick={props.buttonCall}>Get a recipe</button>
+            <button className={styles.buttonCall} disabled={isChecked()} onClick={props.buttonCall}>Get a recipe</button>
         </div>
     )
 }
