@@ -14,6 +14,8 @@ class InMyFridge extends Component{
         inputFromSearch: '',
         loading: false,
         topRecipe: [],
+        listTitle: '',
+        topTitle: '',
     }
 
     myCallback = (dataFromChild) => {
@@ -25,6 +27,7 @@ class InMyFridge extends Component{
     }
 
     componentDidMount() {
+        this.setState({ loading: true });
         const url = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/jokes/random' 
         axios.get(url,
             {
@@ -36,22 +39,29 @@ class InMyFridge extends Component{
         .then(response => response.data)
         .then(data => this.setState({
             randomJoke : Object.values(data)[0]
-        }));
-        // .catch(error => console.log(error)));
+        }))
+        .catch(error => console.log(error));
 
-
-        // const top100 = [];
-        // const urlTop = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=100'
-        // axios.get(urlTop,
-        //     {
-        //       headers: {
-        //         "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-        //         "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
-        //       }
-        //     })
-        // .then(response => response.data)
-        // .then(data => top100 = data.recipes)
-        // .catch(error => console.log(error));
+        const urlTop = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=50';
+        axios.get(urlTop,
+            {
+              headers: {
+                "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+                "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+              }
+            })
+        .then(response => response.data)
+        .then(data => {
+            const top12 = data.recipes.sort((a, b) => { // on trie le tableau des recettes random par rapport  au nombre de likes puis on récupère les 12 premières recettes
+                return b.aggregateLikes - a.aggregateLikes;
+            }).slice(0, 3);
+            this.setState({
+                topRecipe: top12,
+                loading: false,
+                topTitle: 'Top recipes'
+            });
+        })
+        .catch(error => console.log(error));
 
         
     }
@@ -61,6 +71,7 @@ class InMyFridge extends Component{
             recipeList: [],
             loading: true,
             recipeSearch : [],
+            listTitle: 'Search results',
         });
         const { inputFromSearch } = this.state;
         const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=${inputFromSearch}&offset=0&number=12`;
@@ -78,7 +89,13 @@ class InMyFridge extends Component{
     }
     
     getRecipes = () => {
-        this.setState({recipeSearch : [], loading: true, recipeList : []}) //clear the previous list of recipe from search
+        this.setState({ 
+            recipeSearch : [],
+            loading: true,
+            recipeList : [],
+            listTitle: 'Recipes by ingredients',
+        
+        }) //clear the previous list of recipe from search
         let { checkedIngredients } = this.state;
         const filteredArray = checkedIngredients.filter(element => {
             const value = Object.values(element);
@@ -107,16 +124,17 @@ class InMyFridge extends Component{
     }
 
     render() {
-        const { recipeList, recipeSearch, inputFromSearch, loading, checkedIngredients,topRecipe } = this.state;
-        // console.log(top100);
+        const { recipeList, recipeSearch, inputFromSearch, loading, checkedIngredients,topRecipe, listTitle, topTitle } = this.state;
+
         return (
             <React.Fragment>
                 <div className={styles.BackgroundImage}>
                     <h1>In my Fridge</h1>
                     <p>"{this.state.randomJoke}"</p>
                 </div>
-                <h2 className={styles.Subtitle} >Get your meal</h2>
+              
                 <div className={styles.GlobalContainer}>
+                    
                     <NavbarCategories
                         ingredientChoice={this.myCallback}
                         buttonCall={this.getRecipes}
@@ -128,6 +146,9 @@ class InMyFridge extends Component{
                         recipeList={recipeList}
                         recipeSearch={recipeSearch}
                         isLoading={loading}
+                        topRecipe={topRecipe}
+                        listTitle={listTitle}
+                        topTitle={topTitle}
                     />
                 </div>
                 

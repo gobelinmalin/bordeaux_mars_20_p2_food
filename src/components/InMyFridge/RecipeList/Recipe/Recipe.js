@@ -1,5 +1,5 @@
 import React from 'react';
-import RecipeModal from './RecipeModal/RecipeModal'
+import RecipeModal from '../RecipeModal/RecipeModal';
 import styles from "./Recipe.module.css";
 
 const Recipe = (props) => {
@@ -27,6 +27,16 @@ const Recipe = (props) => {
                 </div>
                 : <p><strong>Ingredients: </strong>{props.usedIngredients} {props.missedIngredients}</p>}
             </div>
+
+            {
+                props.aggregateLikes
+            ?   <div className={styles.RecipeLikes}>
+                    <div className={styles.RecipeImage}><img src="../../../Images/Icone/icon-like-orange@2x.png" alt="like it"/></div>
+                    <div className={styles.RecipeNbLike}><small>{props.aggregateLikes}</small></div>
+                </div>
+            :   null
+            }
+
             <div className={styles.RecipeButtonLike}>
                 <div className={styles.RecipeButton}>
                     <RecipeModal dataRecipe={props.id} />
