@@ -1,30 +1,28 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './InMyFridge.module.css';
 import RecipeList from './RecipeList/RecipeList';
 import NavbarCategories from './NavbarCategories/NavbarCategories';
 import axios from 'axios';
 
-class InMyFridge extends Component{
+const InMyFridge = () => {
 
-    state = {
-        checkedIngredients: [], // choix des ingrédients checké par l'utilisateur
-        recipeList: [],
-        randomJoke: '',
-        recipeSearch: [],
-        inputFromSearch: '',
-        loading: false,
-        topRecipe: [],
+    const [ checkedIngredients, setCheckedIngredients] = useState([])
+    const [ recipeList, setRecipeList] = useState([])
+    const [ randomJoke, setRandomJoke] = useState([])
+    const [ recipeSearch, setRecipeSearch] = useState([])
+    const [ inputFromSearch, setInputFromSearch] = useState([])
+    const [ loading, setLoading] = useState(false)
+    const [ topRecipe, setTopRecipe] = useState([])
+
+    const myCallback = (dataFromChild) => {
+        setCheckedIngredients(dataFromChild)
     }
 
-    myCallback = (dataFromChild) => {
-        this.setState({checkedIngredients: dataFromChild});
+    const myCallbackSearch = (dataFromSearch) => {
+        setInputFromSearch(dataFromSearch)
     }
 
-    myCallbackSearch = (dataFromSearch) => {
-        this.setState({inputFromSearch: dataFromSearch});
-    }
-
-    componentDidMount() {
+    useEffect(()=> {
         const url = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/jokes/random' 
         axios.get(url,
             {
@@ -34,35 +32,19 @@ class InMyFridge extends Component{
               }
             })
         .then(response => response.data)
-        .then(data => this.setState({
-            randomJoke : Object.values(data)[0]
-        }));
-        // .catch(error => console.log(error)));
+        .then(data => setRandomJoke(Object.values(data)[0]))
+        .catch(error => console.log(error));
 
-
-        // const top100 = [];
-        // const urlTop = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=100'
-        // axios.get(urlTop,
-        //     {
-        //       headers: {
-        //         "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-        //         "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
-        //       }
-        //     })
-        // .then(response => response.data)
-        // .then(data => top100 = data.recipes)
-        // .catch(error => console.log(error));
-
+    }, [] )
         
-    }
 
-     getRecipeBySearch = () => {
-        this.setState({
-            recipeList: [],
-            loading: true,
-            recipeSearch : [],
-        });
-        const { inputFromSearch } = this.state;
+    
+
+    const getRecipeBySearch = () => {
+         setRecipeList([])
+         setLoading(true)
+         setRecipeSearch([])
+
         const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=${inputFromSearch}&offset=0&number=12`;
         axios.get(url,
             {
@@ -72,14 +54,18 @@ class InMyFridge extends Component{
               }
             })
         .then(response => response.data)
-        .then(data => this.setState({   recipeSearch: data.results,
-                                        loading: false}))
+        .then(data => {
+            setRecipeSearch(data.results)
+            setLoading(false)
+            })
         .catch(error => console.log(error));
     }
     
-    getRecipes = () => {
-        this.setState({recipeSearch : [], loading: true, recipeList : []}) //clear the previous list of recipe from search
-        let { checkedIngredients } = this.state;
+    const getRecipes = () => {
+        setRecipeList([])
+        setLoading(true)
+        setRecipeSearch([])
+
         const filteredArray = checkedIngredients.filter(element => {
             const value = Object.values(element);
             const key = Object.keys(element);
@@ -100,28 +86,26 @@ class InMyFridge extends Component{
               }
             })
         .then(response => response.data)
-        .then(data => this.setState({
-            recipeList : data,
-            loading: false,
-        }))
+        .then(data => {
+            setRecipeList(data)
+            setLoading(false)
+        })
+        
     }
 
-    render() {
-        const { recipeList, recipeSearch, inputFromSearch, loading, checkedIngredients,topRecipe } = this.state;
-        // console.log(top100);
         return (
             <React.Fragment>
                 <div className={styles.BackgroundImage}>
                     <h1>In my Fridge</h1>
-                    <p>"{this.state.randomJoke}"</p>
+                    <p>"{randomJoke}"</p>
                 </div>
                 <h2 className={styles.Subtitle} >Get your meal</h2>
                 <div className={styles.GlobalContainer}>
                     <NavbarCategories
-                        ingredientChoice={this.myCallback}
-                        buttonCall={this.getRecipes}
-                        myCallbackSearch={this.myCallbackSearch}
-                        getRecipeBySearch = {this.getRecipeBySearch}
+                        ingredientChoice={myCallback}
+                        buttonCall={getRecipes}
+                        myCallbackSearch={myCallbackSearch}
+                        getRecipeBySearch = {getRecipeBySearch}
                         listOfIngredients={checkedIngredients} //give the list of checked ingredients
                     />
                     <RecipeList
@@ -133,7 +117,6 @@ class InMyFridge extends Component{
                 
             </React.Fragment>
         )
-    }
 }
 
 export default InMyFridge
