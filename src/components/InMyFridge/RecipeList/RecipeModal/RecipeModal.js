@@ -1,4 +1,4 @@
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+  import { withStyles, makeStyles } from '@material-ui/core/styles';
 import React, { useState, useEffect } from 'react';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -115,7 +115,7 @@ export default function TransitionsModal(props) {
   return (
     <div>
       <button type="button" onClick={handleOpen}>
-        Read more
+        {/* Read More */}
       </button>
       <Modal
         aria-labelledby="transition-modal-title"

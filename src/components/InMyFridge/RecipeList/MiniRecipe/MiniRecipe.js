@@ -1,9 +1,21 @@
 import React from 'react';
 import styles from "./MiniRecipe.module.css";
+import RecipeModal from '../RecipeModal/RecipeModal';
 
 const MiniRecipe = (props) => {
+    
+    // const openModal = (dataRecipe) => {
+    //     console.log('Modal clicked');
+    //     return <RecipeModal dataRecipe={props.id} />
+          
+    // };
+    
+    
     return (
         <div className={styles.MiniRecipe}>
+            <div className={styles.divTest}>
+                <RecipeModal dataRecipe={props.id} />
+            </div>
             <div className={styles.ContainerMiniRecipeImg}>
                 <img src={props.image} alt="Recipe"/>
             </div>
@@ -13,7 +25,7 @@ const MiniRecipe = (props) => {
             </div>
             <div className={styles.RecipeTitle}><p>{props.title}</p></div>
         </div>
-    )
+    );
 }
 
 export default MiniRecipe;

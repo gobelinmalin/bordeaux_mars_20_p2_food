@@ -102,6 +102,10 @@
     margin-left:50px;
 }
 
+.RecipeButton button::after {
+    content: "Read more";
+}
+
 .RecipeButton button:hover {
     background-color: #F29B20;
     border: 1px solid #F29B20;
