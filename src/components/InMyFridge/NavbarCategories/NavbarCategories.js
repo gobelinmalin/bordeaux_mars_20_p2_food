@@ -44,6 +44,7 @@ const NavbarCategories = (props) => {
                 <input placeholder='ex : "Burger"'type='text' value={userInput} onChange={handleChange} />
                 <button className={styles.buttonCall} disabled={userInput.length === 0} onClick={props.getRecipeBySearch}>Search a meal</button>
             </div>
+            <hr/>
             <h2>Choose your ingredient(s)</h2>
             {ingredients.map((element, index) => {
                 return <CategoryIngredient

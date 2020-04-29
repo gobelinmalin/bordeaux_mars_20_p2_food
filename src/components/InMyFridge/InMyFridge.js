@@ -6,6 +6,7 @@ import axios from 'axios';
 
 const InMyFridge = () => {
 
+
     const [ checkedIngredients, setCheckedIngredients] = useState([])
     const [ recipeList, setRecipeList] = useState([])
     const [ randomJoke, setRandomJoke] = useState([])
@@ -13,6 +14,9 @@ const InMyFridge = () => {
     const [ inputFromSearch, setInputFromSearch] = useState([])
     const [ loading, setLoading] = useState(false)
     const [ topRecipe, setTopRecipe] = useState([])
+    const [listTitle, setListTitle] = useState('')
+    const [topTitle, setTopTitle] = useState('')
+
 
     const myCallback = (dataFromChild) => {
         setCheckedIngredients(dataFromChild)
@@ -23,6 +27,7 @@ const InMyFridge = () => {
     }
 
     useEffect(()=> {
+        setLoading(true);
         const url = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/jokes/random' 
         axios.get(url,
             {
@@ -34,19 +39,36 @@ const InMyFridge = () => {
         .then(response => response.data)
         .then(data => setRandomJoke(Object.values(data)[0]))
         .catch(error => console.log(error));
+      
+        const urlTop = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=50';
+        axios.get(urlTop,
+            {
+              headers: {
+                "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+                "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+              }
+            })
+        .then(response => response.data)
+        .then(data => {
+            const top12 = data.recipes.sort((a, b) => { // on trie le tableau des recettes random par rapport  au nombre de likes puis on récupère les 12 premières recettes
+                return b.aggregateLikes - a.aggregateLikes;
+            }).slice(0, 3);
+            setTopRecipe(top12)
+            setLoading(false)
+            setTopTitle('Top recipes')
+        })
+        .catch(error => console.log(error));
 
     }, [] )
-        
-
-    
 
     const getRecipeBySearch = () => {
          setRecipeList([])
          setLoading(true)
          setRecipeSearch([])
-
-        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=${inputFromSearch}&offset=0&number=12`;
-        axios.get(url,
+         setListTitle('Search results')
+      
+         const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=${inputFromSearch}&offset=0&number=12`;
+         axios.get(url,
             {
               headers: {
                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -65,7 +87,8 @@ const InMyFridge = () => {
         setRecipeList([])
         setLoading(true)
         setRecipeSearch([])
-
+        setListTitle('Recipes by ingredients')
+      
         const filteredArray = checkedIngredients.filter(element => {
             const value = Object.values(element);
             const key = Object.keys(element);
@@ -92,15 +115,16 @@ const InMyFridge = () => {
         })
         
     }
-
+    
         return (
             <React.Fragment>
                 <div className={styles.BackgroundImage}>
                     <h1>In my Fridge</h1>
                     <p>"{randomJoke}"</p>
                 </div>
-                <h2 className={styles.Subtitle} >Get your meal</h2>
+              
                 <div className={styles.GlobalContainer}>
+                    
                     <NavbarCategories
                         ingredientChoice={myCallback}
                         buttonCall={getRecipes}
@@ -112,6 +136,9 @@ const InMyFridge = () => {
                         recipeList={recipeList}
                         recipeSearch={recipeSearch}
                         isLoading={loading}
+                        topRecipe={topRecipe}
+                        listTitle={listTitle}
+                        topTitle={topTitle}
                     />
                 </div>
                 

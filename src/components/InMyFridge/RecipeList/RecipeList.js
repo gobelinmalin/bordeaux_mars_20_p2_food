@@ -1,11 +1,29 @@
 import React, { Component, useState } from 'react';
 import styles from "./RecipeList.module.css";
-import Recipe from './Recipe';
+import MiniRecipe from '../RecipeList/MiniRecipe/MiniRecipe';
+import Recipe from "./Recipe/Recipe";
 import Loader from '../../Assets/CssLoader/Loader';
 
 const RecipeList = (props) => {
     return (
         <div className={styles.CardsContainer}>
+            <div className={styles.Top12}>
+                <h2>{props.topTitle}</h2>
+                <div className={styles.ContainerTop12}>
+                    {props.topRecipe.map((element, index) => {
+                        return <MiniRecipe
+                                    key={index}
+                                    image={element.image}
+                                    title={element.title}
+                                    aggregateLikes= {element.aggregateLikes}
+                                    id={element.id}
+                                />
+                        })}
+                </div>   
+            {/* <hr/> */}
+            </div>
+            {/* <div className={styles.ContainerHr}><hr/></div> */}
+            <h2 className={styles.ListTitle}>{props.listTitle}</h2>
             <div className={styles.RecipeList}>
                 {props.recipeList.map((element, index) => {
 

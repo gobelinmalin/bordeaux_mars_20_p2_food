@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: "0px 3px 10px black",
     padding: theme.spacing(2, 4, 3),
-    width: '900px',
+    width: '885px',
     height: '700px',
     padding: '0px',
     overflow: 'scroll',
@@ -47,6 +47,10 @@ const useStyles = makeStyles((theme) => ({
       height: '750px',
     },
     [theme.breakpoints.up('lg')]: {
+      width: '885px',
+      height: '700px',
+    },
+    [theme.breakpoints.up('xl')]: {
       width: '900px',
       height: '700px',
     },
