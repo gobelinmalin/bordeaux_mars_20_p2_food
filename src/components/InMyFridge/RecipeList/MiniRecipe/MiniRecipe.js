@@ -21,7 +21,7 @@ const MiniRecipe = (props) => {
             </div>
             <div className={styles.RecipeImage}>
                 <div className={styles.RecipeImg}><img src="../../../Images/Icone/icon-like-orange@2x.png" alt="like it"/></div>
-                <div className={styles.RecipeLike}><small>{props.aggregateLikes}</small></div>
+                <div className={styles.RecipeNbLike}><small>{props.aggregateLikes}</small></div>
             </div>
             <div className={styles.RecipeTitle}><p>{props.title}</p></div>
         </div>

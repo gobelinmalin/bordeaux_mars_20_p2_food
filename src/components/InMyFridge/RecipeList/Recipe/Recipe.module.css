@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 .RecipeImgContainer {
@@ -124,6 +125,30 @@
 }
 
 .RecipeLikes {
+    display: inline-flex;
+    width: 75px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    justify-content: center;
+    box-shadow: 0 4px 14px -4px rgba(0,0,0,.08);
+    background-color: white;
+    position: absolute;
+    left: 40;
+    /* margin-bottom: 5px;
+    margin-right: 370px; */
+}
+
+.RecipeImage {
+    height: 0;
+}
+
+.RecipeNbLike {
+    line-height: 15px;
+    margin-left: 5px;
+}
+
+
+/* .RecipeLikes {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,7 +156,7 @@
 
 .RecipeImage{
     height: 14px;
-}
+} */
 
 
 /* TABLET RESPONSIVE */
