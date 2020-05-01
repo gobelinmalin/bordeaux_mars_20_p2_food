@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    margin-top: 20px;
 }
 
 .CardsContainer {
@@ -67,6 +68,7 @@
     display : flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: 20px;
 }
 
 /* TABLET RESPONSIVE */
