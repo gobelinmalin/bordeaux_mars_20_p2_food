@@ -63,6 +63,9 @@
     padding: 0 10px 0px 10px;
 }
 
-/* .RecipeImage div, .RecipeImage img {
-    margin: 30px;
-} */
+@media screen and (max-width: 769px){
+    
+    .MiniRecipe{
+        margin-bottom: 10px;
+    }
+}
