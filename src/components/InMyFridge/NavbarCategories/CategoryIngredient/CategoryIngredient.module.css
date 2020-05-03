@@ -97,7 +97,7 @@
 }
 
 /* MOBILE RESPONSIVE */
-@media screen and (max-width: 750px){
+/* @media screen and (max-width: 750px){
     .Item{
         height: 40px;
     }
@@ -109,4 +109,4 @@
     .ItemList p{
         font-size: .8rem;
     }
-}
+} */
