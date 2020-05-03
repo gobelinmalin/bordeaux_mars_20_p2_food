@@ -5,7 +5,7 @@ const PortraitCard2 = (props) => {
     return (
         <div className={styles.PortraitCard2} >
             <div className={styles.Testimonial}>
-                <img className={styles.Portrait} src={`url(${props.imageUrl})`} style={{backgroundImage: 'url(' + props.imageUrl + ')' }} />
+                <img className={styles.Portrait} src={`url(${props.imageUrl})`}/>
                 <div className={styles.ContainerNameDev}>
                     <h3 className={styles.Name}>{props.name}</h3>
                 </div>
