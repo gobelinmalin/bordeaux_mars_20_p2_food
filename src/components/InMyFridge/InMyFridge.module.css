@@ -82,7 +82,6 @@
 
     .GlobalContainer{
         width: 99%;
-        border: 1px solid black;
         margin-left: 4px;
         margin-bottom: 4px;
     }
@@ -90,7 +89,7 @@
 }
 
 /* MOBILE RESPONSIVE */
-@media screen and (max-width: 750px){
+@media screen and (max-width: 1050px){
 
     .BackgroundImage{
         height: 440px;
@@ -116,9 +115,10 @@
         flex-direction: column;
         width: 100%;
         margin-left: 0;
-        border: none;
+        padding-right: 0;
     }
-
-
-
 }
+
+/* @media screen and (max-width: 770px){
+
+} */

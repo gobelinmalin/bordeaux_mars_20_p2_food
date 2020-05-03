@@ -76,10 +76,6 @@
         display: none;
     }
 
-    .CardsContainer{
-        border: none;
-    }
-
     .RecipeList{
         box-shadow: none;
     }
@@ -87,18 +83,25 @@
 }
 
 /* MOBILE RESPONSIVE */
-@media screen and (max-width: 750px){
+@media screen and (max-width: 1050px){
 
     .CardsContainer{
         width: 100%;
-        border: none;
     }
 
     .RecipeList{
         box-shadow: none;
+        width: 100%;
     }
 
     .ContainerSpinner{
         display: none;
+    }
+}
+
+@media screen and (max-width: 769px){
+    .ContainerTop12{
+        flex-direction: column;
+        align-items: center;
     }
 }
