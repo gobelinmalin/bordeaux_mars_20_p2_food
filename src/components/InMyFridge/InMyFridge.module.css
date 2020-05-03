@@ -41,7 +41,7 @@
 
 .BackgroundImage p {
     position: absolute;
-    width: 600px;
+    text-align: center;
     height: 150px;
     top: 80%;
     left: 50%;

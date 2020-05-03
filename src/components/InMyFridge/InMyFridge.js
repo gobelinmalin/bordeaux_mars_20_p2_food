@@ -65,7 +65,6 @@ const InMyFridge = () => {
          setRecipeList([])
          setLoading(true)
          setRecipeSearch([])
-         setListTitle('Search results')
       
          const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=${inputFromSearch}&offset=0&number=12`;
          axios.get(url,
@@ -79,6 +78,7 @@ const InMyFridge = () => {
         .then(data => {
             setRecipeSearch(data.results)
             setLoading(false)
+            setListTitle('Search results')
             })
         .catch(error => console.log(error));
     }
@@ -87,7 +87,6 @@ const InMyFridge = () => {
         setRecipeList([])
         setLoading(true)
         setRecipeSearch([])
-        setListTitle('Recipes by ingredients')
       
         const filteredArray = checkedIngredients.filter(element => {
             const value = Object.values(element);
@@ -112,6 +111,7 @@ const InMyFridge = () => {
         .then(data => {
             setRecipeList(data)
             setLoading(false)
+            setListTitle('Recipes by ingredients')
         })
         
     }
