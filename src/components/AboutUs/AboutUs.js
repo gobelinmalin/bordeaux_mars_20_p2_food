@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './AboutUs.module.css';
-import PortraitCard from '../Home/PortraitCard';
-import { HashLink as Link } from 'react-router-hash-link';
+import PortraitCard2 from './PortraitCard2';
+// import { HashLink as Link } from 'react-router-hash-link';
 
 const AboutUs = () => {
     return (
@@ -14,17 +14,17 @@ const AboutUs = () => {
                 <div className={styles.ContainerMembersImgBackground} />
 
                 <div className={styles.AllPortrait}>
-                    <PortraitCard
+                    <PortraitCard2
                         imageUrl={require('../../Images/David.jpg')}
                         name={'David'}
                         text={'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '}
                     />
-                    <PortraitCard
+                    <PortraitCard2
                         imageUrl={require('../../Images/Johanna.jpg')}
                         name={'Johanna'}
                         text={'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '}
                     />
-                    <PortraitCard
+                    <PortraitCard2
                         imageUrl={require('../../Images/Pierre.jpg')}
                         name={'Pierre'}
                         text={'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '}
