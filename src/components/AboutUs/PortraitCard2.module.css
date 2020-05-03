@@ -22,14 +22,15 @@
                 0 1px 3px rgba(0, 0, 0, .24);
 }
 
-.PortraitCard2 .Portrait{
+.PortraitCard2 .Portrait2{
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    max-width: 4rem;
+    max-width: 6rem;
+    height: 6rem;
     width: 250px;
     position: absolute;
-    top: -1.5rem;
+    top: -3.5rem;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -41,14 +42,14 @@
     margin: 1.5rem 0 1rem 0;
 }
 
-.PortraitCard2 .Name{
+.PortraitCard2 .Name2{
     font-size: 1.15rem;
     margin: 1.5rem 0 1rem 0;
     font-family: Rubik;
     font-weight: 600;
 }
 
-.PortraitCard2 .Description{
+.PortraitCard2 .Description2{
     text-align: center;
     font-weight: 300;
     font-size: 1rem;
@@ -67,7 +68,7 @@
         min-height: 30vh;
     }
 
-    .PortraitCard2 .Description{
+    .PortraitCard2 .Description2{
         font-size: .9rem;
         line-height: 1.2rem;
     }

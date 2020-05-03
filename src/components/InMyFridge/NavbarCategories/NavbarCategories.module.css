@@ -112,3 +112,10 @@
     }
 
 }
+
+@media screen and (max-width: 425px){
+    .buttonCall,
+    .buttonCall:disabled{
+        width: 50%;
+    }
+}
