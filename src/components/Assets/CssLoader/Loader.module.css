@@ -1,6 +1,6 @@
 .Loader {
     position: absolute;
-    top: 25%;
+    top: 40%;
     left: 50%;
     transform: calc(-50%, -50%);
     -webkit-transform: calc(-50%, -50%);

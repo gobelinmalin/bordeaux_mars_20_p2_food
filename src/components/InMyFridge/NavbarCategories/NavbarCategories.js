@@ -37,11 +37,17 @@ const NavbarCategories = (props) => {
        }
     }
 
+    const enterKeyPress = (event) => {
+        if(event.keyCode === 13 && event.target.value !== ''){
+            props.getRecipeBySearch();
+         }
+    }
+
     return (
         <div className={styles.CategoryContainer}>
             <div className={styles.ContainerSearch}>
                 <h2>Make a search</h2>
-                <input placeholder='ex : "Burger"'type='text' value={userInput} onChange={handleChange} />
+                <input placeholder='ex : "Burger"'type='text' value={userInput} onChange={handleChange} onKeyDown={enterKeyPress}/>
                 <button className={styles.buttonCall} disabled={userInput.length === 0} onClick={props.getRecipeBySearch}>Search a meal</button>
             </div>
             <hr/>

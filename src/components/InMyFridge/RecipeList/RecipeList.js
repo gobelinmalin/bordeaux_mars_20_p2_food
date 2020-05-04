@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import styles from "./RecipeList.module.css";
 import MiniRecipe from '../RecipeList/MiniRecipe/MiniRecipe';
 import Recipe from "./Recipe/Recipe";
