@@ -10,14 +10,15 @@
 
 .Title {
     position: absolute;
-    top: 25%;
-    left: 35%;
+    top: 40%;
+    left: 50%;
     font-size: 50px;
-    transform: translate(-10%, -10%);
-    -webkit-transform: translate(-10%, -10%);
-    -moz-transform: translate(-10%, -10%);
-    -ms-transform: translate(-10%, -10%);
-    -o-transform: translate(-10%, -10%);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .FirstPart {
@@ -44,6 +45,7 @@
 .InMyFridge h3 {
     font-size: 70px;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .InMyFridge p {
@@ -61,6 +63,7 @@
     height: 50px;
     margin-top: 25px;
     background-color: #10AC84;
+    border-radius: 30px;
 }
 
 .BackgroundImage2 {
@@ -94,6 +97,7 @@
     width: 200px;
     height: 50px;
     background-color: #10AC84;
+    border-radius: 30px;
 }
 
 .BackgroundImage3 {
@@ -121,13 +125,69 @@
     height: 50px;
     margin-top: 45px;
     background-color: #10AC84;
+    border-radius: 30px;
+}
+
+.buttonHome{
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #10AC84;
+    color: #fefefe;
+    font-size: 20px;
+    font-family: 'Rubik';
+    font-weight: bold;
+
+}
+.buttonHome:hover{
+    background-color: #F29B20;
+}
+
+.buttonHome a {
+    text-decoration: none;
+    color: white;
+}
+
+.buttonHome a:visited {
+    color: white;
+}
+
+@media screen and (min-width: 1501px) {
+    .Title {
+        top: 30%;
+        left: 50%;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+
+    .BackgroundImage1{
+        background-position: 0px;
+        margin-top: 5px;
+        width : 100%;
+        height: 600px;
+    }
+
+    .BackgroundImage3 h3 {
+        margin-top: 50px;
+    }
+
+    .BackgroundImage3 {
+        height: 450px;
+    }
 }
 
 @media screen and (max-width: 1200px) {
 
     .Title {
-        top:15%;
+        font-size: 3rem;
+        top: 30%;
     }
+
+    .Subtitle{
+        font-size: 2rem;
+    }
+
     .FirstPart {
         flex-direction: column;
     }
@@ -139,7 +199,7 @@
         margin: 0 auto;
     }
     .BackgroundImage2 {
-        height: 1250px;
+        height: 1290px;
     }
     .AllPortrait {
         flex-direction: column;
@@ -158,8 +218,9 @@
         height: 350px;
     }
     .Title {
-        top: 18%;
-        font-size: 35px;
+        top: 30%;
+        font-size: 2rem;
+        width: 80%;
     }
     .Subtitle{
         display: none;

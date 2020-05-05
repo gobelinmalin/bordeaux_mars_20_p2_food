@@ -17,17 +17,17 @@ const AboutUs = () => {
                     <PortraitCard2
                         imageUrl={require('../../Images/David.jpg')}
                         name={'David'}
-                        text={'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '}
+                        text={"Front-end React developer who loves to see brillant ideas come to life. I also like making music, playing video games and hanging out with friends."}
                     />
                     <PortraitCard2
                         imageUrl={require('../../Images/Johanna.jpg')}
                         name={'Johanna'}
-                        text={'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '}
+                        text={'JS/REACT developper who loves reading, coding, play video games and spending time with my friends'}
                     />
                     <PortraitCard2
                         imageUrl={require('../../Images/Pierre.jpg')}
                         name={'Pierre'}
-                        text={'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '}
+                        text={"Passionate about web development, reading personal development's books, I also like jogging and swimming without forgetting to have fun with my friends !"}
                     />
                 </div>
 
@@ -36,22 +36,17 @@ const AboutUs = () => {
                     {/* David social networks */}
                     <div className={styles.ContainerMembersSocialContent}>
                         <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="" target="_blank">
+                            <a href="https://twitter.com/davidaswell" target="_blank" rel="noopener noreferrer">
                                 <img className={styles.ImgTwitter} src="../../Images/logo-aboutus-twitter.png" alt="Social network Twitter icon - David" />
                             </a>
                         </div>
                         <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="" target="_blank">
+                            <a href="https://www.instagram.com/david.aswell/" target="_blank" rel="noopener noreferrer">
                                 <img className={styles.ImgInstagram} src="../../Images/logo-aboutus-instagram.png" alt="Social network Instagram icon - David" />
                             </a>
                         </div>
                         <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="" target="_blank">
-                                <img className={styles.ImgFacebook} src="../../Images/logo-aboutus-facebook.png" alt="Social network Facebook icon - David" />
-                            </a>
-                        </div>
-                        <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="" target="_blank">
+                            <a href="https://www.linkedin.com/in/david-faure-504b67b3/" target="_blank" rel="noopener noreferrer">
                                 <img className={styles.ImgLinkedin} src="../../Images/logo-aboutus-linkedin.png" alt="Social network LinkedIn icon - David" />
                             </a>
                         </div>
@@ -59,17 +54,17 @@ const AboutUs = () => {
                     {/* Johanna social networks */}
                     <div className={styles.ContainerMembersSocialContent}>
                         <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="https://twitter.com/Jwana_Joo" target="_blank">
+                            <a href="https://twitter.com/Jwana_Joo" target="_blank" rel="noopener noreferrer">
                                 <img className={styles.ImgTwitter} src="../../Images/logo-aboutus-twitter.png" alt="Social network Twitter icon - Johanna" />
                             </a>
                         </div>
                         <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="https://www.instagram.com/johannaa_joo/" target="_blank">
+                            <a href="https://www.instagram.com/johannaa_joo/" target="_blank" rel="noopener noreferrer">
                                 <img className={styles.ImgInstagram} src="../../Images/logo-aboutus-instagram.png" alt="Social network Instagram icon - Johanna" />
                             </a>
                         </div>
                         <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_sign-in-submit" target="_blank">
+                            <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_sign-in-submit" target="_blank" rel="noopener noreferrer">
                                 <img className={styles.ImgLinkedin} src="../../Images/logo-aboutus-linkedin.png" alt="Social network LinkedIn icon - Johanna" />
                             </a>
                         </div>
@@ -77,24 +72,16 @@ const AboutUs = () => {
                     {/* Pierre social networks */}
                     <div className={styles.ContainerMembersSocialContent}>
                         <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="" target="_blank">
-                                <img className={styles.ImgTwitter} src="../../Images/logo-aboutus-twitter.png" alt="Social network Twitter icon - Pierre" />
-                            </a>
+                            <img className={styles.ImgTwitter} src="../../Images/logo-aboutus-twitter.png" alt="Social network Twitter icon - Pierre" />
                         </div>
                         <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="" target="_blank">
-                                <img className={styles.ImgInstagram} src="../../Images/logo-aboutus-instagram.png" alt="Social network Instagram icon - Pierre" />
-                            </a>
+                            <img className={styles.ImgInstagram} src="../../Images/logo-aboutus-instagram.png" alt="Social network Instagram icon - Pierre" />
                         </div>
                         <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="" target="_blank">
-                                <img className={styles.ImgFacebook} src="../../Images/logo-aboutus-facebook.png" alt="Social network Facebook icon - Pierre" />
-                            </a>
+                            <img className={styles.ImgFacebook} src="../../Images/logo-aboutus-facebook.png" alt="Social network Facebook icon - Pierre" />
                         </div>
                         <div className={styles.ContainerMembersSocialLinksContent}>
-                            <a href="" target="_blank">
-                                <img className={styles.ImgLinkedin} src="../../Images/logo-aboutus-linkedin.png" alt="Social network LinkedIn icon - Pierre" />
-                            </a>
+                            <img className={styles.ImgLinkedin} src="../../Images/logo-aboutus-linkedin.png" alt="Social network LinkedIn icon - Pierre" />
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,7 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './NavbarCategories.module.css';
 import CategoryIngredient from './CategoryIngredient/CategoryIngredient';
-import axios from 'axios';
 import ingredients from '../../../data/Ingredients';
-import Loader from '../../Assets/CssLoader/Loader';
 
 const NavbarCategories = (props) => {
     const [userInput, setUserInput] = useState("");
@@ -53,7 +51,7 @@ const NavbarCategories = (props) => {
             <hr/>
             <h2>Choose your ingredient(s)</h2>
             {ingredients.map((element, index) => {
-                return <CategoryIngredient
+                return <CategoryIngredient  
                     callbackFromParent={props.ingredientChoice}
                     key={index}
                     imageUrl={element.icon}

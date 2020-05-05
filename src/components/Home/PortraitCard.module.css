@@ -21,6 +21,12 @@
 .Name {
     font-family: 'Rubik';
     font-size: 30px;
+    margin-top: 15px;
+}
+
+.Description {
+    font-size: 1.3rem;
+    margin-top: 15px;
 }
 
 @media screen and (max-width: 450px) {
@@ -39,7 +45,9 @@
         display: none;
     }
 
-
+    .Name{
+        text-shadow: 0 0 3px #FFF;
+    }
 }
 @media screen and (max-width: 1200px) {
 

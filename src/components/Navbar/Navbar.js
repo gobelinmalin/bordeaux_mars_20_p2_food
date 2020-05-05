@@ -10,7 +10,9 @@ const Navbar = () => {
 
 
     const closeMenu = () => {
-        setSideMenuOpen(!sideMenuOpen)
+        // if(e.target.classList.contains('overlay') || e.target.classList.contains('btnClose')){
+            setSideMenuOpen(!sideMenuOpen)
+        // }
     }
 
 
@@ -18,10 +20,14 @@ const Navbar = () => {
     return (
         <nav className={'Navbar'}>
         <div className={'LogoAndTitleContainer'} >
-            <LogoFrigo width={'75px'} height={'75px'}/>
-            <h2>Empty your fridge</h2>
+            <Link smooth to="/home">
+                <LogoFrigo width={'75px'} height={'75px'}/>
+            </Link>
+            <Link smooth to="/home">
+                <h2>Empty your fridge</h2>
+            </Link>
         </div>
-        <Menu isOpen={sideMenuOpen} width={ '250px' } right className='BurgerMenu'>
+        <Menu isOpen={sideMenuOpen} width={ '250px' } right className='BurgerMenu' noOverlay>
                     <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/home'>Home</Link></div>
                     <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/inMyFridge'>In my fridge</Link></div>
                     <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/aboutUs'>About us</Link></div>

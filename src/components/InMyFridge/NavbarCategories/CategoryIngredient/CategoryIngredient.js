@@ -52,13 +52,12 @@ class CategoryIngredient extends Component{
                 <div>
                     {this.state.toggle ?
                         <div className={styles.List}>
-                            {this.props.categoryIngredientsName.map((element, index) =>  {
+                            {this.props.categoryIngredientsName.sort().map((element, index) =>  {
+                               
                                 const checkList = this.state.ingredientsList.filter(element2 => { //filter the ingredientList and keep only the ingredients checked.
-
                                     if(Object.values(element2)[0] === true){
                                         return element2
                                     }
-                                    
                                 })
                                 const arrayOfarrays = checkList.map(element=> Object.keys(element)) //get the ingredients names (keys).
                                 let checkedIngredientsList = Array.prototype.concat.apply([], arrayOfarrays);// transform the arrayOfArray into a unique array.
@@ -69,18 +68,15 @@ class CategoryIngredient extends Component{
                                                 name={element}
                                                 type='checkbox'
                                                 onChange={this.handleChecked.bind(this)}
-                                                defaultChecked={checkedIngredientsList.indexOf(element) != -1 ? true: false} // check if the element is already in the chechedIngredientList, and if so, check the checkbox.
+                                                defaultChecked={checkedIngredientsList.indexOf(element) != -1 ? true: false} // check if the element is already in the checkedIngredientList, and if so, check the checkbox.
                                                        
                                             />
                                         </div>
-                                        
                                 })
                             }
                         </div>
-
                         :null
                     }
-                    
                 </div>
             </React.Fragment>
         )
