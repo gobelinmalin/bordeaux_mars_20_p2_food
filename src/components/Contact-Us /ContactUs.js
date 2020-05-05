@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './ContactUs.module.css'
+import axios from 'axios';
 
 const validEmailRegex = 
   RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -7,25 +8,17 @@ const validEmailRegex =
 const validPhoneRegex = 
   RegExp(/^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/);
 
-const validateForm = (errors) => {
-let valid = true;
-Object.values(errors).forEach(
-    // if we have an error string set valid to false
-    (val) => val.length > 0 && (valid = false)
-);
-return valid;
-}
-
 class ContactUs extends Component{
     constructor(props){
         super(props);
         this.state = {
-            fullName : '',
+            name : '',
             email : '',
             phone : '',
+            subject: '',
             message : '',
             errors : {
-                fullName : '',
+                name : '',
                 email : '',
                 phone : '',
                 message : '',
@@ -35,12 +28,29 @@ class ContactUs extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-        if(validateForm(this.state.errors)) {
-          console.info('Valid Form')
-        }else{
-          console.error('Invalid Form')
-        }
+        axios({
+          method: "POST", 
+          url:"http://localhost:3002/send", 
+          data:  this.state
+        }).then((response) => {
+          if (response.data.status === 'success'){
+            alert("Message Sent."); 
+            
+              this.setState({
+                name: '',
+                email:'',
+                phone:'',
+                subject: '',
+                message:'',
+            })
+            
+          }else if(response.data.status === 'fail'){
+            alert("Message failed to send.")
+          }
+        })
       }
+
+   
 
     handleChange = (event) => {
         event.preventDefault();
@@ -48,14 +58,14 @@ class ContactUs extends Component{
         let errors = this.state.errors;
 
         switch(name){
-            case 'fullName':
-                errors.fullName=
+            case 'name':
+                errors.name=
                 value.length < 2
                 ? 'Full name is not valid'
                 : '';
             break;
             case 'email':
-                errors.email =
+                errors.email =    
                 validEmailRegex.test(value)
                 ? ''
                 :'Email is not valid';
@@ -80,8 +90,7 @@ class ContactUs extends Component{
     }
 
     render() {
-    const {errors} = this.state;
-   console.log(errors.phone.length)
+    const {errors, name, email, phone, message, subject} = this.state;
       return (
         <div>
           <div className={styles.Title}>
@@ -124,21 +133,22 @@ class ContactUs extends Component{
 
               <div className={styles.FormWrapper}>
                 <h2>Get in touch</h2>
-                <form onSubmit={this.handleSubmit} noValidate >
-                  <div className={styles.fullName}>
-                    <label htmlFor="fullName" 
-                    className={errors.fullName.length === 22 && `${styles.LabelBad}`}
+                <form onSubmit={this.handleSubmit} noValidate>
+                  <div className={styles.name}>
+                    <label htmlFor="name" 
+                    className={errors.name.length === 22 && `${styles.LabelBad}`}
                     >
                       Full Name *</label>
-                    <input 
+                    <input
+                    value={name}
                     type='text' 
-                    name='fullName' 
+                    name='name' 
                     placeholder="Your name" 
-                    className={errors.fullName.length === 22 && `${styles.InputLengthBad}`}
+                    className={errors.name.length === 22 && `${styles.InputLengthBad}`}
                     onChange={this.handleChange} 
                     noValidate />
-                    {errors.fullName.length > 0 && 
-                    <span className={styles.error}>{errors.fullName}</span>}
+                    {errors.name.length > 0 && 
+                    <span className={styles.error}>{errors.name}</span>}
                   </div>
                   <div className={styles.email}>
                     <label 
@@ -147,7 +157,8 @@ class ContactUs extends Component{
                     >
                         Email *
                         </label>
-                    <input 
+                    <input
+                    value={email}
                     type='email' 
                     name='email'
                     placeholder="Your email" 
@@ -163,7 +174,8 @@ class ContactUs extends Component{
                     >
                     Phone
                     </label>
-                    <input 
+                    <input
+                    value={phone}
                     type='phone' 
                     name='phone' 
                     placeholder="Phone Number : 06 XX XX XX XX / +33 6 XX XX XX XX"
@@ -174,7 +186,7 @@ class ContactUs extends Component{
                   </div>
                   <div className={styles.subject}>
                     <label htmlFor="subject">Subject</label>
-                    <input type='text' name='subject' placeholder="Subject"onChange={this.handleChange} noValidate />
+                    <input value={subject} type='text' name='subject' placeholder="Subject"onChange={this.handleChange} noValidate />
                   </div>
                   <div className={styles.message}>
                     <label 
@@ -183,7 +195,8 @@ class ContactUs extends Component{
                     >
                         Message *
                     </label>
-                    <textarea 
+                    <textarea
+                    value={message}
                     type='text' 
                     name='message' 
                     placeholder="Your message"

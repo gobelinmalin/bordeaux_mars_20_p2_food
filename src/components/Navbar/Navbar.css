@@ -8,7 +8,6 @@
     color: white;
     font-size: 20px;
     font-weight: 400;
-    text-shadow: black 1px 0 10px;
     z-index: 9999;
     background-color:#10AC84;
     margin-top: -10px;
@@ -20,6 +19,17 @@
 
 .LogoAndTitleContainer h2 {
     margin-top: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.LogoAndTitleContainer a {
+  color: white;
+  text-decoration: none;
+}
+
+.LogoAndTitleContainer h2:hover {
+  color: #F29B20;
 }
 
 .NavItemsContainer {
@@ -37,14 +47,14 @@
     text-decoration: none;
 }
 .NavItemsContainer a:hover{
-    color: grey;
+    color: #F29B20;
     
 }
 
-
-
 .navItemsBurger a {
   color: white;
+  text-decoration: none;
+  font-weight: 800;
 }
 
 /* Position and sizing of burger button */
@@ -52,8 +62,6 @@
     position: fixed;
     width: 36px;
     height: 30px;
-    /* left: 16px;
-    top: 26px; */
     left: 85%;
     top: 25px;
     z-index: 1000;
@@ -71,13 +79,23 @@
    
   /* Position and sizing of clickable cross button */
   .bm-cross-button {
-    height: 24px;
-    width: 24px;
+    height: 84px!important;
+    width: 84px!important;
+    right: 45px !important;
+    top: 20px !important
+  }
+
+  .bm-cross-button button {
+    left: 65px !important;
+    top: -15px !important;
+    width: 70% !important;
+    height: 70% !important;
   }
    
   /* Color/shape of close button cross */
   .bm-cross {
     background: #bdc3c7;
+    width: 50px !important;
   }
    
   /*
@@ -115,20 +133,29 @@
   }
    
   /* Styling of overlay */
-  .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
+  /* .bm-overlay {
+    right: -100px;
+  } */
+
+  .BurgerMenu {
+    width: 600px;
   }
 
-  @media screen and (max-width: 775px) {
+  @media screen and (max-width: 842px) {
     .NavItems {
         display: none;
     }
     .bm-burger-button{
-      left: 85%;
+      left: 90%;
     }
     
     .LogoAndTitleContainer h2 {
       display: none;
+    }
+
+    .bm-overlay {
+      background: none !important;
+      right: 200px;
     }
    
 }
@@ -136,9 +163,13 @@
   .bm-burger-button{
     left: 90%
   }
+  .bm-overlay {
+    background: none !important;
+    right: 200px;
+  }
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 843px) {
   .bm-burger-button{
     display: none;
   }

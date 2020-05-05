@@ -91,7 +91,7 @@ const InMyFridge = () => {
         const filteredArray = checkedIngredients.filter(element => {
             const value = Object.values(element);
             const key = Object.keys(element);
-
+            
             if (value[0] === true) {
                 return key[0]
             }
