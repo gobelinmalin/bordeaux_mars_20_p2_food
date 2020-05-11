@@ -20,9 +20,9 @@ const NutritionInfo = (props) => {
     return (
         <React.Fragment>
                 <div className={styles.Amount}>
-                <LightTooltip title={props.title} arrow>
+                  <LightTooltip title={props.title} arrow>
                     <img className={styles.NutritionImg} src={`../../../../Images/Icone/${props.icon}.png`} alt={props.title} />
-                    </LightTooltip>
+                  </LightTooltip>
                     <small>{typeof props.amount === 'string' ? props.amount : props.amount.toFixed(2)} {props.unit}</small>
                 </div>
         </React.Fragment>
