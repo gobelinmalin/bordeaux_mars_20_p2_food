@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className={styles.ContainerContentLinksItems}>
                     <ul>
                         <h2>Empty my Fridge</h2>
-                        <li><Link smooth to='/home'>Home</Link></li>
+                        <li><Link smooth to='/'>Home</Link></li>
                         <li><Link smooth to='/inMyFridge'>In my fridge</Link></li>
                         <li><Link smooth to='/aboutUs'>About us</Link></li>
                         <li><Link smooth to='/contactUs'>Contact us</Link></li>
