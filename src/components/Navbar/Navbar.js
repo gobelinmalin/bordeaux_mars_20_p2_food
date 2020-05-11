@@ -20,25 +20,26 @@ const Navbar = () => {
     return (
         <nav className={'Navbar'}>
         <div className={'LogoAndTitleContainer'} >
-            <Link smooth to="/home">
+            <Link smooth to="/">
                 <LogoFrigo width={'75px'} height={'75px'}/>
             </Link>
-            <Link smooth to="/home">
+            <Link smooth to="/">
                 <h2>Empty your fridge</h2>
             </Link>
         </div>
         <Menu isOpen={sideMenuOpen} width={ '250px' } right className='BurgerMenu' noOverlay>
-                    <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/home'>Home</Link></div>
+                    <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/'>Home</Link></div>
                     <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/inMyFridge'>In my fridge</Link></div>
                     <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/aboutUs'>About us</Link></div>
                     <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/contactUs'>Contact us</Link></div>
 
         </Menu>
             <div className={'NavItemsContainer'}>
-                <div className={'NavItems'}><Link smooth to='/home'>Home</Link></div>
+                <div className={'NavItems'}><Link smooth to='/'>Home</Link></div>
                 <div className={'NavItems'}><Link smooth to='/inMyFridge'>In my fridge</Link></div>
                 <div className={'NavItems'}><Link smooth to='/aboutUs'>About us</Link></div>
-                <div className={'NavItems'}><Link smooth to='/contactUs'>Contact us</Link></div>   
+                <div className={'NavItems'}><Link smooth to='/contactUs'>Contact us</Link></div>
+                <div className={'NavItems'}><Link smooth to='/testComplexe'>Test Complexe</Link></div>    
             </div>
         </nav>
     )

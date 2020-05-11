@@ -1,4 +1,4 @@
-  import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import React, { useState, useEffect } from 'react';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -6,6 +6,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 import Fade from '@material-ui/core/Fade';
 import styles from "./RecipeModal.module.css";
 import axios from 'axios';
+import NutritionInfo from './NutritionInfo';
 
 const LightTooltip = withStyles((theme) => ({
   tooltip: {
@@ -63,7 +64,8 @@ export default function TransitionsModal(props) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [recipe, setRecipe] = useState([]);
-  const [nutrition, setNutrition] = useState({});
+  const [nutrition, setNutrition] = useState({}); //nutrition elements with the extended search (dietetic search page)
+  const [diet, setDiet ] = useState([]); //nutrition eements with the basico search (In my fridge page)
   
 
   const handleOpen = () => {
@@ -106,11 +108,33 @@ export default function TransitionsModal(props) {
         }
       )
       .then(response => response.data)
-      .then(data => setNutrition(data))
+      .then(data => {
+        const newArray = data.good.concat(data.bad)
+        const finalArray = newArray.filter(element => {
+          switch(element.title) {
+            case 'Protein':
+              return element;
+              break;
+            case 'Fat':
+              return element;
+              break;
+            case 'Carbohydrates':
+              return element;
+              break;
+            case 'Calories':
+              return element;
+              break;
+          }
+        })
+        setNutrition(data)
+        setDiet(finalArray)
+        })
       .catch((err) => {
         console.log(err);
       })
   }, [dataRecipe])
+
+  console.log(diet);
 
   return (
     <div>
@@ -174,26 +198,55 @@ export default function TransitionsModal(props) {
                 </div>
               </div>
                 <div className={styles.NutritionContainer}>
-                  <LightTooltip title='Calories' arrow><div>
-                    <img className={styles.NutritionImg} title="calories" src="../../../../Images/Icone/icone-kcal2x.png" alt="calories"/>
-                    <small>{nutrition.calories}</small>
-                  </div>
+                  {/* <LightTooltip title='Calories' arrow>
+                    <div>
+                      <img className={styles.NutritionImg} src="../../../../Images/Icone/icone-kcal2x.png" alt="calories"/>
+                      <small>{nutrition.calories}</small>
+                    </div>
+                  </LightTooltip>
+                  
+                  <LightTooltip title='Fat' arrow>
+                  <div>
+                    <img className={styles.NutritionImg} src="../../../../Images/Icone/icone-fat2x.png" alt="fat"/>
+                    <small>{nutrition.fat}</small>
+                  </div> 
                   </LightTooltip>
                   
                   <div>
-                    <img className={styles.NutritionImg} title="fat" src="../../../../Images/Icone/icone-fat2x.png" alt="fat"/>
-                    <small>{nutrition.fat}</small>
-                  </div> 
-                  
-                  <div>
-                    <img className={styles.NutritionImg} title="carbs" src="../../../../Images/Icone/icone-carbs2x.png" alt="carbs"/>
+                    <img className={styles.NutritionImg} src="../../../../Images/Icone/icone-carbs2x.png" alt="carbs"/>
                     <small>{nutrition.carbs}</small>
                   </div>
                 
                   <div >
-                    <img className={styles.NutritionImg} title="protein" src="../../../../Images/Icone/icone-prot2x.png" alt="protein"/>
+                    <img className={styles.NutritionImg} src="../../../../Images/Icone/icone-prot2x.png" alt="protein"/>
                     <small>{nutrition.protein}</small>
-                  </div>
+                  </div> */}
+
+                 
+                 
+
+                 {/* If its a complexe nutrition, set specific categories, if not set the other one */}
+                  {
+                    props.complexeNutrition
+                    ?  props.complexeNutrition.map(element => {
+                      return <NutritionInfo
+                              icon={element.title}
+                              title={element.title}
+                              amount={element.amount}
+                              unit={element.unit}
+                      />
+                    })
+
+                    : diet.map(element => {
+                      return <NutritionInfo
+                              icon={element.title}
+                              title={element.title}
+                              amount={element.amount}
+                              unit={element.unit}
+                      />
+                    })
+                  }                   
+                
                 </div>            
               </div>              
               <div className={styles.RecipeDetail}>

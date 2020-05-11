@@ -85,6 +85,8 @@
     display: flex;
     justify-content: space-evenly;
     /* width: 100%; */
+    flex-wrap: wrap;
+    width: 63% !important;
 }
 
 .NutritionContainer div {
@@ -94,10 +96,6 @@
 
 .NutritionContainer small {
     padding-left: 5px;
-}
-
-.NutritionImg{
-    width: 35px;
 }
 
 .RecipeIcon small{
