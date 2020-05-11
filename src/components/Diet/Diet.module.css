@@ -1,0 +1,125 @@
+.DietContainer .ContainerTitle{
+    position: relative;
+    width: 100%;
+}
+
+.DietContainer .ContainerTitleImgBackground{
+    background-image: url('../../Images/img/Diet.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 550px;
+    margin-top: 5px;
+}
+
+.ContainerTitle h1{
+    font-size: 8rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.DietContainer{
+    height: 400vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FormLabel {
+    display: flex;
+    flex-direction: column;
+}
+
+.FormLabel input[type=text],
+.FormLabel input[type=number],
+.FormLabel input[type=radio]{
+    padding: 10px;
+    border: 1px solid #d6d1d5;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    width: 100%;
+    margin: 20px;
+}
+
+/* .FormDietContainer{
+    padding-top: 100px;
+} */
+
+.buttonCall {
+    min-width: 50%;
+    cursor: pointer;
+    margin-right: 0.25em;
+    margin-top: 0.5em;
+    padding: 0.938em;
+    border: none;
+    border-radius: 30px;
+    background-color: #10AC84;
+    color: #fefefe;
+    font-size: 20px;
+    font-family: 'Rubik';
+    font-weight: bold;
+}
+
+.RecipesContainer{   
+display: flex;
+justify-content: space-evenly;
+width: 80%;
+flex-wrap: wrap;
+}
+
+.ContainerSpinner{
+    /* margin-top: 30vh; */
+    position: absolute;
+    top: 280vh;
+    left: 40%;
+    transform: calc(-50%, -50%);
+    -webkit-transform: calc(-50%, -50%);
+    -moz-transform: calc(-50%, -50%);
+    -ms-transform: calc(-50%, -50%);
+    -o-transform: calc(-50%, -50%);
+}
+
+@media (min-width: 1900px){
+
+    .DietContainer{
+        height: 250vh;
+    }
+
+    .ContainerSpinner{
+        top: 180vh;
+    }
+    
+    .RecipesContainer{
+        width: 60%;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1899px) {
+    .ContainerSpinner{
+        top: 250vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

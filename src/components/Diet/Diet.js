@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import MiniRecipe from '../InMyFridge/RecipeList/MiniRecipe/MiniRecipe';
 import axios from 'axios';
-import styles from "./TestComplexe.module.css";
+import styles from "./Diet.module.css";
+import Loader from "../Assets/CssLoader/Loader";
 
-const TestComplexe = () => {
+const Diet = () => {
     
     // données des inputs
     const [ dataInput, setDataInput] = useState({
@@ -11,22 +12,25 @@ const TestComplexe = () => {
         intolerances: '',
         cuisine: '',
         excludeIngredients: '',
-        maxCalories: 200,
+        maxCalories: 500,
         minProtein: 0,
-        maxFat: 10,
-        maxSaturatedFat: 10,
+        maxFat: 100,
+        maxSaturatedFat: 100,
         minCarbs: 0,
-        maxSugar: 15,
-        maxVitaminB12: 1000,
+        maxSugar: 150,
+        minVitaminB12: 0,
         minIron: 0,
         minCalcium: 0,
-        maxCholesterol: 5,
+        maxCholesterol: 50,
         minFiber: 0,
-        maxSodium: 1,
+        maxSodium: 100,
         minMagnesium: 0,
         type: '',
         recipeResult: [],
+        loading: false
     });
+
+    //const [loading, setLoading] = useState(false);
 
     const handleChangeInputs = (e) => {
         setDataInput({
@@ -62,10 +66,12 @@ const TestComplexe = () => {
         }
     }
 
-    
     const complexeSearch = () => {
-        console.log(dataInput.type)
-        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?ranking=2&diet=${dataInput.diet}&intolerances=${dataInput.intolerances}&cuisine=${dataInput.cuisine}&excludeIngredients=${dataInput.excludeIngredients}&maxCalories=${dataInput.maxCalories}&minProtein=${dataInput.minProtein}&maxFat=${dataInput.maxFat}&maxSaturatedFat=${dataInput.maxSaturatedFat}&minCarbs=${dataInput.minCarbs}&maxSugar=${dataInput.maxSugar}&minIron=${dataInput.minIron}&minCalcium=${dataInput.minCalcium}&maxCholesterol=${dataInput.maxCholesterol}&minFiber=${dataInput.minFiber}&maxSodium=${dataInput.maxSodium}&minMagnesium=${dataInput.minMagnesium}&type=${dataInput.type}`
+        setDataInput({
+            ...dataInput,
+            loading: true
+        })
+        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?ranking=2&diet=${dataInput.diet}&intolerances=${dataInput.intolerances}&cuisine=${dataInput.cuisine}&excludeIngredients=${dataInput.excludeIngredients}&maxCalories=${dataInput.maxCalories}&minProtein=${dataInput.minProtein}&maxFat=${dataInput.maxFat}&maxSaturatedFat=${dataInput.maxSaturatedFat}&minCarbs=${dataInput.minCarbs}&maxSugar=${dataInput.maxSugar}&minIron=${dataInput.minIron}&minCalcium=${dataInput.minCalcium}&maxCholesterol=${dataInput.maxCholesterol}&minFiber=${dataInput.minFiber}&maxSodium=${dataInput.maxSodium}&minMagnesium=${dataInput.minMagnesium}&type=${dataInput.type}&minVitaminB12=${dataInput.minVitaminB12}`
         
         axios.get(url,
             {
@@ -77,32 +83,38 @@ const TestComplexe = () => {
         .then(response => response.data)
         .then(data => setDataInput({
             ...dataInput,
-            recipeResult: data.results
-        }))
+            recipeResult: data.results,
+            loading: false,
+        }
+        ))
         .catch(error => console.log(error));
-
     }
 
-    console.log(dataInput.recipeResult)
     return(
         <div className={styles.DietContainer}>
-            <div className={styles.Diets}>
+            <div className={styles.ContainerTitle}>
+                <div className={styles.ContainerTitleImgBackground} />
                 <h1>Diet Extended Search</h1>
+            </div>
+            <div className={styles.Diets}>
                 <div className={styles.FormDietContainer}>
-                    <div className= {styles.FormLabel}>
-                        <label>Diet</label>
-                        <input placeholder='ex: vegetarian' onChange={handleChangeInputs} value={dataInput.diet} type="text" name='diet' />
+                    <div className={styles.ContainerSectionForm}>
+                        <div className= {styles.FormLabel}>
+                            <label>Diet</label>
+                            <input placeholder='ex: vegetarian' onChange={handleChangeInputs} value={dataInput.diet} type="text" name='diet' />
+                        </div>
+
+                        <div className= {styles.FormLabel}>
+                            <label>Intolerances</label>
+                            <input placeholder='ex: gluten' onChange={handleChangeInputs} value={dataInput.intolerances} type="text" name='intolerances' />
+                        </div>
+
+                        <div className= {styles.FormLabel}>
+                            <label>Cuisine</label>
+                            <input placeholder='ex: italian' onChange={handleChangeInputs} value={dataInput.cuisine} type="text" name='cuisine' />
+                        </div>
                     </div>
 
-                    <div className= {styles.FormLabel}>
-                        <label>Intolerances</label>
-                        <input placeholder='ex: gluten' onChange={handleChangeInputs} value={dataInput.intolerances} type="text" name='intolerances' />
-                    </div>
-
-                    <div className= {styles.FormLabel}>
-                        <label>Cuisine</label>
-                        <input placeholder='ex: italian' onChange={handleChangeInputs} value={dataInput.cuisine} type="text" name='cuisine' />
-                    </div>
                     
                     <div className= {styles.FormLabel}>
                         <label>Exclude ingredients</label>
@@ -121,11 +133,11 @@ const TestComplexe = () => {
 
                     <div className= {styles.FormLabel}>
                         <label>Fat (gr)</label>
-                        <input placeholder="ex: 10" onChange={handleChangeInputs} value={dataInput.maxFat} type="number" min="10" name='maxFat' />
+                        <input placeholder="ex: 10" onChange={handleChangeInputs} value={dataInput.maxFat} type="number" min="50" name='maxFat' />
                     </div>
                     <div className= {styles.FormLabel}>
                         <label>Max saturated fat (gr)</label>
-                        <input placeholder="ex: 50" onChange={handleChangeInputs} value={dataInput.maxSaturatedFat} type="number" min="10" name='maxSaturatedFat' />
+                        <input placeholder="ex: 50" onChange={handleChangeInputs} value={dataInput.maxSaturatedFat} type="number" min="50" name='maxSaturatedFat' />
                     </div>
 
                     <div className= {styles.FormLabel}>
@@ -183,7 +195,14 @@ const TestComplexe = () => {
                 <button className={styles.buttonCall} onClick={complexeSearch}>Recherche</button>
 
             </div>
-
+            <div className={styles.ContainerSpinner}>
+                {
+                    dataInput.loading
+                    ? <Loader />
+                    : null
+                }
+            </div>
+            
             <div className={styles.RecipesContainer}>
                 {dataInput.recipeResult.map((recipe, index) => {
                     return <MiniRecipe
@@ -200,4 +219,4 @@ const TestComplexe = () => {
     )
 }
 
-export default TestComplexe;
+export default Diet;
