@@ -12,6 +12,7 @@
     -o-border-radius: 5px;
     z-index: 1000;
     position: relative;
+    margin-top: 30px;
 }
 
 .divTest button {
@@ -76,6 +77,13 @@
     height: 80px;
     text-align: center;
     padding: 0 10px 0px 10px;
+}
+
+@media screen and (min-width: 1201px){
+    
+    .MiniRecipe{
+        margin-right: 30px; 
+    }
 }
 
 @media screen and (max-width: 769px){

@@ -27,6 +27,14 @@ const Home = () => {
                 </div>
             </div>
             <div>
+                <div className={styles.Diet}>
+                    <h3>Diet section</h3>
+                    <p>New features ! You can now search a recipe with a complexe research which takes into account a lot of dietetic informations, such as  specififc diets, intolerances or macro and micro nutrients.</p>
+                        <button className={styles.buttonDiet} ><Link smooth to='/diet'>Recipe by diet</Link></button>
+                </div>
+            </div>
+            
+            <div>
                 <div className={styles.BackgroundImage2}>
                     <h3>Our team</h3>
                     <div className={styles.AllPortrait} >

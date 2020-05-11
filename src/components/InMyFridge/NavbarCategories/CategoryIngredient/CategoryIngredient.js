@@ -2,6 +2,18 @@ import React, {Component} from 'react';
 import styles from './CategoryIngredient.module.css'
 import CategoryIcon from '../../../Assets/CategoryIcon/CatergoryIcon';
 import ingredientsList from '../../../../data/IngredientsList';
+import Switch from '@material-ui/core/Switch';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import Checkbox from '@material-ui/core/Checkbox';
+
+const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#10AC84',
+      }
+    },
+  });
 
 class CategoryIngredient extends Component{
 
@@ -47,7 +59,13 @@ class CategoryIngredient extends Component{
                         />
                         <h3>{this.props.itemName}</h3>
                     </div>
-                    <input onClick={this.handleToggle} type='checkbox'  />
+                    {/* <input onClick={this.handleToggle} type='checkbox'  /> */}
+                    <ThemeProvider theme={theme}>
+                        <Switch 
+                        onChange={this.handleToggle}
+                        color="primary"
+                        />
+                    </ThemeProvider>
                 </div>
                 <div>
                     {this.state.toggle ?
@@ -64,13 +82,16 @@ class CategoryIngredient extends Component{
                 
                                 return  <div key={index} className={styles.ItemList}>
                                             <p>{element}</p>
-                                            <input
+                                            <ThemeProvider theme={theme}>
+                                            <Checkbox
                                                 name={element}
-                                                type='checkbox'
+                                                color="primary"
+                                                size="small"
                                                 onChange={this.handleChecked.bind(this)}
                                                 defaultChecked={checkedIngredientsList.indexOf(element) != -1 ? true: false} // check if the element is already in the checkedIngredientList, and if so, check the checkbox.
                                                        
                                             />
+                                            </ThemeProvider>
                                         </div>
                                 })
                             }

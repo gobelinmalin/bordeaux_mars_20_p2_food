@@ -152,6 +152,70 @@
     color: white;
 }
 
+
+.Diet {
+    background-image: url('../../Images/img/Diet.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5px;
+    width : 100%;
+    height: 550px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.Diet h3{
+    font-size: 90px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.Diet p {
+    
+    font-size: 25px;
+    width: 40%;
+    margin:0 auto;
+    margin-top: 25px;
+    text-shadow: 0 0 3px white;
+    
+}
+
+.buttonDiet{
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #10AC84;
+    color: #fefefe;
+    font-size: 20px;
+    font-family: 'Rubik';
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+
+}
+.buttonDiet:hover{
+    background-color: #F29B20;
+}
+
+.buttonDiet a {
+    text-decoration: none;
+    color: white;
+}
+
+.buttonDiet a:visited {
+    color: white;
+}
+
+.Diet button {
+    width: 200px;
+    height: 50px;
+    margin-top: 25px;
+    background-color: #10AC84;
+    border-radius: 30px;
+    text-align: center;
+}
+
 @media screen and (min-width: 1501px) {
     .Title {
         top: 30%;
