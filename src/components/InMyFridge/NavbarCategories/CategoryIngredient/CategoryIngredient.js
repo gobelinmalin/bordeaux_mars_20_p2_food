@@ -84,6 +84,7 @@ class CategoryIngredient extends Component{
                                             <p>{element}</p>
                                             <ThemeProvider theme={theme}>
                                             <Checkbox
+                                                style={{ width: 8, height: 8 }}
                                                 name={element}
                                                 color="primary"
                                                 size="small"

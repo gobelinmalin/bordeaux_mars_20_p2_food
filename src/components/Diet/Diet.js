@@ -3,6 +3,11 @@ import MiniRecipe from '../InMyFridge/RecipeList/MiniRecipe/MiniRecipe';
 import axios from 'axios';
 import styles from "./Diet.module.css";
 import Loader from "../Assets/CssLoader/Loader";
+import LogoTypeMeal from '../Assets/LogoTypeMeal/LogoTypeMeal';
+import MainCourse from '../../Images/Icone/plate.png';
+import Breakfast from '../../Images/Icone/pancake.png';
+import Desert from '../../Images/Icone/cookie.png';
+
 
 const Diet = () => {
     
@@ -25,6 +30,7 @@ const Diet = () => {
         minFiber: 0,
         maxSodium: 100,
         minMagnesium: 0,
+        minVitaminC: 0,
         type: '',
         recipeResult: [],
         loading: false
@@ -69,9 +75,10 @@ const Diet = () => {
     const complexeSearch = () => {
         setDataInput({
             ...dataInput,
+            recipeResult: [],
             loading: true
         })
-        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?ranking=2&diet=${dataInput.diet}&intolerances=${dataInput.intolerances}&cuisine=${dataInput.cuisine}&excludeIngredients=${dataInput.excludeIngredients}&maxCalories=${dataInput.maxCalories}&minProtein=${dataInput.minProtein}&maxFat=${dataInput.maxFat}&maxSaturatedFat=${dataInput.maxSaturatedFat}&minCarbs=${dataInput.minCarbs}&maxSugar=${dataInput.maxSugar}&minIron=${dataInput.minIron}&minCalcium=${dataInput.minCalcium}&maxCholesterol=${dataInput.maxCholesterol}&minFiber=${dataInput.minFiber}&maxSodium=${dataInput.maxSodium}&minMagnesium=${dataInput.minMagnesium}&type=${dataInput.type}&minVitaminB12=${dataInput.minVitaminB12}`
+        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?ranking=2&diet=${dataInput.diet}&intolerances=${dataInput.intolerances}&cuisine=${dataInput.cuisine}&excludeIngredients=${dataInput.excludeIngredients}&maxCalories=${dataInput.maxCalories}&minProtein=${dataInput.minProtein}&maxFat=${dataInput.maxFat}&maxSaturatedFat=${dataInput.maxSaturatedFat}&minCarbs=${dataInput.minCarbs}&maxSugar=${dataInput.maxSugar}&minIron=${dataInput.minIron}&minCalcium=${dataInput.minCalcium}&maxCholesterol=${dataInput.maxCholesterol}&minFiber=${dataInput.minFiber}&maxSodium=${dataInput.maxSodium}&minMagnesium=${dataInput.minMagnesium}&type=${dataInput.type}&minVitaminB12=${dataInput.minVitaminB12}&minVitaminC=${dataInput.minVitaminC}`
         
         axios.get(url,
             {
@@ -91,7 +98,7 @@ const Diet = () => {
     }
 
     return(
-        <div className={styles.DietContainer}>
+        <div className={dataInput.recipeResult.length > 0 ? styles.ScreenFull : styles.DietContainer}>
             <div className={styles.ContainerTitle}>
                 <div className={styles.ContainerTitleImgBackground} />
                 <h1>Diet Extended Search</h1>
@@ -115,86 +122,116 @@ const Diet = () => {
                         </div>
                     </div>
 
+                    <div className={styles.ContainerSectionForm}>
+                        <div className= {styles.FormLabel}>
+                            <label>Exclude ingredients</label>
+                            <input placeholder='ex: mushroom' onChange={handleChangeInputs} value={dataInput.excludeIngredients} type="text" name='excludeIngredients' />
+                        </div>
+
+                        <div className= {styles.FormLabel}>
+                            <label>Max. calories (cal)</label>
+                            <input placeholder='min. 200' onChange={handleChangeInputs} value={dataInput.maxCalories} type="number" min="200" name='maxCalories' />
+                        </div>
+
+                        <div className= {styles.FormLabel}>
+                            <label>Min. protein (gr)</label>
+                            <input placeholder="ex: 25" onChange={handleChangeInputs} value={dataInput.minProtein} type="number" name='minProtein' />
+                        </div>
+                    </div>
                     
-                    <div className= {styles.FormLabel}>
-                        <label>Exclude ingredients</label>
-                        <input placeholder='ex: mushroom' onChange={handleChangeInputs} value={dataInput.excludeIngredients} type="text" name='excludeIngredients' />
+                    <div className={styles.ContainerSectionForm}>
+
+                        <div className= {styles.FormLabel}>
+                            <label>Fat (gr)</label>
+                            <input placeholder="ex: 10" onChange={handleChangeInputs} value={dataInput.maxFat} type="number" min="50" name='maxFat' />
+                        </div>
+                        <div className= {styles.FormLabel}>
+                            <label>Max saturated fat (gr)</label>
+                            <input placeholder="ex: 50" onChange={handleChangeInputs} value={dataInput.maxSaturatedFat} type="number" min="50" name='maxSaturatedFat' />
+                        </div>
+
+                        <div className= {styles.FormLabel}>
+                            <label>Min carbs (gr)</label>
+                            <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minCarbs} type="number" name='minCarbs' />
+                        </div>
+                        
                     </div>
 
-                    <div className= {styles.FormLabel}>
-                        <label>Max. calories (cal)</label>
-                        <input placeholder='min. 200' onChange={handleChangeInputs} value={dataInput.maxCalories} type="number" min="200" name='maxCalories' />
+                    <div className={styles.ContainerSectionForm}>
+                        <div className= {styles.FormLabel}>
+                            <label>Max sugar (gr)</label>
+                            <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.maxSugar} type="number" min="15" name='maxSugar' />
+                        </div>
+                        <div className= {styles.FormLabel}>
+                            <label>Min vitamin B12 (µg)</label>
+                            <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minVitaminB12} type="number" name='minVitaminB12' />
+                        </div>
+                        <div className= {styles.FormLabel}>
+                            <label>Min iron (g)</label>
+                            <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minIron} type="number" name='minIron' />
+                        </div>
                     </div>
 
-                    <div className= {styles.FormLabel}>
-                        <label>Min. protein (gr)</label>
-                        <input placeholder="ex: 25" onChange={handleChangeInputs} value={dataInput.minProtein} type="number" name='minProtein' />
+
+                    <div className={styles.ContainerSectionForm}>
+                        <div className= {styles.FormLabel}>
+                            <label>Min calcium (mg)</label>
+                            <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minCalcium} type="number" name='minCalcium' />
+                        </div>
+                        <div className= {styles.FormLabel}>
+                            <label>Max cholesterol (mg)</label>
+                            <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.maxCholesterol} type="number" name='maxCholesterol' />
+                        </div>
+                        <div className= {styles.FormLabel}>
+                            <label>Min fiber (mg)</label>
+                            <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minFiber} type="number" name='minFiber' />
+                        </div>
                     </div>
 
-                    <div className= {styles.FormLabel}>
-                        <label>Fat (gr)</label>
-                        <input placeholder="ex: 10" onChange={handleChangeInputs} value={dataInput.maxFat} type="number" min="50" name='maxFat' />
-                    </div>
-                    <div className= {styles.FormLabel}>
-                        <label>Max saturated fat (gr)</label>
-                        <input placeholder="ex: 50" onChange={handleChangeInputs} value={dataInput.maxSaturatedFat} type="number" min="50" name='maxSaturatedFat' />
-                    </div>
-
-                    <div className= {styles.FormLabel}>
-                        <label>Min carbs (gr)</label>
-                        <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minCarbs} type="number" name='minCarbs' />
-                    </div>
-
-                    <div className= {styles.FormLabel}>
-                        <label>Max sugar (gr)</label>
-                        <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.maxSugar} type="number" min="15" name='maxSugar' />
-                    </div>
-
-                    <div className= {styles.FormLabel}>
-                        <label>Min vitamin B12 (µg)</label>
-                        <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minVitaminB12} type="number" name='minVitaminB12' />
-                    </div>
-                    <div className= {styles.FormLabel}>
-                        <label>Min iron (g)</label>
-                        <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minIron} type="number" name='minIron' />
-                    </div>
-                    <div className= {styles.FormLabel}>
-                        <label>Min calcium (mg)</label>
-                        <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minCalcium} type="number" name='minCalcium' />
-                    </div>
-                    <div className= {styles.FormLabel}>
-                        <label>Max cholesterol (mg)</label>
-                        <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.maxCholesterol} type="number" name='maxCholesterol' />
-                    </div>
-                    <div className= {styles.FormLabel}>
-                        <label>Min fiber (mg)</label>
-                        <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minFiber} type="number" name='minFiber' />
-                    </div>
-                    <div className= {styles.FormLabel}>
-                        <label>Max sodium (g)</label>
-                        <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.maxSodium} type="number" name='maxSodium' />
-                    </div>
-                    <div className= {styles.FormLabel}>
-                        <label>Magnesium (g)</label>
-                        <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minMagnesium} type="number" name='minMagnesium' />
+                    <div className={styles.ContainerSectionForm}>
+                        <div className= {styles.FormLabel}>
+                            <label>Max sodium (g)</label>
+                            <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.maxSodium} type="number" name='maxSodium' />
+                        </div>
+                        <div className= {styles.FormLabel}>
+                            <label>Magnesium (g)</label>
+                            <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minMagnesium} type="number" name='minMagnesium' />
+                        </div>
+                        <div className= {styles.FormLabel}>
+                            <label>Vitamin C (mg)</label>
+                            <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minMagnesium} type="number" name='minVitaminC' />
+                        </div>
                     </div>
                 </div>
 
 
-                <div className= {styles.FormLabel}>
-                    <label>Type of course :</label>
-                    <label>main course</label>
-                    <input onChange={handleChangeRadio} value="main course" type="radio" name='type' />
-                    <label>breakfast</label>
-                    <input onChange={handleChangeRadio} value='breakfast' type="radio" name='type' />
-                    <label>dessert</label>
-                    <input onChange={handleChangeRadio} value='dessert' type="radio" name='type' />
-                    
+                <div className={[styles.FormLabel, styles.TypeMeal].join(' ')}>
+                    <h3>Type of course :</h3>
+                    <div className={styles.LabelInRow}>
+                        <div className={styles.InputInRow}>
+                            <LogoTypeMeal logo={MainCourse}/>
+                            <label>main course</label>
+                            <input onChange={handleChangeRadio} value="main course" type="radio" name='type' />
+                        </div>
+                        <div className={styles.InputInRow}>
+                            <LogoTypeMeal logo={Breakfast}/>
+                            <label>breakfast</label>
+                            <input onChange={handleChangeRadio} value='breakfast' type="radio" name='type' />
+                        </div>
+                        <div className={styles.InputInRow}>
+                            <LogoTypeMeal logo={Desert}/>
+                            <label>dessert</label>
+                            <input onChange={handleChangeRadio} value='dessert' type="radio" name='type' />
+                        </div>
+                    </div>
+               </div>
+                
+                <div className={styles.SearchButton}>
+                    <button className={styles.buttonCall} onClick={complexeSearch}>Recherche</button>
                 </div>
-                    
-                <button className={styles.buttonCall} onClick={complexeSearch}>Recherche</button>
 
             </div>
+
             <div className={styles.ContainerSpinner}>
                 {
                     dataInput.loading

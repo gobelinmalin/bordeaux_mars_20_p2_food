@@ -51,7 +51,7 @@ const Home = () => {
                         <PortraitCard
                             imageUrl={require('../../Images/Pierre.jpg')}
                             name={'Pierre'}
-                            text={"Passionate about web development, reading personal development's books, I also like jogging and swimming without forgetting to have fun with my friends !"}
+                            text={"Passionate about web development, reading psychology's books, I also like jogging and swimming without forgetting to have fun with my friends !"}
                         />
                     </div>
                     <div className={styles.AboutUsBtn} >
