@@ -32,6 +32,7 @@
     background-position: center;
     margin-top: 75px;
     margin-left: 150px;
+    margin-bottom: 75px;
     width : 50%;
     height: 550px;
 }
@@ -67,12 +68,11 @@
 }
 
 .BackgroundImage2 {
-    background-image: url('../../Images/HomePortraitBackground.jpg');
+    /* background-image: url('../../Images/HomePortraitBackground.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: 5px;
     width : 100%;
-    height: 800px;
+    height: 750px;
     padding: 25px;
 }
 
@@ -104,6 +104,7 @@
     background-image: url('../../Images/ImageContactUs.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 40% 14%;
     width : 100%;
     height: 450px;
     padding-top: 150px;
@@ -154,12 +155,15 @@
 
 
 .Diet {
-    background-image: url('../../Images/img/Diet.jpg');
+    background-image: url('../../Images/img/Diet2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    /* background-position: 25% 40%; */
+    background-position: 30% 0%;
+    /* background-position: 0% 50%; */
     margin-top: 5px;
     width : 100%;
-    height: 550px;
+    height: 650px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -167,7 +171,7 @@
 .Diet h3{
     font-size: 90px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 .Diet p {
@@ -176,7 +180,7 @@
     width: 40%;
     margin:0 auto;
     margin-top: 25px;
-    text-shadow: 0 0 3px white;
+    /* text-shadow: 0 0 3px white; */
     
 }
 
@@ -226,10 +230,10 @@
 @media screen and (min-width: 1201px) {
 
     .BackgroundImage1{
-        background-position: 0px;
+        background-position: 15% 75%;
         margin-top: 5px;
         width : 100%;
-        height: 600px;
+        height: 750px;
     }
 
     .BackgroundImage3 h3 {
@@ -237,7 +241,8 @@
     }
 
     .BackgroundImage3 {
-        height: 450px;
+        height: 550px;
+        padding-top: 150px;
     }
 }
 
