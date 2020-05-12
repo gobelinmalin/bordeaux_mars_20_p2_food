@@ -122,7 +122,7 @@
     }
 
     .AboutUs .ContainerMembersImgBackground{
-        height: 95vh;
+        height: 120vh;
     }
 
     .AboutUs .ContainerMembers .AllPortrait{
@@ -134,8 +134,8 @@
     }
 
     .AboutUs .ContainerMembersSocial{
-        margin-top: 277px;
-        height: 90vh;
+        margin-top: 310px;
+        height: 105vh;
     }
 }
 
@@ -151,7 +151,7 @@
     }
 
     .AboutUs .ContainerMembersSocial{
-        margin-top: 400px;
-        height: 150vh;
+        margin-top: 350px;
+        height: 152vh;
     }
 }
