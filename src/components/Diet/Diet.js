@@ -7,9 +7,21 @@ import LogoTypeMeal from '../Assets/LogoTypeMeal/LogoTypeMeal';
 import MainCourse from '../../Images/Icone/plate.png';
 import Breakfast from '../../Images/Icone/pancake.png';
 import Desert from '../../Images/Icone/cookie.png';
+import TextField from '@material-ui/core/TextField';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import Radio from '@material-ui/core/Radio';
 
 
 const Diet = () => {
+
+    const theme = createMuiTheme({
+        palette: {
+          primary: {
+            main: '#10AC84',
+          }
+        },
+      });
     
     // données des inputs
     const [ dataInput, setDataInput] = useState({
@@ -39,6 +51,7 @@ const Diet = () => {
     //const [loading, setLoading] = useState(false);
 
     const handleChangeInputs = (e) => {
+        console.log(e.target.value)
         setDataInput({
             ...dataInput,
             [e.target.name] : e.target.value
@@ -107,9 +120,22 @@ const Diet = () => {
                 <div className={styles.Diets}>
                     <div className={styles.FormDietContainer}>
                         <div className={styles.ContainerSectionForm}>
-                            <div className= {styles.FormLabel}>
-                                <label>Diet</label>
-                                <input placeholder='ex: vegetarian' onChange={handleChangeInputs} value={dataInput.diet} type="text" name='diet' />
+                            <div className= {styles.FormLabeltest}>
+                                {/* <label>Diet</label>
+                                <input placeholder='ex: vegetarian' onChange={handleChangeInputs} value={dataInput.diet} type="text" name='diet' /> */}
+                                <ThemeProvider theme={theme}>
+                                    <TextField
+                                        onChange={handleChangeInputs}
+                                        value={dataInput.diet}
+                                        label="Diet"
+                                        name='diet'
+                                        type="text"
+                                        placeholder="ex: vegetarian"
+                                        variant="outlined"
+                                        size="small"
+                                        color="primary"
+                                    />
+                                </ThemeProvider>
                             </div>
 
                             <div className= {styles.FormLabel}>
@@ -142,9 +168,22 @@ const Diet = () => {
                         
                         <div className={styles.ContainerSectionForm}>
 
-                            <div className= {styles.FormLabel}>
-                                <label>Fat (gr)</label>
-                                <input placeholder="ex: 10" onChange={handleChangeInputs} value={dataInput.maxFat} type="number" min="50" name='maxFat' />
+                            <div className= {styles.FormLabeltest}>
+                                {/* <label>Fat (gr)</label>
+                                <input placeholder="ex: 10" onChange={handleChangeInputs} value={dataInput.maxFat} type="number" min="50" name='maxFat' /> */}
+                                <ThemeProvider theme={theme}>
+                                    <TextField
+                                        onChange={handleChangeInputs}
+                                        value={dataInput.maxFat}
+                                        label="Fat (gr)"
+                                        name='maxFat'
+                                        type="number"
+                                        placeholder="ex: 10"
+                                        variant="outlined"
+                                        size="small"
+                                        color="primary"
+                                    />
+                                </ThemeProvider>
                             </div>
                             <div className= {styles.FormLabel}>
                                 <label>Max saturated fat (gr)</label>
@@ -223,6 +262,14 @@ const Diet = () => {
                                 <LogoTypeMeal logo={Desert}/>
                                 <label>dessert</label>
                                 <input onChange={handleChangeRadio} value='dessert' type="radio" name='type' />
+                                {/* <ThemeProvider theme={theme}>
+                                    <Radio
+                                        onChange={handleChangeRadio}
+                                        value="dessert"
+                                        name="type"
+                                        color="primary"
+                                    />
+                                </ThemeProvider> */}
                             </div>
                         </div>
                 </div>

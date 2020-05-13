@@ -43,6 +43,12 @@
     width: 25%;
 }
 
+.FormLabeltest {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
 .FormLabel input[type=text],
 .FormLabel input[type=number]{
     padding: 10px;
