@@ -9,7 +9,7 @@ const Home = () => {
 // 
     return (
         <React.Fragment>
-            <div>
+            <div className={styles.Home}>
                 <div className={styles.BackgroundImage1} ></div>
                 <div className={styles.Title} >
                     <h1>Empty Your Fridge !</h1>

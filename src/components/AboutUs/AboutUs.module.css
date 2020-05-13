@@ -13,7 +13,8 @@
 }
 
 .AboutUs .ContainerTitle h1{
-    font-size: 8rem;
+    font-size: 100px;
+    font-weight: normal;
     text-align: center;
     position: absolute;
     top: 50%;
@@ -86,6 +87,12 @@
     justify-content: space-around;
     height: 100%;
     width: 200px;
+}
+
+@media screen and (min-width: 1600px){
+    .AboutUs .ContainerMembersSocial{
+        margin-top: 300px;
+    }
 }
 
 @media screen and (max-width: 1200px){
