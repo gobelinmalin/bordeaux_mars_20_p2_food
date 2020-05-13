@@ -16,11 +16,11 @@
   background-size: cover;
   margin-top: 5px;
   width: 100%;
-  height: 650px;
+  height: 550px;
 }
 
 .Title h1{
-  font-size: 8rem;
+  font-size: 100px;
   text-align: center;
   font-weight: normal;
   position: absolute;

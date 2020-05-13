@@ -68,6 +68,14 @@
     }
 } */
 
+@media screen and (min-width: 1600px){
+    .PortraitCard2 .Testimonial{
+        height: 280px;
+        padding: 2rem 2rem 2rem 2rem;
+    }
+    
+}
+
 /* TABLET RESPONSIVE */
 @media screen and (max-width: 768px){
     .PortraitCard2{

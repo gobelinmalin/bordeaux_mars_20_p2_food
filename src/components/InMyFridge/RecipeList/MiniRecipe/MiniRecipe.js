@@ -13,7 +13,7 @@ const MiniRecipe = (props) => {
     
     return (
         <div className={styles.MiniRecipe}>
-            <div className={styles.divTest}>
+            <div className={styles.ContainerMiniRecipe}>
                 <RecipeModal complexeNutrition={props.nutrition} dataRecipe={props.id} />
             </div>
             <div className={styles.ContainerMiniRecipeImg}>

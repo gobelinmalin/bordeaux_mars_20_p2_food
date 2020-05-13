@@ -26,7 +26,6 @@ const NutritionInfo = (props) => {
                     <small>{typeof props.amount === 'string' ? props.amount : props.amount.toFixed(2)} {props.unit}</small>
                 </div>
         </React.Fragment>
-
     );
 }
 

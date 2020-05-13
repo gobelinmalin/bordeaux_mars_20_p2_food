@@ -21,6 +21,15 @@
     text-align: center;
 }
 
+.Title h1 {
+    font-size: 100px;
+    font-weight: normal;
+}
+
+.Subtitle{
+    font-size: 35px;
+}
+
 .FirstPart {
     display: flex;
 }
@@ -45,6 +54,7 @@
 }
 .InMyFridge h3 {
     font-size: 70px;
+    font-weight: normal;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -78,6 +88,7 @@
 
 .BackgroundImage2 h3 {
     font-size: 70px;
+    font-weight: normal;
     text-align: center;
 }
 
@@ -111,7 +122,8 @@
 }
 
 .BackgroundImage3 h3 {
-    font-size: 90px;
+    font-size: 70px;
+    font-weight: normal;
     text-align: center;
 }
 
@@ -169,17 +181,18 @@
     flex-direction: column;
 }
 .Diet h3{
-    font-size: 90px;
+    font-size: 70px;
+    font-weight: normal;
     text-align: center;
     margin-top: 150px;
 }
 
 .Diet p {
-    
     font-size: 25px;
     width: 40%;
     margin:0 auto;
     margin-top: 25px;
+    text-align: center;
     /* text-shadow: 0 0 3px white; */
     
 }
@@ -233,7 +246,6 @@
         background-position: 15% 75%;
         margin-top: 5px;
         width : 100%;
-        height: 750px;
     }
 
     .BackgroundImage3 h3 {
