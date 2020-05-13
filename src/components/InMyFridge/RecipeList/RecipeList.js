@@ -1,26 +1,60 @@
-import React from 'react';
+import React, { useState} from 'react';
 import styles from "./RecipeList.module.css";
 import MiniRecipe from '../RecipeList/MiniRecipe/MiniRecipe';
 import Recipe from "./Recipe/Recipe";
 import Loader from '../../Assets/CssLoader/Loader';
+import Slider from "react-slick";
 
 const RecipeList = (props) => {
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        speed: 3000,
+        autoplaySpeed: 8000,
+        pauseOnHover: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        variableWidth: true,
+        adaptiveHeight: true,
+        responsive:  [
+            {
+                breakpoint: 766,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    dots: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]   
+    };
+
     return (
         <div className={styles.CardsContainer}>
             <div className={styles.Top12}>
                 <h2>{props.topTitle}</h2>
                 <div className={styles.ContainerTop12}>
-                    {props.topRecipe.map((element, index) => {
-                        return <MiniRecipe
-                                    key={index}
-                                    image={element.image}
-                                    title={element.title}
-                                    aggregateLikes= {element.aggregateLikes}
-                                    id={element.id}
-                                />
+                    <Slider {...settings}>
+                        {props.topRecipe.map((element, index) => {
+                                return <MiniRecipe
+                                            key={index}
+                                            image={element.image}
+                                            title={element.title}
+                                            aggregateLikes= {element.aggregateLikes}
+                                            id={element.id}
+                                            styles={{ width: 200}}
+                                        />
                         })}
+                    </Slider>
                 </div>   
-            {/* <hr/> */}
             </div>
             {/* <div className={styles.ContainerHr}><hr/></div> */}
             <h2 className={styles.ListTitle}>{props.listTitle}</h2>
