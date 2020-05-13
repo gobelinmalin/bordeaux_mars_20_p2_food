@@ -39,10 +39,13 @@
 
 .MiniRecipe:hover {
     transition: transform 0.3 ease-in-out;
-    transform:scale(1.1);
-    -moz-transform:scale(1.1);
-    -ms-transform:scale(1.1);
-    -o-transform:scale(1.1);
+    transform:scale(1.04);
+    -moz-transform:scale(1.04);
+    -ms-transform:scale(1.04);
+    -o-transform:scale(1.04);
+    -webkit-transform:scale(1.04);
+    filter: brightness(0.8);
+    -webkit-filter: brightness(0.8);
 }
 
 .ContainerMiniRecipeImg{

@@ -280,6 +280,19 @@ MEDIA QUERIES START HERE :
 //
 //
 // */
+@media (min-width: 1600px){
+
+  .ImgBackground{
+    height: 700px;
+  }
+
+  .Title h1{
+    top: 60%;
+    left: 50%;
+  }
+
+}
+
 @media (min-width: 1201px){
 
   .informations{
