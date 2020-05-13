@@ -10,7 +10,7 @@
     font-weight: 400;
     z-index: 9999;
     background-color:#10AC84;
-    margin-top: -10px;
+    top: 0;
 }
 
 .LogoAndTitleContainer {
