@@ -68,18 +68,24 @@
     }
 } */
 
+
 @media screen and (min-width: 1600px){
     .PortraitCard2 .Testimonial{
         height: 280px;
-        padding: 2rem 2rem 2rem 2rem;
+        padding: 2rem;
     }
     
 }
 
-/* TABLET RESPONSIVE */
+/* TABLET RESPONSIVE (IPad) */
 @media screen and (max-width: 768px){
+
     .PortraitCard2{
-        min-height: 30vh;
+        min-height: 35vh;
+    }
+
+    .PortraitCard2 .Testimonial{
+        height: 25vh;
     }
 
     .PortraitCard2 .Description2{
@@ -88,9 +94,14 @@
     }
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE RESPONSIVE (Galaxy S9) */
 @media screen and (max-width: 375px){
+    
     .PortraitCard2{
         min-height: 50vh;
+    }
+
+    .PortraitCard2 .Testimonial{
+        height: 38vh;
     }
 }
