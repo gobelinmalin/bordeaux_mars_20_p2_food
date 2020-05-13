@@ -79,7 +79,7 @@
     width: 49%;
     justify-content: space-between;
     align-items: center;
-    padding: 2px;
+    padding: 5px;
 }
 
 @media screen and (max-width: 1801) {
@@ -104,7 +104,7 @@
     }
 
     .ItemList p{
-        font-size: .7rem;
+        font-size: .9rem;
     }
     
 }

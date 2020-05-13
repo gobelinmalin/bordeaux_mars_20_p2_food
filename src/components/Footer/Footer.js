@@ -16,7 +16,7 @@ const Footer = () => {
                         <li><Link smooth to='/diet'>Diet</Link></li>
                         <li><Link smooth to='/aboutUs'>About us</Link></li>
                         <li><Link smooth to='/contactUs'>Contact us</Link></li>
-                        <li><Link smooth to='/legalNotice'>Legal notice</Link></li>
+                        <li>Legal notice</li>
                     </ul>
                 </div>
                 <div className={styles.ContainerContentContacts}>

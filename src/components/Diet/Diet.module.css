@@ -18,7 +18,7 @@
 }
 
 .ContainerTitleImgBackground{
-    background-image: url('../../Images/img/Diet.jpg');
+    background-image: url('../../Images/img/Diet2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -139,6 +139,10 @@ flex-wrap: wrap;
 }
 
 @media (min-width: 1900px){
+
+    .ContainerTitleImgBackground{
+        height: 700px;
+    }
 
     .DietContainer{
         height: 200vh;

@@ -60,6 +60,12 @@
     margin: 0px 5px 0px 5px;
 }
 
+@media screen and (min-width: 1600px){
+    .BackgroundImage {
+        height: 700px;
+    }
+}
+
 /* TABLET RESPONSIVE */
 @media screen and (max-width: 1200px){
 
@@ -75,6 +81,7 @@
         font-size: 1.5rem;
         text-align: center;
         text-shadow: 0 0 3px #FFF;
+        width: 350px;
     }
 
     .Subtitle{

@@ -238,6 +238,10 @@
         top: 30%;
         left: 50%;
     }
+
+    .BackgroundImage1{
+        height: 700px;
+    }
 }
 
 @media screen and (min-width: 1201px) {
