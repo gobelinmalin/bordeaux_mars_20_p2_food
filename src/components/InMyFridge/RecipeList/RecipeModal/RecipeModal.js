@@ -8,6 +8,7 @@ import styles from "./RecipeModal.module.css";
 import axios from 'axios';
 import NutritionInfo from './NutritionInfo';
 
+
 const LightTooltip = withStyles((theme) => ({
   tooltip: {
     backgroundColor: '#F29B20',
@@ -124,6 +125,8 @@ export default function TransitionsModal(props) {
             case 'Calories':
               return element;
               break;
+            default:
+              break;
           }
         })
         setNutrition(data)
@@ -137,7 +140,7 @@ export default function TransitionsModal(props) {
   console.log(diet);
 
   return (
-    <div>
+    <div className={styles.BodyModal}>
       <button type="button" onClick={handleOpen}>
         {/* Read More */}
       </button>
@@ -198,33 +201,6 @@ export default function TransitionsModal(props) {
                 </div>
               </div>
                 <div className={styles.NutritionContainer}>
-                  {/* <LightTooltip title='Calories' arrow>
-                    <div>
-                      <img className={styles.NutritionImg} src="../../../../Images/Icone/icone-kcal2x.png" alt="calories"/>
-                      <small>{nutrition.calories}</small>
-                    </div>
-                  </LightTooltip>
-                  
-                  <LightTooltip title='Fat' arrow>
-                  <div>
-                    <img className={styles.NutritionImg} src="../../../../Images/Icone/icone-fat2x.png" alt="fat"/>
-                    <small>{nutrition.fat}</small>
-                  </div> 
-                  </LightTooltip>
-                  
-                  <div>
-                    <img className={styles.NutritionImg} src="../../../../Images/Icone/icone-carbs2x.png" alt="carbs"/>
-                    <small>{nutrition.carbs}</small>
-                  </div>
-                
-                  <div >
-                    <img className={styles.NutritionImg} src="../../../../Images/Icone/icone-prot2x.png" alt="protein"/>
-                    <small>{nutrition.protein}</small>
-                  </div> */}
-
-                 
-                 
-
                  {/* If its a complexe nutrition, set specific categories, if not set the other one */}
                   {
                     props.complexeNutrition
@@ -266,11 +242,13 @@ export default function TransitionsModal(props) {
                     }
                   </ol>
                 <h2 className={styles.title2} >Diets</h2><hr/>
+                <div className={styles.ContainerListIngredients}>
                   <ul className={styles.orderList}>
                     {recipe.map(element => element.diets.length > 0
                     ? recipe.map(element => element.diets.map(diet => <li>{diet}</li>))
                     : <p className={styles.noSpecialInfo}>No special diets</p>)}
                   </ul>
+                </div>
             </div>
           </div>
         </Fade>

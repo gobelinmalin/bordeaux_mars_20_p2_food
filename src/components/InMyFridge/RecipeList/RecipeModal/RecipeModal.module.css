@@ -1,3 +1,7 @@
+/* .BodyModal::-webkit-scrollbar {
+  display: none;
+} */
+
 .title, .title2 {
     text-transform: uppercase;
     font-family: 'Rubik';
@@ -38,16 +42,21 @@
     padding: 10px;
 }
 
+.ContainerListIngredients{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 120px;
+}
 
 .orderList {
+    width: 100%;
     column-count: 3;
-    margin-left: 40px;
-    margin-right: 5px;
     list-style-image: url('../../../../Images/Icone/list-ingre-vege.png');
 }
 
-.orderList .IngredientsLi {
-    margin-left: 10px;
+.orderList li {
+    margin: 0 20px 0px 10px;
 }
 
 .RecipeDetail {
@@ -55,7 +64,7 @@
     flex-direction: column;
     width: 70%;
     justify-content: space-evenly;
-    margin: 0px 20px 20px 60px;
+    margin: 20px 40px;
 }
 
 .RecipeTitle {
@@ -83,7 +92,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    width: 63% !important;
+    width: 65% !important;
 }
 
 .NutritionContainer div {
@@ -171,7 +180,7 @@
 
     .RecipeDetail{
         width: 90%;
-        margin-left: 50px;
+        margin: 10px 0px 20px 30px;
     }
 
     .RecipeDetail h2{
@@ -182,6 +191,10 @@
     .RecipeDetail ol,
     .RecipeDetail ul{
         font-size: 1rem;
+    }
+
+    .ContainerListIngredients{
+        padding: initial;
     }
 
     .RecipeDetail .orderList{
@@ -227,9 +240,10 @@
 
     .RecipeDetail{
         margin: 0;
-        width: 100%;
-        padding: 10px;
+        width: 90%;
+        /* padding: 10px; */
         padding-top: 0;
+        margin: 0px 20px 20px 15px;
     }
 
     .RecipeDetail h2{
