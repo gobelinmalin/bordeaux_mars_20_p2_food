@@ -52,6 +52,7 @@
     margin-right: 150px;
     margin-top: 75px;
 }
+
 .InMyFridge h3 {
     font-size: 70px;
     font-weight: normal;
@@ -263,10 +264,16 @@
 }
 
 @media screen and (max-width: 1200px) {
-
+    .BackgroundImage1 {
+        height: 440px;
+    }
+    .Title h1{
+        font-size: 4rem;
+    }
     .Title {
         font-size: 3rem;
-        top: 30%;
+        top: 25%;
+        width: 100%;
     }
 
     .Subtitle{
@@ -312,12 +319,15 @@
 
 @media screen and (max-width: 450px) {
     .BackgroundImage1 {
-        height: 410px;
+        height: 440px;
     }
     .Title {
         top: 33%;
         font-size: 2rem;
         width: 80%;
+    }
+    .Title h1 {
+        font-size: 4rem;
     }
     .Subtitle{
         display: none;
@@ -329,6 +339,9 @@
     .InMyFridge {
         width: 100%;
         padding: 20px;
+    }
+    .InMyFridge h3 {
+        font-size: 50px;
     }
     .InMyFridgeBtn {
         width: 80%;
@@ -346,20 +359,24 @@
     }
     .BackgroundImage3 h3 {
         margin-top: -50px;
-        font-size: 70px;
+        font-size: 50px;
         margin-bottom: 70px;
         
     }
     .BackgroundImage3 {
         background-position: 25% 75%;
     }
+    .BackgroundImage2 h3 {
+        font-size: 50px;
+    }
 
     .Diet {
         height: 520px;
-        background-position: 75% 25% ;
+        background-position: 61% 25% ;
     }
     .Diet h3 {
         margin-top: 30px;
+        font-size: 50px;
         
     }
     .Diet p {

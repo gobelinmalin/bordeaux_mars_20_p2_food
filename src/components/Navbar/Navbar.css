@@ -96,6 +96,9 @@
   .bm-cross {
     background: #bdc3c7;
     width: 50px !important;
+    height: 5px !important;
+    margin-top: 10px;
+    margin-right: 10px;
   }
    
   /*
@@ -112,6 +115,8 @@
     background: #1c6d5b;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
+    height: 101% !important;
+    overflow: hidden !important;
   }
    
   /* Morph shape necessary with bubble or elastic */

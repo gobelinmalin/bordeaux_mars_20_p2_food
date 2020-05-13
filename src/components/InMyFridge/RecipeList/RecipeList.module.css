@@ -8,14 +8,14 @@
     text-align: center;
     font-family: 'Rubik';
     color: #10AC84;
-    margin: 10px;
+    margin: 20px;
 }
 
 .ContainerTop12 {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-top: 20px;
+    width: 880px;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 280px;
 }
 
 .CardsContainer {
@@ -73,7 +73,7 @@
 
 .ContainerSpinner {
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: calc(-50%, -50%);
     -webkit-transform: calc(-50%, -50%);
@@ -92,10 +92,12 @@
     .RecipeList{
         box-shadow: none;
     }
+    /* .ContainerTop12 {
+
+    } */
     
 }
 
-/* MOBILE RESPONSIVE */
 @media screen and (max-width: 1050px){
 
     .CardsContainer{
@@ -110,11 +112,20 @@
     .ContainerSpinner{
         display: none;
     }
+
+    
 }
 
 @media screen and (max-width: 769px){
+
     .ContainerTop12{
-        flex-direction: column;
-        align-items: center;
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    .ContainerTop12{
+        width: 280px;
     }
 }

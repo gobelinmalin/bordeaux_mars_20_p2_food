@@ -22,7 +22,9 @@
 	-o-transform: scale(1);
 	-moz-transition:0.3s ease-in-out;
 	-ms-transition:0.3s ease-in-out;
-	-o-transition:0.3s ease-in-out;
+    -o-transition:0.3s ease-in-out;
+    margin-bottom: 25px;
+    margin-left: 20px;
 }
 
 .ContainerMiniRecipe button {
@@ -100,16 +102,17 @@
     padding: 0 10px 0px 10px;
 }
 
+
 @media screen and (min-width: 1201px){
     
     .MiniRecipe{
-        margin-right: 30px; 
+        margin-right: 30px;
     }
 }
 
 @media screen and (max-width: 769px){
     
     .MiniRecipe{
-        margin-bottom: 10px;
+        box-shadow: -5px 8px 15px -12px rgba(120,121,125,1);
     }
 }
