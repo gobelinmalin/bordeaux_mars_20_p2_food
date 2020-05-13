@@ -30,7 +30,7 @@ const Navbar = () => {
         <Menu isOpen={sideMenuOpen} width={ '250px' } right className='BurgerMenu' noOverlay>
                     <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/'>Home</Link></div>
                     <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/inMyFridge'>In my fridge</Link></div>
-                    <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/contactUs'>Diet</Link></div>
+                    <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/diet'>Diet</Link></div>
                     <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/aboutUs'>About us</Link></div>
                     <div className='navItemsBurger'><Link onClick={closeMenu} smooth to='/contactUs'>Contact us</Link></div>
 

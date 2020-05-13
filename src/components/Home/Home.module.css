@@ -193,7 +193,7 @@
     margin:0 auto;
     margin-top: 25px;
     text-align: center;
-    /* text-shadow: 0 0 3px white; */
+    text-shadow: 0 0 3px #FFF;
     
 }
 
@@ -291,15 +291,27 @@
     .AboutUsBtn{
         margin-top: 50px;
     }
+    .Diet {
+        height: 420px;
+        background-position: 75% 25% ;
+    }
+    .Diet h3 {
+        margin-top: 30px;
+        
+    }
+    .Diet p {
+        width: 80%;
+        padding: 15px;
+    }
 
 }
 
 @media screen and (max-width: 450px) {
     .BackgroundImage1 {
-        height: 350px;
+        height: 410px;
     }
     .Title {
-        top: 30%;
+        top: 33%;
         font-size: 2rem;
         width: 80%;
     }
@@ -336,6 +348,19 @@
     }
     .BackgroundImage3 {
         background-position: 25% 75%;
+    }
+
+    .Diet {
+        height: 520px;
+        background-position: 75% 25% ;
+    }
+    .Diet h3 {
+        margin-top: 30px;
+        
+    }
+    .Diet p {
+        width: 100%;
+        padding: 15px;
     }
     
 }
