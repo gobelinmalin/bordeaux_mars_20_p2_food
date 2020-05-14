@@ -82,6 +82,12 @@
     -o-transform: calc(-50%, -50%);
 }
 
+@media screen and (min-width: 1599px) {
+    .ContainerTop12 {
+        width: 1500px;
+    }
+}
+
 @media screen and (max-width: 1200px){
 
     .ContainerSpinner{

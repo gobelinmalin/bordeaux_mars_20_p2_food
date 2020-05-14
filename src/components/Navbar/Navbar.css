@@ -10,7 +10,7 @@
     font-weight: 400;
     z-index: 9999;
     background-color:#10AC84;
-    margin-top: -10px;
+    top: 0;
 }
 
 .LogoAndTitleContainer {
@@ -162,11 +162,18 @@
       background: none !important;
       right: 200px;
     }
+    .bm-item-list {
+      margin-top: 250px;
+    }
    
 }
 @media screen and (max-width: 450px){
   .bm-burger-button{
     left: 85%;
+  }
+
+  .bm-item-list {
+    margin-top: 150px;
   }
 }
 

@@ -14,13 +14,20 @@ const RecipeList = (props) => {
         speed: 3000,
         autoplaySpeed: 8000,
         pauseOnHover: true,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 3,
         variableWidth: true,
         adaptiveHeight: true,
         responsive:  [
             {
-                breakpoint: 766,
+                breakpoint: 1600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 769,
                 settings: {
                   slidesToShow: 2,
                   slidesToScroll: 2,
@@ -30,6 +37,7 @@ const RecipeList = (props) => {
                 breakpoint: 480,
                 settings: {
                     dots: false,
+                    autoplaySpeed: 5000,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 }
