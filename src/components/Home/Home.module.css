@@ -1,0 +1,384 @@
+.BackgroundImage1{
+    background-image: url('../../Images/HomePie.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5px;
+    width : 100%;
+    height: 550px;
+    position: relative;
+}
+
+.Title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-size: 50px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.Title h1 {
+    font-size: 100px;
+    font-weight: normal;
+}
+
+.Subtitle{
+    font-size: 35px;
+}
+
+.FirstPart {
+    display: flex;
+}
+
+.Fridge {
+    background-image: url('../../Images/OpenFridge.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: 75px;
+    margin-left: 150px;
+    margin-bottom: 75px;
+    width : 50%;
+    height: 550px;
+}
+
+.InMyFridge {
+    width: 40%;
+    padding: 50px;
+    margin-right: 150px;
+    margin-top: 75px;
+}
+
+.InMyFridge h3 {
+    font-size: 70px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.InMyFridge p {
+    font-size: 20px;
+}
+
+.InMyFridgeBtn {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.InMyFridgeBtn button {
+    width: 200px;
+    height: 50px;
+    margin-top: 25px;
+    background-color: #10AC84;
+    border-radius: 30px;
+}
+
+.BackgroundImage2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width : 100%;
+    height: 750px;
+    padding: 25px;
+}
+
+.BackgroundImage2 h3 {
+    font-size: 70px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.AllPortrait {
+    display: flex;
+    margin-top: 0px;
+    justify-content: center;
+}
+
+.AboutUsBtn {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.AboutUsBtn button{
+    width: 200px;
+    height: 50px;
+    background-color: #10AC84;
+    border-radius: 30px;
+}
+
+.BackgroundImage3 {
+    background-image: url('../../Images/ImageContactUs.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 40% 14%;
+    width : 100%;
+    height: 450px;
+    padding-top: 150px;
+}
+
+.BackgroundImage3 h3 {
+    font-size: 70px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.ContactUsBtn {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ContactUsBtn button{
+    width: 200px;
+    height: 50px;
+    margin-top: 45px;
+    background-color: #10AC84;
+    border-radius: 30px;
+}
+
+.buttonHome{
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #10AC84;
+    color: #fefefe;
+    font-size: 20px;
+    font-family: 'Rubik';
+    font-weight: bold;
+
+}
+.buttonHome:hover{
+    background-color: #F29B20;
+}
+
+.buttonHome a {
+    text-decoration: none;
+    color: white;
+}
+
+.buttonHome a:visited {
+    color: white;
+}
+
+
+.Diet {
+    background-image: url('../../Images/img/Diet2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 30% 0%;
+    margin-top: 5px;
+    width : 100%;
+    height: 650px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.Diet h3{
+    font-size: 70px;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.Diet p {
+    font-size: 25px;
+    width: 40%;
+    margin:0 auto;
+    margin-top: 25px;
+    text-align: center;
+    text-shadow: 0 0 3px #FFF;
+    
+}
+
+.buttonDiet{
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #10AC84;
+    color: #fefefe;
+    font-size: 20px;
+    font-family: 'Rubik';
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+
+}
+.buttonDiet:hover{
+    background-color: #F29B20;
+}
+
+.buttonDiet a {
+    text-decoration: none;
+    color: white;
+}
+
+.buttonDiet a:visited {
+    color: white;
+}
+
+.Diet button {
+    width: 200px;
+    height: 50px;
+    margin-top: 25px;
+    background-color: #10AC84;
+    border-radius: 30px;
+    text-align: center;
+}
+
+@media screen and (min-width: 1501px) {
+    .Title {
+        top: 30%;
+        left: 50%;
+    }
+
+    .BackgroundImage1{
+        height: 700px;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+
+    .BackgroundImage1{
+        background-position: 15% 75%;
+        margin-top: 5px;
+        width : 100%;
+    }
+
+    .BackgroundImage3 h3 {
+        margin-top: 50px;
+    }
+
+    .BackgroundImage3 {
+        height: 550px;
+        padding-top: 150px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .BackgroundImage1 {
+        height: 440px;
+    }
+    .Title h1{
+        font-size: 4rem;
+    }
+    .Title {
+        font-size: 3rem;
+        top: 25%;
+        width: 100%;
+    }
+
+    .Subtitle{
+        font-size: 2rem;
+    }
+
+    .FirstPart {
+        flex-direction: column;
+    }
+    .Fridge {
+        margin: 25px auto 0px auto;
+    }
+    .InMyFridge {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .BackgroundImage2 {
+        height: 1290px;
+    }
+    .AllPortrait {
+        flex-direction: column;
+    }
+    .InMyFridge h3 {
+        margin-bottom: 25px;
+    }
+    .AboutUsBtn{
+        margin-top: 50px;
+    }
+    .Diet {
+        height: 420px;
+        background-position: 75% 25% ;
+    }
+    .Diet h3 {
+        margin-top: 30px;
+        
+    }
+    .Diet p {
+        width: 80%;
+        padding: 15px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .BackgroundImage1 {
+        height: 440px;
+    }
+    .Title {
+        top: 33%;
+        font-size: 2rem;
+        width: 80%;
+    }
+    .Title h1 {
+        font-size: 4rem;
+    }
+    .Subtitle{
+        display: none;
+    }
+    .Fridge {
+        height: 300px;
+        width: 250px;
+    }
+    .InMyFridge {
+        width: 100%;
+        padding: 20px;
+    }
+    .InMyFridge h3 {
+        font-size: 50px;
+    }
+    .InMyFridgeBtn {
+        width: 80%;
+    }
+    .AllPortrait {
+        flex-direction: column;
+        text-align: center;
+    }
+    .BackgroundImage2 {
+        height: 950px;
+    }
+    .AboutUsBtn {
+        margin-top: 25px;
+        width: 80%;
+    }
+    .BackgroundImage3 h3 {
+        margin-top: -50px;
+        font-size: 50px;
+        margin-bottom: 70px;
+        
+    }
+    .BackgroundImage3 {
+        background-position: 25% 75%;
+    }
+    .BackgroundImage2 h3 {
+        font-size: 50px;
+    }
+
+    .Diet {
+        height: 520px;
+        background-position: 61% 25% ;
+    }
+    .Diet h3 {
+        margin-top: 30px;
+        font-size: 50px;
+        
+    }
+    .Diet p {
+        width: 100%;
+        padding: 15px;
+    }
+    
+}

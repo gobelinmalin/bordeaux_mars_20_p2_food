@@ -1,0 +1,167 @@
+.Recipe {
+    width: 312px;
+    height: 400px;
+    margin: 10px;
+    box-shadow: 0px 3px 10px grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 5px;
+}
+
+.RecipeImgContainer {
+	height: 170px;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.RecipeImgContainer img {
+    max-width: 100%;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out;
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	-moz-transition:0.3s ease-in-out;
+	-ms-transition:0.3s ease-in-out;
+	-o-transition:0.3s ease-in-out;
+}
+
+.RecipeImgContainer img:hover {
+    transition: transform 0.3 ease-in-out;
+    transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -ms-transform:scale(1.1);
+    -o-transform:scale(1.1);
+}
+
+.RecipeTitle h3 {
+    text-align: center;
+    font-family: 'Rubik';
+    font-weight: 600;
+    font-size: 22px;
+}
+
+ .RecipeTitle {
+    margin : 0px 10px 0px 10px;
+}
+
+.RecipeIngredients {
+    width: 100%;
+    align-self: flex-start;
+}
+
+.RecipeIngredients p{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.ContainerInformationSearch {
+    display: flex;
+    justify-content: center;
+}
+
+.ReadyInMinutes,
+.HowManyPeople{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.ReadyInMinutes img,
+.HowManyPeople img{
+    margin-right: 5px;
+}
+
+.HowManyPeople img{
+    margin-left: 5px;
+}
+
+.ContainerInformationSearch small{
+    line-height: 20px;
+}
+
+.RecipeButton {
+    margin-bottom : 20px;
+    align-self: center;
+    width: 200px;
+}
+
+.RecipeButton button {
+    min-width: 100%;
+    height: auto;
+    cursor: pointer;
+    padding: 0.938em;
+    background-color: #10AC84;
+    border: 1px solid #10AC84;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Rubik';
+    font-weight: bold;
+}
+
+.RecipeButton button::after {
+    content: "Read more";
+}
+
+.RecipeButton button:hover {
+    background-color: #F29B20;
+    border: 1px solid #F29B20;
+    color: white;
+}
+
+.RecipeButtonLike{
+    display: flex;
+    justify-content: center;
+}
+
+.RecipeLikes {
+    display: inline-flex;
+    width: 75px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    justify-content: center;
+    box-shadow: 0 4px 14px -4px rgba(0,0,0,.08);
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.RecipeImage {
+    height: 0;
+}
+
+.RecipeNbLike {
+    line-height: 15px;
+    margin-left: 5px;
+}
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1200px){
+
+    .Recipe {
+        width: 400px;
+    }
+
+    .RecipeImgContainer{
+        height: 185px;
+    }
+
+    .RecipeImgContainer img{
+        width: 400px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 750px){
+
+    .Recipe {
+        width: 312px;
+    }
+}

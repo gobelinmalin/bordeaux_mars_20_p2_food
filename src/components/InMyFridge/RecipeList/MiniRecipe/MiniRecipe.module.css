@@ -1,0 +1,118 @@
+.MiniRecipe {
+    cursor: pointer;
+    height: 200px;
+    width: 250px;
+    box-shadow: 0px 3px 10px grey;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    z-index: 1000;
+    position: relative;
+    margin-top: 30px;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out;
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	-moz-transition:0.3s ease-in-out;
+	-ms-transition:0.3s ease-in-out;
+    -o-transition:0.3s ease-in-out;
+    margin-bottom: 25px;
+    margin-left: 20px;
+}
+
+.ContainerMiniRecipe button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    background-color: transparent;
+}
+
+.MiniRecipe:hover {
+    transition: transform 0.3 ease-in-out;
+    transform:scale(1.04);
+    -moz-transform:scale(1.04);
+    -ms-transform:scale(1.04);
+    -o-transform:scale(1.04);
+    -webkit-transform:scale(1.04);
+    filter: brightness(0.8);
+    -webkit-filter: brightness(0.8);
+}
+
+.ContainerMiniRecipeImg{
+    overflow: hidden;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.ContainerMiniRecipeImg img {
+    max-width: 100%;
+    height: auto;
+}
+
+.MiniRecipe small{
+    font-family: 'Rubik';
+    height: 15px;
+}
+
+.MiniRecipe p {
+    font-family: 'Rubik';
+}
+
+.RecipeImage {
+    display: inline-flex;
+    width: 75px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    justify-content: center;
+    box-shadow: 0 4px 14px -4px rgba(0,0,0,.08);
+    background-color: white;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 170px;
+}
+
+.RecipeImg {
+    height: 0;
+}
+
+.RecipeNbLike {
+    line-height: 15px;
+    margin-left: 5px;
+}
+
+.RecipeTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    text-align: center;
+    padding: 0 10px 0px 10px;
+}
+
+
+@media screen and (min-width: 1201px){
+    
+    .MiniRecipe{
+        margin-right: 30px;
+    }
+}
+
+@media screen and (max-width: 769px){
+    
+    .MiniRecipe{
+        box-shadow: -5px 8px 15px -12px rgba(120,121,125,1);
+    }
+}

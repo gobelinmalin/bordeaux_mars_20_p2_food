@@ -1,0 +1,126 @@
+.CategoryContainer {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.CategoryContainer hr {
+    width: 70%;
+    border: 0.5px solid #b2bec3;
+    align-self: center;
+}
+
+.ContainerSearch {
+    display: flex;
+    flex-direction: column;
+}
+
+.ContainerSearch input{
+    width: 75%;
+    padding: 10px 10px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #d6d1d5;
+    margin: 0 auto;
+}
+
+.CategoryContainer h2 {
+    text-align: center;
+    font-family: 'Rubik';
+    color: #10AC84;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.buttonCall {
+    cursor: pointer;
+    background-color: #10AC84;
+}
+
+.buttonCall,
+.buttonCall:disabled{
+    width: 70%;
+    margin-right: 0.25em;
+    margin: 30px;
+    padding: 0.7em;
+    border: none;
+    border-radius: 30px;
+    color: #fefefe;
+    font-size: 1rem;
+    font-family: 'Rubik';
+    font-weight: bold;
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.buttonCall:disabled{
+    cursor: not-allowed;
+    background-color: lightgrey;
+}
+
+.buttonCall:hover{
+    background-color: #F29B20;
+}
+
+.buttonCall:disabled:hover{
+    background-color: lightgrey;
+}
+
+@media screen and (min-width: 1550px){
+    .CategoryContainer {
+        width: 25%;
+    }
+}
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1200px){
+
+    .CategoryContainer{
+        width: 45%;
+        height: initial;
+        border: none;
+        margin-left: 0;
+    }
+
+    .buttonCall,
+    .buttonCall:disabled{
+        font-size: 1rem;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 1050px){
+
+    .CategoryContainer{
+        width: 100%;
+        margin-left: 0;
+        border: none;
+        height: initial;
+    }
+
+    .buttonCall,
+    .buttonCall:disabled{
+        width: 30%;
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 769px){
+
+    .buttonCall,
+    .buttonCall:disabled{
+        width: 30%;
+    }
+
+}
+
+@media screen and (max-width: 425px){
+    .buttonCall,
+    .buttonCall:disabled{
+        width: 50%;
+    }
+}

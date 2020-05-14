@@ -1,0 +1,139 @@
+.Top12 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Top12 h2 {
+    text-align: center;
+    font-family: 'Rubik';
+    color: #10AC84;
+    margin: 20px;
+}
+
+.ContainerTop12 {
+    width: 880px;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 280px;
+}
+
+.CardsContainer {
+    width: 75%;
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ContainerHr {
+    width: 100%;
+    align-self: center;
+}
+
+.CardsContainer hr  {
+    width: 100%;
+}
+
+.ListTitle{
+    margin: 60px 10px 10px 10px;
+    font-family: 'Rubik';
+    color: #10AC84;
+    text-align: center;
+    width: 100%;
+}
+
+.Recipe {
+    width: 350px;
+    height: auto;
+    border: 1px solid black;
+    margin: 5px;
+    box-shadow: 4px 4px 10px grey;
+}
+
+.RecipeImgContainer{
+    height: 150px;
+    overflow: hidden;
+}
+
+.Recipe img{
+    width: 100%;
+}
+
+.Recipe h3{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.RecipeList {
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.ContainerSpinner {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: calc(-50%, -50%);
+    -webkit-transform: calc(-50%, -50%);
+    -moz-transform: calc(-50%, -50%);
+    -ms-transform: calc(-50%, -50%);
+    -o-transform: calc(-50%, -50%);
+}
+
+@media screen and (min-width: 1599px) {
+    .ContainerTop12 {
+        width: 1500px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+
+    .ContainerSpinner{
+        display: none;
+    }
+
+    .RecipeList{
+        box-shadow: none;
+    }
+    /* .ContainerTop12 {
+
+    } */
+    
+}
+
+/* TABLET RESPONSIVE */
+
+@media screen and (max-width: 1050px){
+
+    .CardsContainer{
+        width: 100%;
+    }
+
+    .RecipeList{
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .ContainerSpinner{
+        display: none;
+    }
+
+    
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 769px){
+
+    .ContainerTop12{
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    .ContainerTop12{
+        width: 280px;
+    }
+}

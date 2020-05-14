@@ -1,0 +1,448 @@
+:focus {
+    outline: none;
+}
+
+.Contact-Us{
+  display: flex;
+}
+
+.Title{
+  position: relative;
+}
+
+.ImgBackground{
+  background-image: url('../../Images/ImageContactUs.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5px;
+  width: 100%;
+  height: 550px;
+}
+
+.Title h1{
+  font-size: 100px;
+  text-align: center;
+  font-weight: normal;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.informations h2 {
+  font-family: 'Rubik';
+  font-weight: 600;
+  color: #10AC84;
+  text-transform: uppercase;
+}
+
+.informations h2:hover {
+  color: #F29B20;
+}
+
+.LeftLocation, 
+.LeftPhone, 
+.LeftMail {
+
+    display: flex;
+    margin : 20px 0px 20px 0px;
+    justify-content: space-evenly;
+}
+
+.LeftLocationText,
+.LeftPhoneText,
+.LeftMailText
+{
+    text-align: left;
+    width: 45%;
+    align-self: center;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.LeftLocationText p,
+.LeftPhoneText p,
+.LeftMailText p {
+  margin: 4px;
+}
+
+.LeftLocationText h2,
+.LeftPhoneText h2,
+.LeftMailText h2 {
+  margin: 0px 0px 10px 4px;
+}
+
+.LeftLocationImage,
+.LeftPhoneImage,
+.LeftMailImage
+{
+    align-self: center;
+}
+
+.LeftLocationImage:hover,
+.LeftPhoneImage:hover,
+.LeftMailImage:hover{
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0px 40px 0px;
+}
+
+.informations{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin:100px;
+  width: 480px;
+  max-width: 80%;
+  min-width: 100px;
+  min-height: 760px;
+  padding: 20px 40px;
+  border-radius: 6px;
+  box-shadow: -1px 1px 20px 0px rgba(0,0,0,0.75);
+  background-color: #fefefe;
+}
+
+.FormWrapper {
+  display: flex;
+  flex-direction: column;
+  margin:100px;
+  width: 480px;
+  max-width: 80%;
+  min-width: 100px;
+  min-height: 400px;
+  padding: 20px 40px;
+  border-radius: 6px;
+  box-shadow: -1px 1px 20px 0px rgba(0,0,0,0.75);
+  background-color: #fefefe;
+}
+
+.FormWrapper > h2 {
+  display: flex;
+  justify-content: center;
+  font-family: "Rubik", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 0.25em;
+  margin-bottom: 20px ;
+  color: #10AC84;
+}
+
+.FormWrapper h2:hover {
+  color: #F29B20;
+}
+
+.FormWrapper form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info {
+  padding-bottom: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.info small {
+  color : red;
+}
+
+.FormWrapper label {
+  margin-bottom: 0.5em;
+  color: #444;
+  font-weight: 600;
+}
+
+.FormWrapper .LabelBad{
+  color : #db2269;
+}
+
+.FormWrapper input {
+  padding: 10px 10px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #d6d1d5;
+}
+
+.FormWrapper input:hover,
+.FormWrapper textarea:hover {
+  border: 1px solid #F29B20;
+}
+
+.FormWrapper textarea {
+  height: 200px;
+  padding: 10px 10px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #d6d1d5;
+}
+
+.FormWrapper textarea::placeholder {
+  font-size: 1.2em;
+  color: #bbb;
+}
+
+.FormWrapper input::placeholder {
+  font-size: 1.2em;
+  color: #bbb;
+}
+
+.InputLengthDefault {
+  border: 1px solid #d6d1d5;
+}
+
+.InputLengthOk {
+  border : 1px solid #10AC84;
+}
+
+.FormWrapper .InputLengthBad,
+.FormWrapper .TextareaLengthBad {
+  border : 1px solid #db2269;
+}
+
+.FormWrapper button {
+  min-width: 100%;
+  cursor: pointer;
+  margin-right: 0.25em;
+  margin-top: 0.5em;
+  padding: 	0.938em;
+  border: none;
+  border-radius: 30px;
+  background-color: #10AC84;
+  color: #fefefe;
+  font-size: 20px;
+  font-family: 'Rubik';
+  font-weight: bold;
+}
+.FormWrapper button:hover {
+  background-color: #F29B20;
+  color: #fefefe;
+}
+
+.error {
+  color:#db2269;
+  font-size: 0.8em;
+  display: relative;
+  padding: 5px;
+}
+
+.name,
+.email,
+.phone,
+.subject {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.name {
+  width: 100%;
+}
+
+.email,
+.phone,
+.subject  {
+  width: 100%;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.submit {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* //
+//
+//
+//
+MEDIA QUERIES START HERE : 
+//
+//
+//
+// */
+@media (min-width: 1600px){
+
+  .ImgBackground{
+    height: 700px;
+  }
+
+  .Title h1{
+    top: 60%;
+    left: 50%;
+  }
+
+}
+
+@media (min-width: 1201px){
+
+  .informations{
+    margin:100px;
+    width: 30%;
+    padding: 20px 40px;
+    border-radius: 6px;
+    box-shadow: -1px 1px 20px 0px rgba(0,0,0,0.75);
+    background-color: #fefefe;
+  }
+
+  .LeftLocation, 
+  .LeftPhone, 
+  .LeftMail {
+      margin : 10px 0px 10px 0px;
+      padding : 10px;
+      width: 100%;
+  }
+
+  .FormWrapper {
+    width: 35%;
+  }
+
+  .submit button{
+    min-width: 60%;
+  }
+
+  .submit {
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 1200px) {
+
+  .Title h1{
+    font-size: 6rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .ImgBackground{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 450px;
+  }
+  
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .LeftLocation, 
+  .LeftPhone, 
+  .LeftMail {
+      margin : 10px 0px 10px 0px;
+      padding : 10px;
+      justify-content: center;
+      width: 100%;
+  }
+
+  .LeftMail {
+    height: auto;
+  }
+
+  .LeftLocationText,
+  .LeftPhoneText,
+  .LeftMailText
+  {
+    flex-wrap: wrap;
+    text-align: left;
+    width: 100%;
+    padding-left: 10px;
+  }
+
+}
+
+@media (max-width: 780px){
+
+  .Title h1{
+    font-size: 4rem;
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .ImgBackground{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 440px;
+  }
+
+  .informations{
+    padding: 20px 60px;
+  }
+
+}
+
+@media (max-width: 500px){
+
+  .ImgBackground{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 440px;
+    background-position: 27%;
+  }
+
+  .FormWrapper{
+    padding: 20px;
+  }
+
+  .informations{
+    padding: 10px 20px;
+  }
+
+  .Title h1{
+    font-size: 4rem;
+    text-align: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  .LeftLocation, 
+  .LeftPhone, 
+  .LeftMail {
+  flex-direction: column;
+  align-content: center;
+  padding : 0px;
+  }
+
+  .LeftLocationText,
+  .LeftPhoneText,
+  .LeftMailText
+  {
+    margin: 20px;
+    text-align: center;
+  }
+
+  .FormWrapper button {
+    width: 280px;
+  }
+}

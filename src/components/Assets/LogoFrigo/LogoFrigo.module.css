@@ -1,0 +1,14 @@
+.LogoFrigo{
+    background-image: url('../../../Images/fridge.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-top: 13px;
+}
+
+@media screen and (max-width: 768px){
+    .LogoFrigo {
+        margin-bottom: 8px;
+    }
+}

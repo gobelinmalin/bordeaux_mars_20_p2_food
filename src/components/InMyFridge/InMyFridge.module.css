@@ -1,0 +1,129 @@
+.BackgroundImage {
+    background-image: url('../../Images/ImageHome.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5px;
+    width : 100%;
+    height: 550px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.BackgroundImage h1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    font-size: 100px;
+    font-weight: normal;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.Subtitle {
+    text-align: center;
+    color: #10AC84;
+    font-family: 'Rubik';
+    padding: 15px;
+    font-size: 2.5rem;
+}
+
+.GlobalContainer {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 10px;
+    margin: 0 5px 20px 0;
+    position: relative;
+}
+
+.BackgroundImage p {
+    position: absolute;
+    text-align: center;
+    height: 150px;
+    top: 80%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.TopRecipe {
+    height: 200px;
+    border: 2px solid black;
+    margin: 0px 5px 0px 5px;
+}
+
+@media screen and (min-width: 1600px){
+    .BackgroundImage {
+        height: 700px;
+    }
+}
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1200px){
+
+    .BackgroundImage{
+        height: 405px;
+    }
+
+    .BackgroundImage h1{
+        font-size: 6rem;
+    }
+
+    .BackgroundImage p{
+        font-size: 1.5rem;
+        text-align: center;
+        text-shadow: 0 0 3px #FFF;
+        width: 350px;
+    }
+
+    .Subtitle{
+        font-size: 1.7rem;
+    }
+
+    .GlobalContainer{
+        width: 99%;
+        margin-left: 4px;
+        margin-bottom: 4px;
+    }
+
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 1050px){
+
+    .BackgroundImage{
+        height: 440px;
+        background-position: 40% 50%;
+    }
+
+    .BackgroundImage h1{
+        font-size: 4rem;
+    }
+
+    .BackgroundImage p{
+        font-size: 1.3rem;
+        font-weight: 600;
+        text-align: center;
+        text-shadow: 0 0 3px #FFF;
+        width: 100%;
+    }
+
+    .Subtitle{
+        font-size: 1.5rem;
+    }
+
+    .GlobalContainer{
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        padding-right: 0;
+    }
+}

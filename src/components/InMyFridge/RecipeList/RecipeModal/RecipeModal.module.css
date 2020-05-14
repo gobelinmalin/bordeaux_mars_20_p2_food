@@ -1,0 +1,273 @@
+.title, .title2 {
+    text-transform: uppercase;
+    font-family: 'Rubik';
+}
+
+.title {
+    align-self: center;
+}
+
+.RecipeTitle .title {
+    font-size: 40px;
+}
+
+.title2 {
+    align-self: center;
+    text-align: center;
+    color: #10AC84;
+}
+
+.RecipeDetail hr{
+    margin: 10px 0px 20px 0px;
+    border: 0.5px solid #10AC84;
+}
+
+.ContainerModalFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.closeButton {
+    position: absolute;
+    right: 0;
+    left: 90;
+    top : 50;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.ContainerListIngredients{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 120px;
+}
+
+.orderList {
+    width: 100%;
+    column-count: 3;
+    list-style-image: url('../../../../Images/Icone/list-ingre-vege.png');
+}
+
+.orderList li {
+    margin: 0 20px 0px 10px;
+}
+
+.RecipeDetail {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-evenly;
+    margin: 20px 40px;
+}
+
+.RecipeTitle {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 100%;
+}
+
+.RecipeTitle h1{
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+.RecipeIcon {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    margin: 10px 20px 30px 0;
+    width: 100%;
+
+}
+
+.NutritionContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 65% !important;
+}
+
+.NutritionContainer div {
+    display: flex;
+    align-items: center;
+}
+
+.NutritionContainer small {
+    padding-left: 5px;
+}
+
+.RecipeIcon small{
+    font-weight: bold;
+}
+
+.RecipeIcon div {
+    display: flex;
+    align-items: center;
+}
+
+.RecipeIcon div img{
+    padding-right: 7px;
+}
+
+.RecipeDetail h2 {
+    margin: 35px 0 0 0;
+}
+
+.RecipeDetail ul{
+    margin-left: 0;
+}
+
+.InstructionsOl {
+    counter-reset: li;
+    list-style: none;
+}
+
+.InstructionsLi {
+    position: relative;
+    padding: 5px 0 33px 50px;
+    font-size: 16px;
+    font-family: 'Rubik';
+}
+
+.InstructionsLi:before {
+    border-radius: 50%;
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    line-height: 35px;
+    left: -8px;
+    top: -2px;
+    color: #10AC84;
+    width: 35px;
+    height: 35px;
+    box-shadow: 1px 1px 12px 0 rgba(0, 0, 0, 0.07);
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Rubik';
+}
+
+/* David est son GROS ecran responsive */
+@media screen and (min-width: 1201px){
+    .RecipeDetail{
+        width: initial;
+    }
+
+    .NutritionContainer{
+        width: 100%;
+    }
+}
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1200px){
+
+    .divImg{
+        width: 640px!important;
+    }
+
+    .RecipeTitle .title {
+        font-size: 2.2rem
+    }
+
+    .RecipeDetail{
+        width: 90%;
+        margin: 10px 0px 20px 30px;
+    }
+
+    .RecipeDetail h2{
+        font-size: 1.3rem
+    }
+
+    .RecipeDetail p,
+    .RecipeDetail ol,
+    .RecipeDetail ul{
+        font-size: 1rem;
+    }
+
+    .ContainerListIngredients{
+        padding: initial;
+    }
+
+    .RecipeDetail .orderList{
+        margin-left: 40px;
+    }
+
+    .RecipeDetail ol{
+        margin-right: 10px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 750px){
+
+    .closeButton{
+        width: 65px;
+    }
+
+    .divImg{
+        height: 250px!important;
+        width: 360px!important;
+    }
+
+    .RecipeDetail p,
+    .RecipeDetail ol,
+    .RecipeDetail ul{
+        font-size: .9rem;
+    }
+
+    .RecipeTitle .title {
+        font-size: 1.6rem
+    }
+
+    .RecipeIcon{
+        margin: 0;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .RecipeIcon div small{
+        padding-right: 10px;
+    }
+
+    .RecipeDetail{
+        margin: 0;
+        width: 90%;
+        padding-top: 0;
+        margin: 0px 20px 20px 15px;
+    }
+
+    .RecipeDetail h2{
+        margin-top: 35px;
+    }
+
+    .RecipeDetail .orderList{
+        margin-left: 40px;
+        column-count: 2!important;
+    }
+
+    .title2 {
+        font-size: 1.2rem
+    }
+
+    .RecipeDetail ol{
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+
+    .paper{
+        height: 663px!important;
+    }
+
+    .modal{
+        margin-top: 0!important;
+    }
+
+    .noSpecialInfo{
+        text-align: center;
+        padding-right: 10px;
+    }
+}

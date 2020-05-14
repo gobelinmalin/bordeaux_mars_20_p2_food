@@ -1,0 +1,64 @@
+.PortraitCard {
+    width: 350px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 50px 75px;
+
+}
+
+.Portrait {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 4px 4px 10px grey;
+}
+
+.Name {
+    font-family: 'Rubik';
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.Description {
+    font-size: 1.3rem;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 450px) {
+    .PortraitCard {
+        margin: 35px auto;
+        margin-left: -15px;
+        width: 250px;
+        margin: 25px;
+        font-size: 20px;
+    }
+    .Portrait {
+        height: 150px;
+        width: 150px;
+    }
+    .Description {
+        display: none;
+    }
+
+    .Name{
+        text-shadow: 0 0 3px #FFF;
+    }
+}
+@media screen and (max-width: 1200px) {
+
+    .PortraitCard {
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .Description {
+        display: none;
+    }
+
+
+}
