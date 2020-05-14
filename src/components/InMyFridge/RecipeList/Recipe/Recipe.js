@@ -13,8 +13,6 @@ const Recipe = (props) => {
                 <h3>{props.title}</h3>
             </div>
             
-            
-
             {/* Condition en fonction des informations "recette pour x personnes" et "temps de préparation" disponibles, sinon on affiche tous
                 les ingrédients */}
                     <div className={styles.RecipeIngredients}>
@@ -32,7 +30,6 @@ const Recipe = (props) => {
                         : <p><strong>Ingredients: </strong>{props.usedIngredients} {props.missedIngredients}</p>}
                     </div>
             
-
             {/* Condition en fonction de l'objet "aggregateLikes", s'il existe on affiche les likes */}
             {
                 props.aggregateLikes

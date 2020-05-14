@@ -64,10 +64,7 @@ const Diet = () => {
         loading: false
     });
 
-    //const [loading, setLoading] = useState(false);
-
     const handleChangeInputs = (e) => {
-        console.log(e.target.value)
         setDataInput({
             ...dataInput,
             [e.target.name] : e.target.value
@@ -75,7 +72,6 @@ const Diet = () => {
     };
 
     const handleChangeRadio = (e) => {
-        console.log(e.target.value)
 
         switch(e.target.value) {
             case 'breakfast':

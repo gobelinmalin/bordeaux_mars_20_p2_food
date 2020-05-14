@@ -1,54 +1,54 @@
 .Navbar{
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    justify-content: space-between;
-    position: fixed;
-    color: white;
-    font-size: 20px;
-    font-weight: 400;
-    z-index: 9999;
-    background-color:#10AC84;
-    top: 0;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: space-between;
+  position: fixed;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  z-index: 9999;
+  background-color:#10AC84;
+  top: 0;
 }
 
 .LogoAndTitleContainer {
-    display: flex;
+  display: flex;
 }
 
 .LogoAndTitleContainer h2 {
-    margin-top: 25px;
-    color: white;
-    text-decoration: none;
-}
-
-.LogoAndTitleContainer a {
+  margin-top: 25px;
   color: white;
   text-decoration: none;
 }
 
+.LogoAndTitleContainer a {
+color: white;
+text-decoration: none;
+}
+
 .LogoAndTitleContainer h2:hover {
-  color: #F29B20;
+color: #F29B20;
 }
 
 .NavItemsContainer {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .NavItems {
-    padding: 30px;
+  padding: 30px;
 }
 
 .NavItemsContainer a{
-    color: white;
-    font-weight: 800;
-    text-decoration: none;
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
 }
 .NavItemsContainer a:hover{
-    color: #F29B20;
-    
+  color: #F29B20;
+  
 }
 
 .navItemsBurger a {
@@ -59,105 +59,100 @@
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-    position: fixed;
-    width: 36px;
-    height: 30px;
-    left: 85%;
-    top: 25px;
-    z-index: 1000;
-  }
-   
-  /* Color/shape of burger icon bars */
-  .bm-burger-bars {
-    background: white;
-  }
-   
-  /* Color/shape of burger icon bars on hover*/
-  .bm-burger-bars-hover {
-    background: white;
-  }
-   
-  /* Position and sizing of clickable cross button */
-  .bm-cross-button {
-    height: 84px!important;
-    width: 84px!important;
-    right: 45px !important;
-    top: 20px !important
-  }
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 85%;
+  top: 25px;
+  z-index: 1000;
+}
+  
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: white;
+}
+  
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: white;
+}
+  
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 84px!important;
+  width: 84px!important;
+  right: 45px !important;
+  top: 20px !important
+}
 
-  .bm-cross-button button {
-    left: 65px !important;
-    top: -15px !important;
-    width: 70% !important;
-    height: 70% !important;
-  }
-   
-  /* Color/shape of close button cross */
-  .bm-cross {
-    background: #bdc3c7;
-    width: 50px !important;
-  }
-   
-  /*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
-  .bm-menu-wrap {
-    position: fixed;
-    height: 100%;
-  }
-   
-  /* General sidebar styles */
-  .bm-menu {
-    background: #1c6d5b;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
-  }
-   
-  /* Morph shape necessary with bubble or elastic */
-  .bm-morph-shape {
-    fill: #373a47;
-  }
-   
-  /* Wrapper for item list */
-  .bm-item-list {
-    color: #b8b7ad;
-    padding: 1.2em;
-    margin-top: 150px;
-  }
-   
-  /* Individual item */
-  .bm-item {
-    display: inline-block;
-    padding-top: 15px;
-  }
-   
-  /* Styling of overlay */
-  /* .bm-overlay {
-    right: -100px;
-  } */
+.bm-cross-button button {
+  left: 65px !important;
+  top: -15px !important;
+  width: 70% !important;
+  height: 70% !important;
+}
+  
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+  width: 50px !important;
+}
+  
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+  
+/* General sidebar styles */
+.bm-menu {
+  background: #1c6d5b;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+  
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+  
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 1.2em;
+  margin-top: 150px;
+}
+  
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  padding-top: 15px;
+}
+  
+/* Styling of overlay */
+.BurgerMenu {
+  width: 600px;
+}
 
-  .BurgerMenu {
-    width: 600px;
-  }
-
-  @media screen and (max-width: 842px) {
-    .NavItems {
-        display: none;
-    }
-    .bm-burger-button{
-      left: 90%;
-    }
-    
-    .LogoAndTitleContainer h2 {
+@media screen and (max-width: 842px) {
+  .NavItems {
       display: none;
-    }
+  }
+  .bm-burger-button{
+    left: 90%;
+  }
+  
+  .LogoAndTitleContainer h2 {
+    display: none;
+  }
 
-    .bm-overlay {
-      background: none !important;
-      right: 200px;
-    }
-   
+  .bm-overlay {
+    background: none !important;
+    right: 200px;
+  }
 }
 @media screen and (max-width: 450px){
   .bm-burger-button{
@@ -179,5 +174,4 @@
   .bm-burger-button{
     display: none;
   }
-
 }

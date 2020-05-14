@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './AboutUs.module.css';
 import PortraitCard2 from './PortraitCard2';
-// import { HashLink as Link } from 'react-router-hash-link';
 
 const AboutUs = () => {
     return (

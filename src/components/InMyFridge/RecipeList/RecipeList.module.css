@@ -82,7 +82,6 @@
     -o-transform: calc(-50%, -50%);
 }
 
-/* TABLET RESPONSIVE */
 @media screen and (max-width: 1200px){
 
     .ContainerSpinner{
@@ -95,7 +94,7 @@
     
 }
 
-/* MOBILE RESPONSIVE */
+/* TABLET RESPONSIVE */
 @media screen and (max-width: 1050px){
 
     .CardsContainer{
@@ -112,6 +111,7 @@
     }
 }
 
+/* MOBILE RESPONSIVE */
 @media screen and (max-width: 769px){
     .ContainerTop12{
         flex-direction: column;
