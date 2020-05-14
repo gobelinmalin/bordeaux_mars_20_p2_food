@@ -108,8 +108,8 @@ const Diet = () => {
         axios.get(url,
             {
                 headers: {
-                "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-                "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+                    "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+                    "x-rapidapi-key": process.env.REACT_APP_API_KEY,
                 }
             })
         .then(response => response.data)
@@ -133,8 +133,6 @@ const Diet = () => {
                     <div className={styles.FormDietContainer}>
                         <div className={styles.ContainerSectionForm}>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Diet</label>
-                                <input placeholder='ex: vegetarian' onChange={handleChangeInputs} value={dataInput.diet} type="text" name='diet' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -151,8 +149,6 @@ const Diet = () => {
                             </div>
 
                             <div className= {styles.FormLabel}>
-                                {/* <label>Intolerances</label>
-                                <input placeholder='ex: gluten' onChange={handleChangeInputs} value={dataInput.intolerances} type="text" name='intolerances' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -169,8 +165,6 @@ const Diet = () => {
                             </div>
 
                             <div className= {styles.FormLabel}>
-                                {/* <label>Cuisine</label>
-                                <input placeholder='ex: italian' onChange={handleChangeInputs} value={dataInput.cuisine} type="text" name='cuisine' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -189,8 +183,6 @@ const Diet = () => {
 
                         <div className={styles.ContainerSectionForm}>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Exclude ingredients</label>
-                                <input placeholder='ex: mushroom' onChange={handleChangeInputs} value={dataInput.excludeIngredients} type="text" name='excludeIngredients' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -207,8 +199,6 @@ const Diet = () => {
                             </div>
 
                             <div className= {styles.FormLabel}>
-                                {/* <label>Max. calories (cal)</label>
-                                <input placeholder='min. 200' onChange={handleChangeInputs} value={dataInput.maxCalories} type="number" min="200" name='maxCalories' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -225,8 +215,6 @@ const Diet = () => {
                             </div>
 
                             <div className= {styles.FormLabel}>
-                                {/* <label>Min. protein (gr)</label>
-                                <input placeholder="ex: 25" onChange={handleChangeInputs} value={dataInput.minProtein} type="number" name='minProtein' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -245,8 +233,6 @@ const Diet = () => {
                         <div className={styles.ContainerSectionForm}>
 
                             <div className= {styles.FormLabel}>
-                                {/* <label>Fat (gr)</label>
-                                <input placeholder="ex: 10" onChange={handleChangeInputs} value={dataInput.maxFat} type="number" min="50" name='maxFat' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -261,8 +247,6 @@ const Diet = () => {
                                 </ThemeProvider>
                             </div>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Max saturated fat (gr)</label>
-                                <input placeholder="ex: 50" onChange={handleChangeInputs} value={dataInput.maxSaturatedFat} type="number" min="50" name='maxSaturatedFat' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -278,8 +262,6 @@ const Diet = () => {
                             </div>
 
                             <div className= {styles.FormLabel}>
-                                {/* <label>Min carbs (gr)</label>
-                                <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minCarbs} type="number" name='minCarbs' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -298,8 +280,6 @@ const Diet = () => {
 
                         <div className={styles.ContainerSectionForm}>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Max sugar (gr)</label>
-                                <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.maxSugar} type="number" min="15" name='maxSugar' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -314,8 +294,6 @@ const Diet = () => {
                                 </ThemeProvider>
                             </div>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Min vitamin B12 (µg)</label>
-                                <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minVitaminB12} type="number" name='minVitaminB12' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -330,8 +308,6 @@ const Diet = () => {
                                 </ThemeProvider>
                             </div>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Min iron (g)</label>
-                                <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minIron} type="number" name='minIron' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -350,8 +326,6 @@ const Diet = () => {
 
                         <div className={styles.ContainerSectionForm}>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Min calcium (mg)</label>
-                                <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minCalcium} type="number" name='minCalcium' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -366,8 +340,6 @@ const Diet = () => {
                                 </ThemeProvider>
                             </div>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Max cholesterol (mg)</label>
-                                <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.maxCholesterol} type="number" name='maxCholesterol' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -382,8 +354,6 @@ const Diet = () => {
                                 </ThemeProvider>
                             </div>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Min fiber (mg)</label>
-                                <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minFiber} type="number" name='minFiber' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -401,8 +371,6 @@ const Diet = () => {
 
                         <div className={styles.ContainerSectionForm}>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Max sodium (g)</label>
-                                <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.maxSodium} type="number" name='maxSodium' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -417,8 +385,6 @@ const Diet = () => {
                                 </ThemeProvider>
                             </div>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Magnesium (g)</label>
-                                <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minMagnesium} type="number" name='minMagnesium' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -433,8 +399,6 @@ const Diet = () => {
                                 </ThemeProvider>
                             </div>
                             <div className= {styles.FormLabel}>
-                                {/* <label>Vitamin C (mg)</label>
-                                <input placeholder="ex: 30" onChange={handleChangeInputs} value={dataInput.minVitaminC} type="number" name='minVitaminC' /> */}
                                 <ThemeProvider theme={theme}>
                                     <TextField
                                         onChange={handleChangeInputs}
@@ -455,38 +419,22 @@ const Diet = () => {
                     <div className={[styles.FormLabel, styles.TypeMeal].join(' ')}>
                         <h3>Type of course :</h3>
                         <div className={styles.LabelInRow}>
-                        <ThemeProvider theme={theme}>
-                            <RadioGroup onChange={handleChangeRadio}>
-                            <div className={styles.InputInRow}>
-                                <div style={{marginBottom: '8px'}}><LogoTypeMeal logo={MainCourse} /></div>
-                                <FormControlLabel value="main course" control={<Radio color="primary" className={classes.icon}/>} label="Main course" labelPlacement="start"/>
-                            </div>
-                            <div className={styles.InputInRow}>
-                                <LogoTypeMeal logo={Breakfast}/>
-                                <FormControlLabel value="breakfast" control={<Radio color="primary" className={classes.icon2}/>} label="Breakfast" labelPlacement="start"/>
-                            </div>
-                            <div className={styles.InputInRow}>
-                                <LogoTypeMeal logo={Desert}/>
-                                <FormControlLabel value="dessert" control={<Radio color="primary" className={classes.icon3}/>} label="Dessert" labelPlacement="start"/>
-                            </div>
-                            </RadioGroup>
-                        </ThemeProvider>
-
-                            {/* <div className={styles.InputInRow}>
-                                <LogoTypeMeal logo={MainCourse}/>
-                                <label>main course</label>
-                                <input onChange={handleChangeRadio} value="main course" type="radio" name='type' />
-                            </div>
-                            <div className={styles.InputInRow}>
-                                <LogoTypeMeal logo={Breakfast}/>
-                                <label>breakfast</label>
-                                <input onChange={handleChangeRadio} value='breakfast' type="radio" name='type' />
-                            </div>
-                            <div className={styles.InputInRow}>
-                                <LogoTypeMeal logo={Desert}/>
-                                <label>dessert</label>
-                                <input onChange={handleChangeRadio} value='dessert' type="radio" name='type' />
-                            </div> */}
+                            <ThemeProvider theme={theme}>
+                                <RadioGroup onChange={handleChangeRadio}>
+                                <div className={styles.InputInRow}>
+                                    <div style={{marginBottom: '8px'}}><LogoTypeMeal logo={MainCourse} /></div>
+                                    <FormControlLabel value="main course" control={<Radio color="primary" className={classes.icon}/>} label="Main course" labelPlacement="start"/>
+                                </div>
+                                <div className={styles.InputInRow}>
+                                    <LogoTypeMeal logo={Breakfast}/>
+                                    <FormControlLabel value="breakfast" control={<Radio color="primary" className={classes.icon2}/>} label="Breakfast" labelPlacement="start"/>
+                                </div>
+                                <div className={styles.InputInRow}>
+                                    <LogoTypeMeal logo={Desert}/>
+                                    <FormControlLabel value="dessert" control={<Radio color="primary" className={classes.icon3}/>} label="Dessert" labelPlacement="start"/>
+                                </div>
+                                </RadioGroup>
+                            </ThemeProvider>
                         </div>
                 </div>
                     

@@ -33,12 +33,11 @@ const Recipe = (props) => {
             {/* Condition en fonction de l'objet "aggregateLikes", s'il existe on affiche les likes */}
             {
                 props.aggregateLikes
-                ?
+                &&
                 <div className={styles.RecipeLikes}>
                     <div className={styles.RecipeImage}><img src="../../../Images/Icone/icon-like-orange@2x.png" alt="like it"/></div>
                     <div className={styles.RecipeNbLike}><small>{props.aggregateLikes}</small></div>
                 </div>
-                :   null
             }
 
             <div className={styles.RecipeButtonLike}>
@@ -46,9 +45,8 @@ const Recipe = (props) => {
                     <RecipeModal dataRecipe={props.id} />
                 </div>
                 <div className={styles.RecipeLikesContainer}>
-                    {props.recipeLikes === undefined
-                    ? null
-                    :
+                    {props.recipeLikes !== undefined
+                    &&
                         <div className={styles.RecipeLikes}>
                             <div className={styles.RecipeImage}><img src="../../../Images/Icone/icon-like-orange@2x.png" alt="like it"/></div>
                             <div className={styles.RecipeNbLike}><small>{props.recipeLikes}</small></div>

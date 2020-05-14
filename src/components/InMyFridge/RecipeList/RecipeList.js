@@ -87,9 +87,8 @@ const RecipeList = (props) => {
             </div>
             <div className={styles.ContainerSpinner}>
                 {
-                props.isLoading
-                ? <Loader />
-                : null
+                    props.isLoading
+                    && <Loader />
                 }
             </div>
             <div className={styles.RecipeList}>

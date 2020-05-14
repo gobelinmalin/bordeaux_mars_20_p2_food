@@ -12,10 +12,8 @@ const MiniRecipe = (props) => {
                 <img src={props.image} alt="Recipe"/>
             </div>
             {
-                props.nutrition 
-                ?
-                    null
-                :
+                !props.nutrition 
+                &&
                 <div className={styles.RecipeImage}>
                     <div className={styles.RecipeImg}><img src="../../../Images/Icone/icon-like-orange@2x.png" alt="like it"/></div>
                     <div className={styles.RecipeNbLike}><small>{props.aggregateLikes}</small></div>
