@@ -1,6 +1,3 @@
-
-
-
 .Item {
     display: flex;
     justify-content: space-between;
@@ -108,18 +105,3 @@
     }
     
 }
-
-/* MOBILE RESPONSIVE */
-/* @media screen and (max-width: 750px){
-    .Item{
-        height: 40px;
-    }
-
-    .IconAndName h3{
-        font-size: .8rem;
-    }
-
-    .ItemList p{
-        font-size: .8rem;
-    }
-} */

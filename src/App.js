@@ -11,10 +11,11 @@ import InMyFridge from './components/InMyFridge/InMyFridge';
 import Diet from './components/Diet/Diet';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Switch>
-        <>
+        <React.Fragment>
           <div className="App">
               <Navbar />
                 <Route path='/' exact component={Home}/>
@@ -24,7 +25,7 @@ function App() {
                 <Route path='/contactUs' exact component={ContactUs}/>
               <Footer />
           </div>
-        </>
+        </React.Fragment>
       </Switch>
     </BrowserRouter>
   );

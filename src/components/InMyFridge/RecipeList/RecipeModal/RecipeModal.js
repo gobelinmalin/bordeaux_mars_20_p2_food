@@ -1,26 +1,11 @@
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import React, { useState, useEffect } from 'react';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
-import Tooltip from '@material-ui/core/Tooltip'
 import Fade from '@material-ui/core/Fade';
 import styles from "./RecipeModal.module.css";
 import axios from 'axios';
 import NutritionInfo from './NutritionInfo';
-
-
-const LightTooltip = withStyles((theme) => ({
-  tooltip: {
-    backgroundColor: '#F29B20',
-    color:'white',
-    fontSize: 14,
-    fontFamily:'Rubik',
-    fontWeight: 'bold'
-  },
-  arrow : {
-    color: '#F29B20'
-  }
-}))(Tooltip);
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -33,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: theme.palette.background.paper,
     boxShadow: "0px 3px 10px black",
-    // padding: theme.spacing(2, 4, 3),
     width: '885px',
     height: '700px',
     padding: '0px',
@@ -65,7 +49,6 @@ export default function TransitionsModal(props) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [recipe, setRecipe] = useState([]);
-  const [nutrition, setNutrition] = useState({}); //nutrition elements with the extended search (dietetic search page)
   const [diet, setDiet ] = useState([]); //nutrition eements with the basico search (In my fridge page)
   
 
@@ -128,8 +111,8 @@ export default function TransitionsModal(props) {
             default:
               break;
           }
+          return null;
         })
-        setNutrition(data)
         setDiet(finalArray)
         })
       .catch((err) => {
@@ -137,13 +120,9 @@ export default function TransitionsModal(props) {
       })
   }, [dataRecipe])
 
-  console.log(diet);
-
   return (
     <div className={styles.BodyModal}>
-      <button type="button" onClick={handleOpen}>
-        {/* Read More */}
-      </button>
+      <button type="button" onClick={handleOpen}></button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -179,8 +158,8 @@ export default function TransitionsModal(props) {
                 <div className={styles.RecipeIcon}>
                   <div>
                       <img src="../../../../Images/Icone/icon-cook-time@2x.png"alt="icone-cooking-min"/>
-                      {recipe.map(element => element.cookingMinutes !== undefined
-                      ? <small>Cook {recipe.map(element => element.cookingMinutes)} min</small>
+                      {recipe.map((element, index) => element.cookingMinutes !== undefined
+                      ? <small key={index}>Cook {recipe.map(element => element.cookingMinutes)} min</small>
                       : <small>no cooking time</small>
                       )} 
                   </div>
@@ -192,8 +171,8 @@ export default function TransitionsModal(props) {
 
 
                   <img src="../../../../Images/Icone/icon-prep-time@2x.png"alt="icone-cooking-min"/>
-                    {recipe.map(element => element.preparationMinutes !== undefined
-                    ? <small> Prep {recipe.map(element => element.preparationMinutes)} min</small>
+                    {recipe.map((element, index) => element.preparationMinutes !== undefined
+                    ? <small key={index}> Prep {recipe.map(element => element.preparationMinutes)} min</small>
                     : <small>no prep. time</small>
                     )}
                   </div>
@@ -204,8 +183,9 @@ export default function TransitionsModal(props) {
                  {/* If its a complexe nutrition, set specific categories, if not set the other one */}
                   {
                     props.complexeNutrition
-                    ?  props.complexeNutrition.map(element => {
+                    ?  props.complexeNutrition.map((element, index) => {
                       return <NutritionInfo
+                              key={index}
                               icon={element.title}
                               title={element.title}
                               amount={element.amount}
@@ -213,8 +193,9 @@ export default function TransitionsModal(props) {
                       />
                     })
 
-                    : diet.map(element => {
+                    : diet.map((element, index) => {
                       return <NutritionInfo
+                              key={index}
                               icon={element.title}
                               title={element.title}
                               amount={element.amount}
@@ -229,14 +210,14 @@ export default function TransitionsModal(props) {
                 <h2 className={styles.title2}>Ingredients list</h2><hr/>
                 <div className={styles.ContainerListIngredients}>
                   <ul className={styles.orderList}>
-                      {recipe.map(element => element.extendedIngredients.map(ingredient => <li>{ingredient.name}</li>))}                      
+                      {recipe.map(element => element.extendedIngredients.map((ingredient, index) => <li key={index}>{ingredient.name}</li>))}                      
                   </ul>
                 </div>
 
                 <h2 className={styles.title2} >Instructions</h2><hr/>
                   <ol className={styles.InstructionsOl}>
                     {recipe.map(element => element.analyzedInstructions.length > 0 
-                    ? recipe.map(element => element.analyzedInstructions.map(element2 => element2.steps.map(element3 => <li className={styles.InstructionsLi}>{element3.step}</li>)))
+                    ? recipe.map(element => element.analyzedInstructions.map(element2 => element2.steps.map((element3, index) => <li key={index} className={styles.InstructionsLi}>{element3.step}</li>)))
                     : <p className={styles.noSpecialInfo}>No special instructions</p>
                     )
                     }
@@ -245,7 +226,7 @@ export default function TransitionsModal(props) {
                 <div className={styles.ContainerListIngredients}>
                   <ul className={styles.orderList}>
                     {recipe.map(element => element.diets.length > 0
-                    ? recipe.map(element => element.diets.map(diet => <li>{diet}</li>))
+                    ? recipe.map(element => element.diets.map((diet, index) => <li key={index}>{diet}</li>))
                     : <p className={styles.noSpecialInfo}>No special diets</p>)}
                   </ul>
                 </div>

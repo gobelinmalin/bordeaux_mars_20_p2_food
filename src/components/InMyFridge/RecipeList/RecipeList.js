@@ -53,10 +53,10 @@ const RecipeList = (props) => {
                                             styles={{ width: 200}}
                                         />
                         })}
+
                     </Slider>
-                </div>   
+                </div>
             </div>
-            {/* <div className={styles.ContainerHr}><hr/></div> */}
             <h2 className={styles.ListTitle}>{props.listTitle}</h2>
             <div className={styles.RecipeList}>
                 {props.recipeList.map((element, index) => {
@@ -67,10 +67,10 @@ const RecipeList = (props) => {
                                 title={element.title}
                                 missedIngredients={element.missedIngredients.slice(0,8).map(
                                     
-                                    nameingredient => <span> {nameingredient.name}, </span>
+                                    (nameingredient,index2) => <span key={index2}> {nameingredient.name}, </span>
                                 )}
                                 usedIngredients= {element.usedIngredients.map(
-                                    nameingredient => <span>{nameingredient.name},</span>
+                                    (nameingredient, index3) => <span key={index3}>{nameingredient.name},</span>
                                 )}
                                 recipeLikes= {element.likes}
                                 id={element.id}

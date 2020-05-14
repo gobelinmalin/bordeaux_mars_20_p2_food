@@ -1,7 +1,3 @@
-/* .BodyModal::-webkit-scrollbar {
-  display: none;
-} */
-
 .title, .title2 {
     text-transform: uppercase;
     font-family: 'Rubik';
@@ -156,7 +152,6 @@
 }
 
 /* David est son GROS ecran responsive */
-
 @media screen and (min-width: 1201px){
     .RecipeDetail{
         width: initial;
@@ -241,7 +236,6 @@
     .RecipeDetail{
         margin: 0;
         width: 90%;
-        /* padding: 10px; */
         padding-top: 0;
         margin: 0px 20px 20px 15px;
     }

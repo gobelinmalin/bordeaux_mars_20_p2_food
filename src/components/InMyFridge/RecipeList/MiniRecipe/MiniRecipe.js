@@ -2,15 +2,7 @@ import React from 'react';
 import styles from "./MiniRecipe.module.css";
 import RecipeModal from '../RecipeModal/RecipeModal';
 
-const MiniRecipe = (props) => {
-    
-    // const openModal = (dataRecipe) => {
-    //     console.log('Modal clicked');
-    //     return <RecipeModal dataRecipe={props.id} />
-          
-    // };
-    
-    
+const MiniRecipe = (props) => {   
     return (
         <div className={styles.MiniRecipe}>
             <div className={styles.ContainerMiniRecipe}>

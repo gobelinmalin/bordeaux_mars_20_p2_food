@@ -25,6 +25,7 @@ const NavbarCategories = (props) => {
            if(Object.values(element)[0] === true){
                return element;
            }
+           return null;
        });
        // check if user has checked an ingredient and return the result
        if (!filteredArray.length > 0) {

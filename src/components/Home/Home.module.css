@@ -79,7 +79,6 @@
 }
 
 .BackgroundImage2 {
-    /* background-image: url('../../Images/HomePortraitBackground.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     width : 100%;
@@ -171,9 +170,7 @@
     background-image: url('../../Images/img/Diet2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-position: 25% 40%; */
     background-position: 30% 0%;
-    /* background-position: 0% 50%; */
     margin-top: 5px;
     width : 100%;
     height: 650px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './NutritionInfo.module.css';
 import Tooltip from '@material-ui/core/Tooltip'
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 const LightTooltip = withStyles((theme) => ({
     tooltip: {
