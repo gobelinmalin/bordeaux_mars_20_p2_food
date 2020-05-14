@@ -3,9 +3,10 @@ import styles from './InMyFridge.module.css';
 import RecipeList from './RecipeList/RecipeList';
 import NavbarCategories from './NavbarCategories/NavbarCategories';
 import axios from 'axios';
+const dotenv = require('dotenv');
 
 const InMyFridge = () => {
-
+    const env = dotenv.config().parsed;
 
     const [ checkedIngredients, setCheckedIngredients ] = useState([])
     const [ recipeList, setRecipeList ] = useState([])
@@ -16,7 +17,6 @@ const InMyFridge = () => {
     const [ topRecipe, setTopRecipe ] = useState([])
     const [ listTitle, setListTitle ] = useState('')
     const [ topTitle, setTopTitle ] = useState('')
-
 
     const myCallback = (dataFromChild) => {
         setCheckedIngredients(dataFromChild)
@@ -33,7 +33,7 @@ const InMyFridge = () => {
             {
               headers: {
                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-                "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+                "x-rapidapi-key": process.env.REACT_APP_API_KEY,
               }
             })
         .then(response => response.data)
@@ -45,7 +45,7 @@ const InMyFridge = () => {
             {
               headers: {
                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-                "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+                "x-rapidapi-key": process.env.REACT_APP_API_KEY,
               }
             })
         .then(response => response.data)
@@ -72,7 +72,7 @@ const InMyFridge = () => {
             {
               headers: {
                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-                "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+                "x-rapidapi-key": process.env.REACT_APP_API_KEY,
               }
             })
         .then(response => response.data)
@@ -108,7 +108,7 @@ const InMyFridge = () => {
             {
               headers: {
                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-                "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+                "x-rapidapi-key": process.env.REACT_APP_API_KEY,
               }
             })
         .then(response => response.data)

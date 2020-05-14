@@ -68,7 +68,7 @@ export default function TransitionsModal(props) {
       {
         headers: {
           "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-          "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+          "x-rapidapi-key": process.env.REACT_APP_API_KEY,
         }
       }
     )
@@ -87,7 +87,7 @@ export default function TransitionsModal(props) {
         {
           headers: {
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-            "x-rapidapi-key": "788f9512demsh2ae41414a86ef90p1a01bcjsn23eee9f9e33b"
+            "x-rapidapi-key": process.env.REACT_APP_API_KEY,
           }
         }
       )
@@ -120,8 +120,10 @@ export default function TransitionsModal(props) {
       })
   }, [dataRecipe])
 
+  const isComplexeNutrition = props.complexeNutrition ? props.complexeNutrition : diet; // selon les macro (fiber, vitamin c, protein...) que l'on veut renvoyer dans les modal sur les pages in my fridge ou diet
+  
   return (
-    <div className={styles.BodyModal}>
+    <div>
       <button type="button" onClick={handleOpen}></button>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -182,18 +184,7 @@ export default function TransitionsModal(props) {
                 <div className={styles.NutritionContainer}>
                  {/* If its a complexe nutrition, set specific categories, if not set the other one */}
                   {
-                    props.complexeNutrition
-                    ?  props.complexeNutrition.map((element, index) => {
-                      return <NutritionInfo
-                              key={index}
-                              icon={element.title}
-                              title={element.title}
-                              amount={element.amount}
-                              unit={element.unit}
-                      />
-                    })
-
-                    : diet.map((element, index) => {
+                    isComplexeNutrition.map((element, index) => {
                       return <NutritionInfo
                               key={index}
                               icon={element.title}
@@ -203,7 +194,6 @@ export default function TransitionsModal(props) {
                       />
                     })
                   }                   
-                
                 </div>            
               </div>              
               <div className={styles.RecipeDetail}>
