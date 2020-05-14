@@ -179,6 +179,10 @@ flex-wrap: wrap;
 /* TABLET RESPONSIVE (IPAD) */
 @media screen and (max-width: 768px){
 
+    .ContainerTitle h1{
+        font-size: 4rem;
+    }
+
     .ContainerSpinner{
         display: none;
     }
@@ -190,6 +194,10 @@ flex-wrap: wrap;
     .ScreenFull {
         height: 270vh;
     }
+    .ContainerTitleImgBackground {
+        background-position: 100%;
+        height: 440px;
+    }
 }
 
 /* MOBILE RESPONSIVE (IPHONE 6/7/8) */
@@ -200,7 +208,7 @@ flex-wrap: wrap;
     }
 
     .ContainerTitle h1{
-        font-size: 6rem;
+        font-size: 4rem;
     }
 
     .ContainerSectionForm{
@@ -231,6 +239,9 @@ flex-wrap: wrap;
 
     .ScreenFull {
         height: 640vh;
+    }
+    .ContainerTitleImgBackground {
+        background-position: 50%;
     }
 
 }

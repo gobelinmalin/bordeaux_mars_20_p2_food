@@ -377,7 +377,7 @@ MEDIA QUERIES START HERE :
 @media (max-width: 780px){
 
   .Title h1{
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: center;
     position: absolute;
     top: 60%;
@@ -389,7 +389,7 @@ MEDIA QUERIES START HERE :
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 350px;
+    height: 440px;
   }
 
   .informations{
@@ -404,8 +404,8 @@ MEDIA QUERIES START HERE :
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 300px;
-    background-position: center;
+    height: 440px;
+    background-position: 27%;
   }
 
   .FormWrapper{
@@ -417,12 +417,13 @@ MEDIA QUERIES START HERE :
   }
 
   .Title h1{
-    font-size: 2.9rem;
+    font-size: 4rem;
     text-align: center;
     position: absolute;
     top: 55%;
-    left: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
   }
 
   .LeftLocation, 

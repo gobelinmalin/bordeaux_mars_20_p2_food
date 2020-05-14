@@ -52,7 +52,7 @@ const InMyFridge = () => {
         .then(data => {
             const top12 = data.recipes.sort((a, b) => { // on trie le tableau des recettes random par rapport  au nombre de likes puis on récupère les 12 premières recettes
                 return b.aggregateLikes - a.aggregateLikes;
-            }).slice(0, 3);
+            }).slice(0, 12);
             setTopRecipe(top12)
             setLoading(false)
             setTopTitle('Top recipes')
@@ -65,6 +65,7 @@ const InMyFridge = () => {
          setRecipeList([])
          setLoading(true)
          setRecipeSearch([])
+         setListTitle('')
       
          const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=${inputFromSearch}&offset=0&number=12`;
          axios.get(url,
@@ -88,6 +89,7 @@ const InMyFridge = () => {
         setRecipeList([])
         setLoading(true)
         setRecipeSearch([])
+        setListTitle('')
       
         const filteredArray = checkedIngredients.filter(element => {
             const value = Object.values(element);
