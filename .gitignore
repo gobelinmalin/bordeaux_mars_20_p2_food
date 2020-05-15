@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #MDP - API + adresse mail
-#.env
+.env

@@ -9,8 +9,8 @@ let transport = {
     host: 'smtp.gmail.com', // Don’t forget to replace with the SMTP host of your provider
     port: 587,
     auth: {
-    user: process.env.NODE_ENV_USER,
-    pass: process.env.NODE_ENV_PASS
+    user: 'contactinmyfridge@gmail.com',
+    pass: 'inmyfridge33'
   }
 }
 
